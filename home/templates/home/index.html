@@ -6,7 +6,23 @@
 {% block content %}
 
 Home page hello!
+<br>
 
-<a href="{% url 'all_products' %}">View products</a>
+<section class="py-5 text-center container">
+    <div class="row py-lg-3">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="h1 fw-bold">Search, Read, Buy, Review</h1>
+        <p class="lead text-muted">Website introduction.</p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Make an account</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+<a href="{% url 'all_products' %}" class="btn btn-primary my-2">View products</a>
+<a href="" class="btn btn-primary my-2">Create an account</a>
+
+
 
 {% endblock %}

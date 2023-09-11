@@ -2,33 +2,45 @@
 
 
 {% block content %}
-Products page
+<div class="container">
+  <main class="pt-5">
+    <div class="row g-3">
+      <div class="col-md-5 col-lg-5 order-md-first bg-light">
+        <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ product.image.url }}">
+      </div>
+      <div class="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
+        <h1 class="mb-0 h4">{{ product.title }}</h1>
+        <p><span class="lead">{{ product.brand }}</span> (Brand)</p>
+        <p>{{ product.description|slice:":355" }}...</p>
+        <div class="border">
+          <div class="col border-bottom">
+            <div class="row p-3">
+              <div class="col-6">Yarn</div>
+              <div class="col-6 text-end"><span class="h4 fw-bold">£{{ product.price }}</span></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row p-3">
+              <div class="col-6">
+                <label for="select">Qty</label>
+                <select id="select">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
+              </div>
+              <div class="col-6 text-end">
+                <button type="button" id="add-button" value="{{product.id}}" class="btn btn-secondary btn-sm">Add to
+                  basket</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-      {% for product in products %}
+</div>
 
-        <td>{{ product.name }}</td>
-        <td>{{ product.brand }}</td>
-        <td>{{ product.image }}</td>
-
-      {% endfor %}
-
-      
-    </tr>
-    </tbody>
-  </table>
-
-  {% endblock %}
-
-    
+{% endblock %}

@@ -1,1 +1,12 @@
-Home page
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+Home page hello!
+
+<a href="{% url 'all_products' %}">View products</a>
+
+{% endblock %}

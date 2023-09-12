@@ -12,6 +12,12 @@ def categories(request):
     }
 
 
+def category_list(request, category_slug):
+    category = get_object_or_404(Category, slug=category_slug)
+    products = Product.objects.filter(category=category)
+    return render(request, 'products/category.html', {'category': category, 'products': products})
+
+
 def product_all(request):
     """
     View to display all the products for

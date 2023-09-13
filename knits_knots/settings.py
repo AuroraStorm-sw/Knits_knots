@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # internal apps
     'home',
     'products',
+    'basket',
 ]
 
 SITE_ID = 1

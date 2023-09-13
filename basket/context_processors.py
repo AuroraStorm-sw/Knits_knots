@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from .basket import Basket
 
 
 def basket(request):

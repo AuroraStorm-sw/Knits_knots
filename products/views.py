@@ -3,9 +3,14 @@ from .models import Category, Product
 
 
 def category_list(request, category_slug):
+    """
+    View to display all the categories
+    and each corresponding product
+    """
     category = get_object_or_404(Category, slug=category_slug)
     products = Product.objects.filter(category=category)
-    return render(request, 'products/category.html', {'category': category, 'products': products})
+    return render(request, 'products/category.html',
+                  {'category': category, 'products': products})
 
 
 def product_all(request):
@@ -23,4 +28,5 @@ def product_detail(request, slug):
     get a detailed page for it
     """
     product = get_object_or_404(Product, slug=slug)
-    return render(request, 'products/product_detail.html', {'product': product})
+    return render(request, 'products/product_detail.html',
+                  {'product': product})

@@ -36,10 +36,8 @@ body {
 
 .banner {
     margin: auto;
-    width: fit-content;
+    max-width: fit-content;
     padding: 10px;
-
-    background-color: #fff;
 }
 
 .banner-text {
@@ -47,9 +45,19 @@ body {
 }
 
 
+/*--------------- NAVBAR --------------- */
 
+.nav {
+    background-color: bisque;
 
+    align-items: center;
+} 
 
+.nav-link,
+.navbar-brand {
+    font-size: 1.2rem;
+    color: #000;
+}
 
 
 

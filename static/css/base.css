@@ -1,6 +1,58 @@
-body {
-    background-color: rgb(245, 218, 179);
+/*GOOGLE FONT IMPORT*/
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
+
+
+
+/*--------------- BASE SETTINGS --------------- */
+
+html {
+    height: 100%;
 }
+
+body {
+    display: flex;
+    flex-direction: column;    
+    
+    margin: 0 auto;
+    min-height: 100vh;
+
+    position: relative;
+}
+
+.background {
+    min-height: 80vh;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    background-image: url("https://res.cloudinary.com/dg4yefryk/image/upload/v1694697655/bg.svg");
+}
+
+
+/*--------------- BANNER --------------- */
+
+
+.banner {
+    margin: auto;
+    width: fit-content;
+    padding: 10px;
+
+    background-color: #fff;
+}
+
+.banner-text {
+    font-family: 'Autour One', monospace;
+}
+
+
+
+
+
+
+
+
 
 tr {
     background-color: rgb(235, 187, 187);

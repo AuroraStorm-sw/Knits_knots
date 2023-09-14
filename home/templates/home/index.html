@@ -5,19 +5,34 @@
 
 {% block content %}
 
-<h1 class="text-center">Home page hello!</h1>
-<br>
 
-<section class="py-5 text-center container">
-    <div class="row py-lg-3">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="h1 fw-bold">Search, Read, Buy, Review</h1>
-        <p class="lead text-muted">Website introduction.</p>
-      </div>
+
+<section class="py-5 text-center container-fluid">
+  <div class="row py-lg-3">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h1 class="h1 fw-bold">Crochet, embroidery, or macramé?</h1>
+      <br>
+      <p>Welcome to Knits&Knots, where we celebrate the beautiful art of
+        thread and fibre work!
+        <br><br>
+        Whether you're experienced or just starting out, we provide everything you need to
+        unleash your creativity and create stunning pieces and fun projects.
+        <br><br>
+        From yarns to cords, our online store has all the supplies you need to bring your fibre projects to life. Join
+        our
+        community of creative enthusiasts and let's make breathtaking pieces together.
+        <br><br>
+        Get ready to explore the world
+        of fibres and discover your new favorite type of yarn!</p>
+      <br><br>
+
+      <button><a href="{% url 'products:product_all' %}">Let's get shopping</a></button>
+
+
     </div>
-  </section>
+  </div>
+</section>
 
-<div class="text-center"><button><a href="{% url 'products:product_all' %}">Start shopping</a></button></div>
 
 
 {% endblock %}

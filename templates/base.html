@@ -27,14 +27,16 @@
   <!-- BANNER -->
   <div class="container-fluid">
     <div class="banner">
-      <a class="d-none d-md-block" href="/" style="vertical-align:right"><img src="{% static 'img/logo-big.png' %}" alt=""></a>      
-      <a class="d-md-none" href="/" style="vertical-align:right"><img src="{% static 'img/logo-small.png' %}" alt=""></a>      
+      <a class="d-none d-md-block" href="/" style="vertical-align:right"><img src="{% static 'img/logo-big.png' %}"
+          alt=""></a>
+      <a class="d-md-none" href="/" style="vertical-align:right"><img src="{% static 'img/logo-small.png' %}"
+          alt=""></a>
     </div>
   </div>
 
   <header>
-    <!-- NAVBAR -->
 
+    <!-- NAVBAR -->
     <nav class="nav navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Home</a>
@@ -58,6 +60,10 @@
             {% endfor %}
 
           </ul>
+          <a type="button" role="button" href="{% url 'basket:basket' %}" class="btn btn-outline-secondary"><i
+              class="bi bi-cart4">Basket</i>
+            <div>1</div>
+          </a>
         </div>
       </div>
     </nav>

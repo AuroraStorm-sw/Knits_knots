@@ -67,7 +67,11 @@ p {
     color: #000;
 }
 
-
+.basket {
+    font-size: 1.4rem;
+    float: left;
+    clear: none
+}
 
 /*--------------- Buttons --------------- */
 
@@ -76,11 +80,9 @@ Button design by Temani Afif
 https://codepen.io/t_afif/pen/VwxbdpV
 */
 
-button {
+/* button {
     --b: 3px;
-    /* border thickness */
     --s: .15em;
-    /* size of the corner */
     --c: #66B100;
 
     padding: calc(.05em + var(--s)) calc(.3em + var(--s));
@@ -98,7 +100,7 @@ button:focus-visible {
     --_p: 0px;
     outline-color: var(--c);
     outline-offset: .05em;
-}
+} */
 
 button:active {
     background: var(--c);
@@ -106,10 +108,8 @@ button:active {
 }
 
 button {
-    font-family: system-ui, sans-serif;;
     font-size: 2rem;
     cursor: pointer;
-    border: none;
     margin: .1em;
 }
 
@@ -122,12 +122,40 @@ button a:hover {
     color: #000;
 }
 
+/*Button for scrolling back to the top of tha page
+Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top*/
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: solid 1px #000;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    padding: 15px;
+
+    color: #000;
+    font-size: 18px;
+    background: 
+}
+
+#myBtn:hover {
+    background-color: #66B100;
+}
 
 /*--------------- PRODUCT CARDS --------------- */
 
 
 .product-card {
     width: 20rem;
+}
+
+.product-card:hover {
+    transform: translate(0, -7px);
+    transition: ease-in-out 400ms;
 }
 
 
@@ -160,7 +188,7 @@ footer a:hover {
 #social-media-links {
     float: left;
 }
-   
+
 #newsletter-subscribe {
     float: right;
 }

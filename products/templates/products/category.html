@@ -7,24 +7,36 @@
 
 
 <main>
-  <div class="album py-5 bg-light">
-    <div class="container">
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-3">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="h1 fw-bold">Products title</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
+          etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5">
+    <div class="container-fluid">
 
       <div class="pb-3 h5">{{category.name|title}}</div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+      <div class="row d-flex justify-content-around p-3 m-1">
 
         {% for product in products %}
 
         <div class="col">
-          <div class="card shadow-sm">
-          <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
-
+          <div class="card product-card m-3">
+            <a href="{{ product.get_absolute_url }}">
+              <img src="{{ product.image.url }}" alt="Responsive Image">
+            </a>
             <div class="card-body">
               <p class="card-text">
                 <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
               </p>
               <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">9min read</small>
+                <small class="text-muted">{{ product.description }}</small>
               </div>
             </div>
           </div>

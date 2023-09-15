@@ -1,3 +1,7 @@
+  
+  // Button for scrolling back to the top of tha page
+  // Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top
+
 let mybutton = document.getElementById("myBtn");
 
 window.onscroll = function () {

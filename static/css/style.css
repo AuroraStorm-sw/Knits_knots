@@ -42,7 +42,6 @@ p {
 
 /*--------------- BANNER --------------- */
 
-
 .banner {
     margin: auto;
     max-width: fit-content;
@@ -64,7 +63,7 @@ p {
 .nav-link,
 .navbar-brand {
     font-size: 1.2rem;
-    color: #000;
+    color: rgba(0,0,0,.7);
 }
 
 .basket {
@@ -72,6 +71,10 @@ p {
     float: left;
     clear: none
 }
+
+.nav-link:hover {
+    color: #000;
+  }
 
 /*--------------- Buttons --------------- */
 
@@ -191,6 +194,9 @@ footer a:hover {
 
 
 /*--------------- FORMS --------------- */
+
+/*Form styling based on my previous project:
+https://github.com/AuroraStorm-sw/Inspired-Ink*/
 
 label {
     /*Source for aligning labels and inputs:

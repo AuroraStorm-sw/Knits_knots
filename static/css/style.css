@@ -102,12 +102,7 @@ button:focus-visible {
     outline-offset: .05em;
 } */
 
-button:active {
-    background: var(--c);
-    color: #fff;
-}
-
-button {
+ button {
     font-size: 2rem;
     cursor: pointer;
     margin: .1em;
@@ -120,7 +115,7 @@ button a {
 
 button a:hover {
     color: #000;
-}
+} 
 
 /*Button for scrolling back to the top of tha page
 Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top*/
@@ -191,6 +186,33 @@ footer a:hover {
 
 #newsletter-subscribe {
     float: right;
+}
+
+
+
+/*--------------- FORMS --------------- */
+
+label {
+    /*Source for aligning labels and inputs:
+    https://www.w3docs.com/snippets/html/how-to-align-labels-next-to-inputs.html;*/
+    display: inline-block;
+    width: 12rem;
+    text-align: left;
+    
+    font-family: 'Palanquin', sans-serif;
+}
+
+form {
+    padding-bottom: 3rem;
+}
+
+form p {
+    margin: 1rem;
+}
+
+.signup-form {
+    margin-top: 5rem;
+    text-align: center;
 }
 
 

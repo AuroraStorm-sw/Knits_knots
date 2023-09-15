@@ -53,7 +53,12 @@ p {
 /*--------------- NAVBAR --------------- */
 
 .nav {
-    background-color: bisque;
+    background-color: #C5C0F1;
+}
+
+.navbar-nav {
+    float: none;
+    text-align: center;
 }
 
 .nav-link,
@@ -61,6 +66,8 @@ p {
     font-size: 1.2rem;
     color: #000;
 }
+
+
 
 /*--------------- Buttons --------------- */
 
@@ -115,6 +122,37 @@ button a:hover {
     color: #000;
 }
 
+
+/*--------------- PRODUCT CARDS --------------- */
+
+
+.product-card {
+    width: 20rem;
+}
+
+
+/*--------------- FOOTER --------------- */
+
+.footer {
+    width: 100%;
+    border: 1px solid #000;
+    background-color: #C5C0F1;
+}
+
+footer a {
+    font-size: 2.1rem;
+    color: black;
+
+    text-align: center;
+
+    margin-left: 20px;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #66B100;
+}
 
 
 

@@ -16,15 +16,14 @@
   </section>
 
   <div class="album py-5 bg-light">
-    <div class="container">
+    <div class="container-fluid">
 
       <div class="pb-3 h5">All items</div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-
+      <div class="row d-flex justify-content-around p-3 m-1">
         {% for product in products %}
 
         <div class="col">
-          <div class="card shadow-sm">
+          <div class="card product-card m-3">
             <a href="{{ product.image.url }}" data-abc="true" target="_blank">
               <img src="{{ product.image.url }}" alt="Responsive Image">
             </a>

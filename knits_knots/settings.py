@@ -86,9 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
-                # makes the product categories available throughout the website
-                'products.context_processors.categories',
+                'basket.context.basket_contents',
             ],
         },
     },
@@ -169,3 +167,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Threshold for free delivery
+FREE_DELIVERY_THRESHOLD = 60
+STANDARD_DELIVERY_PERCENTAGE = 10

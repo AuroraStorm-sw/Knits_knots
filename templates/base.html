@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   {% endblock %}
 
- <!-- JAVASCRIPT -->
+  <!-- JAVASCRIPT -->
   {% block extra_js %}
   <script type="text/javascript">
     var user = '{{request.user}}'
@@ -28,7 +28,7 @@
   {% endblock %}
 
 
-<title>{% block title %}Knits&Knots{% endblock %}</title>
+  <title>{% block title %}Knits&Knots{% endblock %}</title>
 
 </head>
 
@@ -38,9 +38,8 @@
 
     {% if user.is_authenticated %}
     <li><a class="nav-link" href="{% url 'wishlist' %}">Wishlist</a></li>
-    <li><a class="nav-link" href="#">Profile</a></li>
+    <li><a class="nav-link" href="#">{{request.user.username}}'s Profile</a></li>
     <li><a class="nav-link" href="{% url 'account_logout' %}">Sign out</a></li>
-
     {% else %}
 
     <li><a class="nav-link" href="{% url 'account_login' %}">Sign in</a></li>
@@ -51,6 +50,13 @@
     <li class="nav-item">
       <a type="button" role="button" href="{% url 'basket:basket' %}" class="btn basket"><i class="bi bi-cart4"></i>
         <span>1</span>
+        <p> 
+          {% if grand_total %}
+            £{{ grand_total|floatformat:2 }}
+          {% else %}
+            £0.00
+          {% endif %}
+        </p>
       </a>
     </li>
   </ul>
@@ -96,6 +102,9 @@
         </div>
       </div>
     </nav>
+    <div class="container-fluid">
+      <p>Free delivery on orders over £{{ free_delivery_threshold }}! </p>
+    </div>
   </header>
 
   <div class="background">

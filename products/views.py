@@ -1,7 +1,20 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+
 from .models import Category, Product, Tag
+
+from .models import Category
+
+
+def categories(request):
+    """
+    View to make categories available for customers
+    to browse through
+    """
+    return {
+        'categories': Category.objects.all()
+    }
 
 
 def category_list(request, category_slug):

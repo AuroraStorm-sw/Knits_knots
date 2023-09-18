@@ -35,16 +35,20 @@ class Order(models.Model):
     created = models.DateTimeField(
         auto_now_add=True)
 
-    def __str__(self):
-        return str(self.id)
-
     class Meta:
         ordering = ('-created',)
         verbose_name = 'Customer Order'
         verbose_name_plural = 'Customer Orders'
 
+    def __str__(self):
+        return str(self.order_id)
+
 
 class OrderProduct(models.Model):
+    """
+    Model for products in a customer's
+    order
+    """
     product = models.ForeignKey(
         Product,
         on_delete=models.SET_NULL,
@@ -67,6 +71,9 @@ class OrderProduct(models.Model):
 
 
 class ShippingAdress(models.Model):
+    """
+    Model for customer shipping address
+    """
     customer = models.ForeignKey(
         User,
         on_delete=models.SET_NULL,

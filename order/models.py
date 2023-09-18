@@ -62,6 +62,9 @@ class OrderProduct(models.Model):
     date_ordered = models.DateTimeField(
         auto_now_add=True)
 
+    class Meta:
+        ordering = ('-date_ordered',)
+
 
 class ShippingAdress(models.Model):
     customer = models.ForeignKey(
@@ -91,3 +94,6 @@ class ShippingAdress(models.Model):
 
     def __str__(self):
         return self.address
+
+    class Meta:
+        ordering = ('-order',)

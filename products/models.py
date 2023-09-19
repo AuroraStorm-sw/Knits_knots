@@ -17,11 +17,6 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'categories'
 
-    def get_absolute_url(self):
-        return reverse(
-            'products:category_list',
-            args=[self.slug])
-
     def __str__(self):
         return self.name
 
@@ -81,8 +76,6 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=6,
         decimal_places=2)
-    slug = models.SlugField(
-        max_length=200)
     tags = models.ManyToManyField(
         Tag,
         related_name='products',
@@ -95,8 +88,4 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse('products:product_detail', args=[self.slug])
-
 

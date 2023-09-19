@@ -74,7 +74,12 @@ p {
 
 .nav-link:hover {
     color: #000;
-  }
+}
+
+.search-form {
+    margin: auto;
+    width: 50%;
+}
 
 /*--------------- Buttons --------------- */
 

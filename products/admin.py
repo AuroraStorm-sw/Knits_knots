@@ -32,7 +32,6 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
         'image',
         'price',
-        'slug',
     )
 
     search_fields = [
@@ -41,5 +40,3 @@ class ProductAdmin(admin.ModelAdmin):
     ]
 
     ordering = ('name', 'category')
-
-    prepopulated_fields = {'slug': ('name',)}

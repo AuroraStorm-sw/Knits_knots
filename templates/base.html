@@ -50,6 +50,19 @@
 
   <header>
     {% include 'includes/main-nav.html' %}
+
+    <div class="row align-items-center">
+      <div class="col-12 col-md-8">
+          <p>Free delivery on orders over £{{ free_delivery_threshold }}!</p>
+      </div>
+      <div class="col-6 col-md-4">
+          <form class="form-inline input-group" method="GET" action="{% url 'product_all' %}">
+              <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search product" aria-label="Search">
+              <span class="input-group-btn"><button class="btn btn-outline-success my-2 my-sm-0"
+                      type="submit">Search</button></span>
+          </form>
+      </div>
+  </div>
   </header>
 
 

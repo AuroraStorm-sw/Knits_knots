@@ -29,7 +29,9 @@
         <br>
 
         {% if basket_items %}
-            Stuff in basket
+            <div>
+                {{ basket_items }}
+            </div>
         {% else %}
             Your basket is empty
             <a href="/">Continue shopping</a>

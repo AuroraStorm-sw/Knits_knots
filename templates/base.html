@@ -49,24 +49,76 @@
 <body>
 
   <header>
-    {% include 'includes/main-nav.html' %}
+
+    <!-- TOP NAVBAR -->
+    <ul class="nav justify-content-end">
+
+      {% if user.is_authenticated %}
+      {% if user.is_superuser %}
+      <li><a class="nav-link" href="">Product Management</a></li>
+      {% endif %}
+      <li><a class="nav-link" href="{% url 'wishlist' %}">Wishlist</a></li>
+      <li><a class="nav-link" id="user-options" href="#">{{request.user.username}}'s Profile</a></li>
+      <li><a class="nav-link" href="{% url 'account_logout' %}">Sign out</a></li>
+      {% else %}
+
+      <li><a class="nav-link" href="{% url 'account_login' %}">Sign in</a></li>
+      <li><a class="nav-link" href="{% url 'account_signup' %}">Create Account</a></li>
+
+      {% endif %}
+
+      <li class="nav-item">
+        <a type="button" role="button" href="{% url 'basket' %}" class="btn basket"><i class="bi bi-cart4"></i>
+          <span>1</span>
+          <p>
+            {% if grand_total %}
+            £{{ grand_total|floatformat:2 }}
+            {% else %}
+            £0.00
+            {% endif %}
+          </p>
+        </a>
+      </li>
+    </ul>
+
+    <!-- BANNER -->
+    <div class="container-fluid">
+      <div class="banner">
+        <a class="d-none d-md-block" href="/" style="vertical-align:right"><img src="{% static 'img/logo-big.png' %}"
+            alt=""></a>
+        <a class="d-md-none" href="/" style="vertical-align:right"><img src="{% static 'img/logo-small.png' %}"
+            alt=""></a>
+      </div>
+    </div>
+
+
+    <ul class="nav justify-content-center">
+
+      <li><a class="nav-link" href="{% url 'wishlist' %}">Wishlist</a></li>
+      <li><a class="nav-link" id="user-options" href="#">{{request.user.username}}'s Profile</a></li>
+      <li><a class="nav-link" href="{% url 'account_logout' %}">Sign out</a></li>
+
+      <li><a class="nav-link" href="{% url 'account_login' %}">Sign in</a></li>
+      <li><a class="nav-link" href="{% url 'account_signup' %}">Create Account</a></li>
+
+
+    </ul>
 
     <div class="row align-items-center">
       <div class="col-12 col-md-8">
-          <p>Free delivery on orders over £{{ free_delivery_threshold }}!</p>
+        <p>Free delivery on orders over £{{ free_delivery_threshold }}!</p>
       </div>
       <div class="col-6 col-md-4">
-          <form class="form-inline input-group" method="GET" action="{% url 'product_all' %}">
-              <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search product" aria-label="Search">
-              <span class="input-group-btn"><button class="btn btn-outline-success my-2 my-sm-0"
-                      type="submit">Search</button></span>
-          </form>
+        <form class="form-inline input-group" method="GET" action="{% url 'product' %}">
+          <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search product" aria-label="Search">
+          <span class="input-group-btn"><button class="btn btn-outline-success my-2 my-sm-0"
+              type="submit">Search</button></span>
+        </form>
       </div>
-  </div>
+    </div>
   </header>
 
-
-  {% if messages%}
+  {% if messages %}
 
   <div class="message-container"></div>
 

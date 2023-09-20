@@ -21,7 +21,7 @@
         <div class="border">
           <div class="col border-bottom">
 
-            <form class="form" action="" method="POST">
+            <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
               {% csrf_token %}
               <div class="form-row">
                 <div class="col-12">
@@ -35,8 +35,7 @@
               </div>
 
               <div class="col-12">
-                <a href="{% url 'product_all' %}" class="btn btn-outline-success">
-                  <span><i class="bi bi-arrow-left"></i></span>
+                <a href="{% url 'product' %}" class="btn btn-outline-success">
                   <span>Keep shopping</span>
                 </a>
                 <input type="submit" class="btn btn-outline-success" id="add-basket" value="{{product.id}}">
@@ -44,8 +43,6 @@
               <input type="hidden" name="redirect_url" value="{{ request.path }}">
 
             </form>
-
-
           </div>
         </div>
       </div>

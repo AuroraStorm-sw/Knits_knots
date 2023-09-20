@@ -28,6 +28,13 @@
 
         <br>
 
+        {% if basket_items %}
+            Stuff in basket
+        {% else %}
+            Your basket is empty
+            <a href="/">Continue shopping</a>
+        {% endif %}
+
         <div class="box-element">
 
             <div class="cart-row">

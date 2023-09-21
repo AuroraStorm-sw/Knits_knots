@@ -35,17 +35,17 @@ def update_basket(request, item_id):
     """
 
     quantity = int(request.POST.get('quantity'))
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
+    color = None
+    if 'product_color' in request.POST:
+        color = request.POST['product_color']
     basket = request.session.get('basket', {})
 
-    if size:
+    if color:
         if quantity > 0:
-            basket[item_id]['items_by_size'][size] = quantity
+            basket[item_id]['items_by_color'][color] = quantity
         else:
-            del basket[item_id]['items_by_size'][size]
-            if not basket[item_id]['items_by_size']:
+            del basket[item_id]['items_by_color'][color]
+            if not basket[item_id]['items_by_color']:
                 basket.pop(item_id)
     else:
         if quantity > 0:
@@ -55,3 +55,29 @@ def update_basket(request, item_id):
 
     request.session['basket'] = basket
     return redirect(reverse('basket'))
+
+
+def delete_from_basket(request, item_id):
+    """
+    A view to update a quantity of products in
+    the shopping basket
+    """
+
+    try:
+        color = None
+        if 'product_color' in request.POST:
+            color = request.POST['product_color']
+        basket = request.session.get('basket', {})
+
+        if color:
+            del basket[item_id]['items_by_color'][color]
+            if not basket[item_id]['items_by_color']:
+                basket.pop(item_id)
+        else:
+            basket.pop(item_id)
+
+        request.session['basket'] = basket
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)

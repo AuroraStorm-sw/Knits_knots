@@ -81,6 +81,10 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=6,
         decimal_places=2)
+    has_colors = models.BooleanField(
+        default=False,
+        null=True,
+        blank=True)
     tags = models.ManyToManyField(
         Tag,
         related_name='products',

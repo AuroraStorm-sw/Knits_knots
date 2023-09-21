@@ -18,6 +18,22 @@
         <p><span class="lead">{{ product.brand }}</span></p>
         <p><span class="lead">{{ product.category }}</span></p>
         <p>{{ product.description|slice:":355" }}...</p>
+
+        {% with product.has_colors as color %}
+        {% if color %}
+        <div class="col-12">
+          <p><strong>Colors:</strong></p>
+          <select class="form-control rounded-0 w-50" name="product_color" id='id_product_color'>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="yellow" selected>yellow</option>
+            <option value="purple">purple</option>
+            <option value="black">black</option>
+          </select>
+        </div>
+        {% else %}
+        <p>No color variations</p>
+        {% endif %}
         <div class="border">
           <div class="col border-bottom">
 
@@ -26,33 +42,28 @@
               <div class="form-row">
                 <div class="col-12">
                   <div class="form-group w-50">
-                    <input class="form-control qty_input" 
-                      type="number" name="quantity"
-                        value="1"
-                        min="1"
-                        max="99"
-                        data-item_id="{{ product.id }}" 
-                        id="id_qty_{{ product.id }}">
-                      <span class="h4 fw-bold">£{{ product.price }}</span>
-                  </div>
+                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                      data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                    <span class="h4 fw-bold">£{{ product.price }}</span>
                   </div>
                 </div>
               </div>
-
-              <div class="col-12">
-                <a href="{% url 'product' %}" class="btn btn-outline-success">
-                  <span>Keep shopping</span>
-                </a>
-                <input type="submit" class="btn btn-outline-success" id="add-basket" value="{{product.id}}">
-              </div>
-              <input type="hidden" name="redirect_url" value="{{ request.path }}">
-
-            </form>
           </div>
+          {% endwith %}
+          <div class="col-12">
+            <a href="{% url 'product' %}" class="btn btn-outline-success">
+              <span>Keep shopping</span>
+            </a>
+            <input type="submit" class="btn btn-outline-success" id="add-basket" value="{{product.id}}">
+          </div>
+          <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
+          </form>
         </div>
       </div>
     </div>
-  </main>
+</div>
+</main>
 </div>
 
 {% endblock %}

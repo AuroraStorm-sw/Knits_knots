@@ -173,3 +173,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Threshold for free delivery
 FREE_DELIVERY_THRESHOLD = 30
 STANDARD_DELIVERY_PERCENTAGE = 10
+
+
+# Storing alert messages
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

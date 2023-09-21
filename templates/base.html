@@ -117,8 +117,11 @@
 
   {% if messages %}
 
-  <div class="message-container"></div>
-
+  <div id="message-container">
+    {% for message in messages %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% endfor %}
+  </div>
   {% endif %}
 
 
@@ -163,6 +166,10 @@
 
   <!-- LOCAL -->
   <script src="{% static 'js/back-to-top-button.js' %}"></script>
+
+  <script type="text/javascript">
+    $('.toast').toast('show');
+  </script>
 
   {% endblock %}
 </body>

@@ -84,7 +84,6 @@ p {
 /*--------------- Buttons --------------- */
 
 button {
-    font-size: 2rem;
     cursor: pointer;
     margin: .1em;
 }
@@ -96,7 +95,16 @@ button a {
 
 button a:hover {
     color: #000;
-} 
+}
+
+.home-btn {
+    font-size: 2rem;
+}
+
+.increment-qty,
+.decrement-qty {
+    background-color: transparent;
+}
 
 /*Button for scrolling back to the top of tha page
 Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top*/
@@ -122,6 +130,11 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
 #myBtn:hover {
     background-color: #66B100;
 }
+
+.btn-link {
+    cursor: pointer;
+}
+
 
 /*--------------- PRODUCT CARDS --------------- */
 

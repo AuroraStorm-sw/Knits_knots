@@ -27,6 +27,8 @@
   <!-- ICONIFY-->
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
+  <script src="https://kit.fontawesome.com/4863a75fd6.js" crossorigin="anonymous"></script>
+
   <!-- JQUERY -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -69,7 +71,6 @@
 
       <li class="nav-item">
         <a type="button" role="button" href="{% url 'basket' %}" class="btn basket"><i class="bi bi-cart4"></i>
-          <span>1</span>
           <p>
             {% if grand_total %}
             £{{ grand_total|floatformat:2 }}

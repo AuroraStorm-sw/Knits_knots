@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
 
 from products.models import Product
@@ -18,14 +18,29 @@ def add_to_basket(request, item_id):
     the shopping basket
     """
 
-    product = Product.objects.get(pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
+    color = None
+
+    if 'product_color' in request.POST:
+        color = request.POST['product_color']
+    bag = request.session.get('bag', {})
+
+    if color:
+        if item_id in list(bag.keys()):
+            if color in bag[item_id]['items_by_color'].keys():
+                bag[item_id]['items_by_color'][color] += quantity
+            else:
+                bag[item_id]['items_by_color'][color] = quantity
+        else:
+            bag[item_id] = {'items_by_color': {color: quantity}}
 
     if item_id in list(basket.keys()):
         basket[item_id] += quantity
+        messages.success(request, f'Updated quantity')
     else:
         basket[item_id] = quantity
         messages.success(request,
@@ -41,8 +56,11 @@ def update_basket(request, item_id):
     the shopping basket
     """
 
+    product = get_object_or_404(Product, pk=item_id)
+
     quantity = int(request.POST.get('quantity'))
     color = None
+
     if 'product_color' in request.POST:
         color = request.POST['product_color']
     basket = request.session.get('basket', {})
@@ -60,6 +78,8 @@ def update_basket(request, item_id):
         else:
             basket.pop(item_id)
 
+    messages.success(request, f'Successfully updated basket!')
+
     request.session['basket'] = basket
     return redirect(reverse('basket'))
 
@@ -69,6 +89,8 @@ def delete_from_basket(request, item_id):
     A view to update a quantity of products in
     the shopping basket
     """
+
+    product = get_object_or_404(Product, pk=item_id)
 
     try:
         color = None
@@ -82,9 +104,12 @@ def delete_from_basket(request, item_id):
                 basket.pop(item_id)
         else:
             basket.pop(item_id)
+        messages.success(request, f'Successfully deleted item!')
 
         request.session['basket'] = basket
         return HttpResponse(status=200)
 
     except Exception as e:
+        messages.error(request,
+                        f'An error occurred when removing the item: {e}')
         return HttpResponse(status=500)

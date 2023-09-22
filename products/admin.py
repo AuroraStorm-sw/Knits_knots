@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, Tag
+from .models import Category, Product, Tag, Videocall
 
 
 @admin.register(Tag)
@@ -39,3 +39,18 @@ class ProductAdmin(admin.ModelAdmin):
     ]
 
     ordering = ('name', 'category')
+
+
+@admin.register(Videocall)
+class VideocallAdmin(admin.ModelAdmin):
+    list_display = (
+        'calltype',
+        'booking_date',
+        'comment',
+        )
+
+    search_fields = [
+        'calltype',
+    ]
+
+    ordering = ('calltype',)

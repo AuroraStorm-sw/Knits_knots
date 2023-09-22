@@ -11,7 +11,7 @@ class OrderAdmin(admin.ModelAdmin):
         'order_id',
         'customer',
         'date_ordered',
-        'complete',
+        'status',
         'created',
     )
 

@@ -81,10 +81,6 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=6,
         decimal_places=2)
-    has_colors = models.BooleanField(
-        default=False,
-        null=True,
-        blank=True)
     tags = models.ManyToManyField(
         Tag,
         related_name='products',
@@ -95,6 +91,55 @@ class Product(models.Model):
         verbose_name_plural = 'Products'
         ordering = ['name']
 
+    def _generate_sku_number(self):
+        """
+        Generate a random, unique SKU
+        with UUID
+        """
+        return uuid.uuid4().hex.upper()
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to
+        generate an order id if one hasn't
+        been set
+        """
+        if not self.sku:
+            self.sku = self._generate_order_number()
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.name
 
+
+class Videocall(models.Model):
+    """
+    A model for customers to purchase a private
+    video call tutorial
+    """
+    MATERIAL = 'Material'
+    CROCHET = 'Crochet'
+    KNITTING = 'Knitting'
+    EMBROIDERY = 'Embroidery'
+    CROSSTITCH = 'Cross-stitch'
+
+    CALL_CHOICES = (
+        (MATERIAL, 'Material'),
+        (CROCHET, 'Crochet'),
+        (KNITTING, 'Knitting'),
+        (EMBROIDERY, 'Embroidery'),
+        (CROSSTITCH, 'Cross-stitch'),
+    )
+    calltype = models.CharField(
+        max_length=200,
+        choices=CALL_CHOICES,
+        default='Material'
+    )
+    booking_date = models.DateTimeField()
+    comment = models.TextField(
+        max_length=500,
+        default='Anything we should know?'
+    )
+
+    def __str__(self):
+        return self.calltype

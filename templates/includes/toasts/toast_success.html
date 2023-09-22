@@ -10,5 +10,22 @@
         <div class="toast-body">
             {{ message }}
         </div>
+        {% if grand_total %}
+        <p>Your basket: {{ product_count }}</p>
+        <div class="toast-wrapper">
+            {% for item in basket_items %}
+            <div class="row">
+                <div class="col-3">
+                    <img src="{{ product.image.url }}" alt="">
+                </div>
+                <div class="col-9">
+                    <p>{{ product.name }}</p>
+                    <p>Quantity: {{ item.quantity }}</p>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <a href="{% url 'basket' %}">Secure Checkout</a>
+        </div>
     </div>
 </div>

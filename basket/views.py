@@ -111,5 +111,5 @@ def delete_from_basket(request, item_id):
 
     except Exception as e:
         messages.error(request,
-                        f'An error occurred when removing the item: {e}')
+                       f'An error occurred when removing the item: {e}')
         return HttpResponse(status=500)

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load basket_tools %}
 {% block title %}Checkout{% endblock %}
 
 {% block content %}
@@ -10,73 +11,114 @@
 <a href="/">Continue shopping</a>
 
 <div class="row">
-    <div class="col-lg-6">
-        <div class="box-element" id="form-wrapper">
-            <form id="form">
-                <div id="user-info">
-                    <div class="form-field">
-                        <input required class="form-control" type="text" name="name" placeholder="Name">
-                    </div>
-                    <div class="form-field">
-                        <input required class="form-control" type="email" name="email" placeholder="Email">
-                    </div>
-                </div>
-
-                <div id="shipping-info">
-                    <hr>
-                    <p>Shipping Information:</p>
-                    <hr>
-                    <div class="form-field">
-                        <input class="form-control" type="text" name="address" placeholder="Address">
-                    </div>
-                    <div class="form-field">
-                        <input class="form-control" type="text" name="city" placeholder="City">
-                    </div>
-                    <div class="form-field">
-                        <input class="form-control" type="text" name="state" placeholder="State">
-                    </div>
-                    <div class="form-field">
-                        <input class="form-control" type="text" name="zipcode" placeholder="Zip code">
-                    </div>
-                    <div class="form-field">
-                        <input class="form-control" type="text" name="country" placeholder="Zip code">
-                    </div>
-                </div>
-
-                <hr>
-                <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
-            </form>
+    <div class="col-12 col-lg 6 order-lg-last mb-5">
+        <div class="row">
+            Item summary
         </div>
-
-        <br>
-        <div class="box-element hidden" id="payment-info">
-            <small>Paypal Options</small>
+        <div>
+            Subtotal
         </div>
-
     </div>
+    {% for item in basket_items %}
+    <div class="cart-row">
+        <div style="flex: 1"> Items: 
+            <p>{{ item.product.name }}</p>
+        </div>
+        <div style="flex: 1"> Price per item: 
+            <p>{{ item.product.price }}</p>
+        </div>
 
-    <div class="col-lg-6">
-        <div class="box-element">
-            <a class="btn btn-outline-dark" href="{% url 'basket' %}">&#x2190; Back to Cart</a>
-            <hr>
-            <h3>Order Summary</h3>
-            <hr>
-            <div class="cart-row">
-                <div style="flex:2"><img class="row-image" src=""></div>
-                <div style="flex:2">
-                    <p>Product 1</p>
-                </div>
-                <div style="flex:1">
-                    <p>$20.00</p>
-                </div>
-                <div style="flex:1">
-                    <p>x2</p>
-                </div>
+        <div style="flex: 1"> Quantity: 
+            <p>{{ item.quantity }}</p>
+        </div>
+
+    <div> Total price: 
+        <p>£{{ item.product.price| calc_subtotal:item.quantity }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<form action="{% url 'checkout' %}" method="POST" id="payment_form">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Details</legend>
+        {{ order_form.name | as_crispy_field}}
+        {{ order_form.surname | as_crispy_field}}
+        {{ order_form.email | as_crispy_field}}
+    </fieldset>
+
+    <fieldset>
+        <legend>Details</legend>
+        {{ order_form.address | as_crispy_field}}
+        {{ order_form.city | as_crispy_field}}
+        {{ order_form.postcode | as_crispy_field}}
+        {{ order_form.country | as_crispy_field}}
+        <div>
+            {% if user.is_authenticated %}
+            <label for="form-check-label">Save information to profile</label>
+            <input class="form-check-input" type="checkbox" name="save-info" id="id-save-info">
+            {% else %}
+            <label for="id-save-info">
+                <a href="{% url 'account_signup' %}">Create an account</a> or
+                <a href="{% url 'account_signup' %}">Sign in</a> to save delivery details!
+            </label>
+            {% endif %}
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Payment</legend>
+        <!-- Stripe card element -->
+        <div id="card-element"></div>
+        <!-- Stripe card error display -->
+        <div id="card-errors" class="card-errors" role="alert"></div>
+    </fieldset>
+
+    <button id="submit-btn">
+        <span>Complete order</span>
+    </button>
+
+    <p>
+        Your card will be charged £{{ grand_total|floatformat:2 }}
+    </p>
+
+</form>
+
+<div class="row text-black text-right">
+    <div class="col-7 offset-2">
+        <p class="my-0">Order Total:</p>
+        <p class="my-0">Delivery:</p>
+        <p class="my-0">Grand Total:</p>
+    </div>
+    <div class="col-3">
+        <p class="my-0">${{ total | floatformat:2 }}</p>
+        <p class="my-0">${{ delivery | floatformat:2 }}</p>
+        <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+    </div>
+</div>
+
+<div class="col-lg-6">
+    <div class="box-element">
+        <a class="btn btn-outline-dark" href="{% url 'basket' %}">&#x2190; Back to Cart</a>
+        <hr>
+        <h3>Order Summary</h3>
+        <hr>
+        <div class="cart-row">
+            <div style="flex:2"><img class="row-image" src=""></div>
+            <div style="flex:2">
+                <p>Product 1</p>
             </div>
-            <h5>Items: 2</h5>
-            <h5>Total: $4</h5>
+            <div style="flex:1">
+                <p>$20.00</p>
+            </div>
+            <div style="flex:1">
+                <p>x2</p>
+            </div>
         </div>
+        <h5>Items: 2</h5>
+        <h5>Total: $4</h5>
     </div>
+</div>
 </div>
 
 {% endblock %}

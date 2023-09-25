@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-aurorastorms-knitsknots-gbq88bbce0h.ws-eu104.gitpod.io', "knits-knots-3cc8ac17064e.herokuapp.com"]
 
@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     'order',
     'wishlist',
     'profile',
+
+    # crispy forms
+    'crispy_forms',
 ]
 
 SITE_ID = 1
@@ -72,6 +75,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'knits_knots.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -90,6 +95,10 @@ TEMPLATES = [
                 'products.context.categories',
                 'basket.context.basket_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

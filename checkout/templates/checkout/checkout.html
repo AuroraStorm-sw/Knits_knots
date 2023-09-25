@@ -21,104 +21,113 @@
     </div>
     {% for item in basket_items %}
     <div class="cart-row">
-        <div style="flex: 1"> Items: 
+        <div style="flex: 1"> Items:
             <p>{{ item.product.name }}</p>
         </div>
-        <div style="flex: 1"> Price per item: 
+        <div style="flex: 1"> Price per item:
             <p>{{ item.product.price }}</p>
         </div>
 
-        <div style="flex: 1"> Quantity: 
+        <div style="flex: 1"> Quantity:
             <p>{{ item.quantity }}</p>
         </div>
 
-    <div> Total price: 
-        <p>£{{ item.product.price| calc_subtotal:item.quantity }}</p>
-    </div>
-</div>
-{% endfor %}
-
-<form action="{% url 'checkout' %}" method="POST" id="payment_form">
-    {% csrf_token %}
-    <fieldset>
-        <legend>Details</legend>
-        {{ order_form.name | as_crispy_field}}
-        {{ order_form.surname | as_crispy_field}}
-        {{ order_form.email | as_crispy_field}}
-    </fieldset>
-
-    <fieldset>
-        <legend>Details</legend>
-        {{ order_form.address | as_crispy_field}}
-        {{ order_form.city | as_crispy_field}}
-        {{ order_form.postcode | as_crispy_field}}
-        {{ order_form.country | as_crispy_field}}
-        <div>
-            {% if user.is_authenticated %}
-            <label for="form-check-label">Save information to profile</label>
-            <input class="form-check-input" type="checkbox" name="save-info" id="id-save-info">
-            {% else %}
-            <label for="id-save-info">
-                <a href="{% url 'account_signup' %}">Create an account</a> or
-                <a href="{% url 'account_signup' %}">Sign in</a> to save delivery details!
-            </label>
-            {% endif %}
+        <div> Total price:
+            <p>£{{ item.product.price| calc_subtotal:item.quantity }}</p>
         </div>
-    </fieldset>
-
-    <fieldset>
-        <legend>Payment</legend>
-        <!-- Stripe card element -->
-        <div id="card-element"></div>
-        <!-- Stripe card error display -->
-        <div id="card-errors" class="card-errors" role="alert"></div>
-    </fieldset>
-
-    <button id="submit-btn">
-        <span>Complete order</span>
-    </button>
-
-    <p>
-        Your card will be charged £{{ grand_total|floatformat:2 }}
-    </p>
-
-</form>
-
-<div class="row text-black text-right">
-    <div class="col-7 offset-2">
-        <p class="my-0">Order Total:</p>
-        <p class="my-0">Delivery:</p>
-        <p class="my-0">Grand Total:</p>
     </div>
-    <div class="col-3">
-        <p class="my-0">${{ total | floatformat:2 }}</p>
-        <p class="my-0">${{ delivery | floatformat:2 }}</p>
-        <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
-    </div>
-</div>
+    {% endfor %}
 
-<div class="col-lg-6">
-    <div class="box-element">
-        <a class="btn btn-outline-dark" href="{% url 'basket' %}">&#x2190; Back to Cart</a>
-        <hr>
-        <h3>Order Summary</h3>
-        <hr>
-        <div class="cart-row">
-            <div style="flex:2"><img class="row-image" src=""></div>
-            <div style="flex:2">
-                <p>Product 1</p>
+    <form action="{% url 'checkout' %}" method="POST" id="payment_form">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Details</legend>
+            {{ order_form.name | as_crispy_field}}
+            {{ order_form.surname | as_crispy_field}}
+            {{ order_form.email | as_crispy_field}}
+        </fieldset>
+
+        <fieldset>
+            <legend>Details</legend>
+            {{ order_form.address | as_crispy_field}}
+            {{ order_form.city | as_crispy_field}}
+            {{ order_form.postcode | as_crispy_field}}
+            {{ order_form.country | as_crispy_field}}
+            <div>
+                {% if user.is_authenticated %}
+                <label for="form-check-label">Save information to profile</label>
+                <input class="form-check-input" type="checkbox" name="save-info" id="id-save-info">
+                {% else %}
+                <label for="id-save-info">
+                    <a href="{% url 'account_signup' %}">Create an account</a> or
+                    <a href="{% url 'account_signup' %}">Sign in</a> to save delivery details!
+                </label>
+                {% endif %}
             </div>
-            <div style="flex:1">
-                <p>$20.00</p>
-            </div>
-            <div style="flex:1">
-                <p>x2</p>
-            </div>
+        </fieldset>
+        
+        <fieldset class="px-3">
+            <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+            <!-- A Stripe card element will go here -->
+            <div class="mb-3" id="card-element"></div>
+
+            <!-- Used to display form errors -->
+            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+        </fieldset>
+
+
+        <button id="submit-btn">
+            <span>Complete order</span>
+        </button>
+
+        <p>
+            Your card will be charged £{{ grand_total|floatformat:2 }}
+        </p>
+
+    </form>
+
+    <div class="row text-black text-right">
+        <div class="col-7 offset-2">
+            <p class="my-0">Order Total:</p>
+            <p class="my-0">Delivery:</p>
+            <p class="my-0">Grand Total:</p>
         </div>
-        <h5>Items: 2</h5>
-        <h5>Total: $4</h5>
+        <div class="col-3">
+            <p class="my-0">${{ total | floatformat:2 }}</p>
+            <p class="my-0">${{ delivery | floatformat:2 }}</p>
+            <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="box-element">
+            <a class="btn btn-outline-dark" href="{% url 'basket' %}">&#x2190; Back to Cart</a>
+            <hr>
+            <h3>Order Summary</h3>
+            <hr>
+            <div class="cart-row">
+                <div style="flex:2"><img class="row-image" src=""></div>
+                <div style="flex:2">
+                    <p>Product 1</p>
+                </div>
+                <div style="flex:1">
+                    <p>$20.00</p>
+                </div>
+                <div style="flex:1">
+                    <p>x2</p>
+                </div>
+            </div>
+            <h5>Items: 2</h5>
+            <h5>Total: $4</h5>
+        </div>
     </div>
 </div>
-</div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'js/stripe_elements.js' %}"></script>
 {% endblock %}

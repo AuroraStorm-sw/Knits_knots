@@ -1,5 +1,5 @@
 from django import forms
-from order.models import Order, ShippingAdress
+from order.models import Order, OrderProduct, ShippingAdress
 
 
 class OrderFormAddress(forms.ModelForm):
@@ -24,7 +24,7 @@ class OrderFormAddress(forms.ModelForm):
                 'name': 'Name',
                 'surname': 'Surname',
                 'email': 'Email',
-                'adress': 'Address',
+                'address': 'Address',
                 'city': 'City',
                 'postcode': 'Postal code',
                 'country': 'Country',

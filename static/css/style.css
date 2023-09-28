@@ -213,12 +213,25 @@ form p {
 
 /*--------------- CHECKOUT FORM --------------- */
 
-select,
-select option {
-  color: #000;
+.form-control,
+#id_default_country {
+    color: #000 !important;
 }
 
-select:invalid,
-select option[value=""] {
-  color: #aab7c4 !important;
+input::placeholder,
+#id_default_country {
+    color: rgb(116, 114, 114) !important;
+}
+
+.form-control:focus {
+    border-color: #C5C0F1 !important;
+    box-shadow: 0 0 0 0.25rem rgba(197,192,241,.5) !important;
+
+}
+
+/*--------------- PROFILE  --------------- */
+
+.order-history-table {
+    max-height: 400px;
+    overflow-y: auto;
 }

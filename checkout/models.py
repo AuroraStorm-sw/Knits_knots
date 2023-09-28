@@ -21,6 +21,7 @@ class Order(models.Model):
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
+        related_name='orders',
     )
     full_name = models.CharField(
         max_length=50,

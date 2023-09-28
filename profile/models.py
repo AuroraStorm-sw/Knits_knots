@@ -18,8 +18,12 @@ class UserProfile(models.Model):
         max_length=20,
         null=True,
         blank=True)
-    default_country = CountryField(
-        blank_label='Country *',
+    default_street_address1 = models.CharField(
+        max_length=80,
+        null=True,
+        blank=True)
+    default_street_address2 = models.CharField(
+        max_length=80,
         null=True,
         blank=True)
     default_postcode = models.CharField(
@@ -30,16 +34,12 @@ class UserProfile(models.Model):
         max_length=40,
         null=True,
         blank=True)
-    default_street_address1 = models.CharField(
-        max_length=80,
-        null=True,
-        blank=True)
-    default_street_address2 = models.CharField(
-        max_length=80,
-        null=True,
-        blank=True)
     default_county = models.CharField(
         max_length=80,
+        null=True,
+        blank=True)
+    default_country = CountryField(
+        blank_label='Country',
         null=True,
         blank=True)
 

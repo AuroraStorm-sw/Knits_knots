@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT'
 
 ALLOWED_HOSTS = [
-    '8000-aurorastorms-knitsknots-gbq88bbce0h.ws-eu105.gitpod.io',
+    '8000-aurorastorms-knitsknots-gbq88bbce0h.ws-eu104.gitpod.io',
     "knits-knots-3cc8ac17064e.herokuapp.com"]
 
 

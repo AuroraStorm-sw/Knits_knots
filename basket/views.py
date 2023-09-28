@@ -27,16 +27,16 @@ def add_to_basket(request, item_id):
 
     if 'product_color' in request.POST:
         color = request.POST['product_color']
-    bag = request.session.get('bag', {})
+    basket = request.session.get('basket', {})
 
     if color:
-        if item_id in list(bag.keys()):
-            if color in bag[item_id]['items_by_color'].keys():
-                bag[item_id]['items_by_color'][color] += quantity
+        if item_id in list(basket.keys()):
+            if color in basket[item_id]['items_by_color'].keys():
+                basket[item_id]['items_by_color'][color] += quantity
             else:
-                bag[item_id]['items_by_color'][color] = quantity
+                basket[item_id]['items_by_color'][color] = quantity
         else:
-            bag[item_id] = {'items_by_color': {color: quantity}}
+            basket[item_id] = {'items_by_color': {color: quantity}}
 
     if item_id in list(basket.keys()):
         basket[item_id] += quantity

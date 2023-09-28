@@ -1,12 +1,13 @@
 from django.db import models
-
-import uuid
-
-from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 
+from django_countries.fields import CountryField
+
 from products.models import Product
+from profile.models import UserProfile
+
+import uuid
 
 
 class Order(models.Model):
@@ -15,6 +16,12 @@ class Order(models.Model):
         null=False,
         editable=False
         )
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
     full_name = models.CharField(
         max_length=50,
         null=False,
@@ -30,11 +37,10 @@ class Order(models.Model):
         null=False,
         blank=False,
          )
-    country = models.CharField(
-        max_length=40,
+    country = CountryField(
+        blank_label='Country *',
         null=False,
-        blank=False
-        )
+        blank=False)
     postcode = models.CharField(
         max_length=20,
         null=True,

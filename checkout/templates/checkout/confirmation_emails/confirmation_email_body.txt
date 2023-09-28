@@ -1,0 +1,22 @@
+Hi {{ order.full_name}}!
+
+Confirmation stuff goes here
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.dare }}
+
+Order Total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ grand_total }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{order.town_or_city }}.
+
+If we need to contact you, we'll do so on phome number {{ order.phone_number }}.
+
+If you need any assistance, please contact us on {{ contact_email }}!
+
+Thank you again for your order,
+and best wishes with your project!
+
+Warm regards,
+Knits&Knots

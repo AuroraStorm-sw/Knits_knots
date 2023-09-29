@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Product management</h2>
+            <h3>Add a new product</h3>
+            <hr>
+        </div>
+        <div class="row">
+            <form action="POST" action="{% url 'admin_add_product' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-right">
+                    <a href="{% url 'product' %}">Cancel</a>
+                    <button type="submit">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -62,7 +62,7 @@
 
       {% if user.is_authenticated %}
       {% if user.is_superuser %}
-      <li><a class="nav-link" href="">Product Management</a></li>
+      <li><a class="nav-link" href="{% url 'admin_add_product' %}">Product Management</a></li>
       {% endif %}
       <li><a class="nav-link" href="{% url 'wishlist' %}">Wishlist</a></li>
       <li><a class="nav-link" id="user-options" href="{% url 'profile' %}">{{request.user.username}}'s Profile</a></li>

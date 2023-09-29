@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 
 from .models import Product, Category
+from .forms import ProductForm
 
 
 def product_all(request):
@@ -67,3 +68,11 @@ def category_list(request, category_slug):
                   {'category': category, 'products': products})
 
 
+def admin_add_product(request):
+    """
+    View for the admin to add new products
+    to the webshop
+    """
+    form = ProductForm()
+
+    return render(request, 'products/admin_add_product.html', {'form': form})

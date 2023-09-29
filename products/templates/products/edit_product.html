@@ -9,16 +9,16 @@
         <div class="col">
             <hr>
             <h2 class="logo-font mb-4">Product management</h2>
-            <h3>Add a new product</h3>
+            <h3>Edit product</h3>
             <hr>
         </div>
         <div class="row">
-            <form action="POST" action="{% url 'admin_add_product' %}" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-right">
-                    <a href="{% url 'product' %}">Cancel</a>
-                    <button type="submit">Add Product</button>
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'product' %}">Cancel</a>
+                    <button class="btn btn-black rounded-0" type="submit">Update Product</button>
                 </div>
             </form>
         </div>

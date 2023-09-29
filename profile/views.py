@@ -11,7 +11,16 @@ def profile(request):
     """ A view to return the profile page """
 
     profile = get_object_or_404(UserProfile, user=request.user)
-    form = UserProfileForm(instance=profile)
+
+    if request.method == 'POST':
+        form = UserProfileForm(instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated profile!')
+        else:
+            messages.error(request, 'Update failed, please ensure the form is valid!')
+    else:
+        form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
     context = {

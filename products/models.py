@@ -2,6 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+import uuid
+
 
 class Category(models.Model):
     """
@@ -105,7 +107,7 @@ class Product(models.Model):
         been set
         """
         if not self.sku:
-            self.sku = self._generate_order_number()
+            self.sku = self._generate_sku_number()
         super().save(*args, **kwargs)
 
     def __str__(self):

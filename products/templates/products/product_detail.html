@@ -7,9 +7,13 @@
   <main class="pt-5">
     <div class="row g-3">
       <div class="col-md-5 col-lg-5 order-md-first">
+
+        {% if product.image %}
         <a href="{{ product.image.url }}" target="_blank">
-          <img class="img-fluid mx-auto d-block" width="400px" alt="Product Image" src="{{ product.image.url }}"
-            target="_blank">
+          <img class="img-fluid rounded" src="{{ product.image.url }}" alt="{{ product.name }}">
+          {% else %}
+          <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+          {% endif %}
         </a>
       </div>
 
@@ -57,11 +61,14 @@
             <input type="submit" class="btn btn-outline-success" id="add-basket" value="{{product.id}}">
           </div>
           <input type="hidden" name="redirect_url" value="{{ request.path }}">
-
           </form>
         </div>
       </div>
     </div>
+    {% if request.user.is_superuser %}
+    <a href="{% url 'edit_product' product.id %}"><small class="text-muted">Edit</small></a>
+    <a href="{% url 'delete_product' product.id %}"><small class="text-muted">Delete</small></a>
+    {% endif %}
 </div>
 </main>
 </div>

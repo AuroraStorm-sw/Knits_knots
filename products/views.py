@@ -26,7 +26,6 @@ def product_all(request):
     context = {
         'products': products,
         'search_term': query,
-
     }
 
     return render(request, 'products/products.html', context)
@@ -69,13 +68,16 @@ def category_list(request, category_slug):
 
 
 def add_product(request):
-    """ Add a product to the store """
+    """
+    View to add a new product to 
+    the store for the store manager
+    """
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
@@ -90,7 +92,10 @@ def add_product(request):
 
 
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """
+    View to edit an existing product
+    for store manager
+    """
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -111,3 +116,13 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    """
+    View to delete a product for store manager
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product successfully deleted!')
+    return redirect(reverse('product'))

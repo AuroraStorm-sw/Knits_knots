@@ -29,7 +29,11 @@
         <div class="col">
           <div class="card product-card m-3">
             <a href="{{ product.get_absolute_url }}">
-              <img src="{{ product.image.url }}" alt="Responsive Image">
+              {% if product.image %}
+              <img class="img-fluid rounded" src="{{ product.image.url }}" alt="{{ product.name }}">
+              {% else %}
+              <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+              {% endif %}
             </a>
             <div class="card-body">
               <p class="card-text">

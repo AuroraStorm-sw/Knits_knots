@@ -16,11 +16,11 @@
             {% for item in basket_items %}
             <div class="row">
                 <div class="col-3">
-                    {% if item.product.image %}
-                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ product.name }}">
-                {% else %}
-                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                {% endif %}
+                    {% if product.image %}
+                    <img class="img-fluid rounded" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+                    {% endif %}
 
                 </div>
                 <div class=" col-9">

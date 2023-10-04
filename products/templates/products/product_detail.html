@@ -64,15 +64,15 @@
           </form>
 
           {% if user.is_authenticated %}
-          {% if is_in_wishlist %}
-          <a href="" aria-label="remove product from your favourites"
-            class="text-danger ml-3 favourites">
+          {% if is_in_wishlist%}
+          <a href="{% url 'delete_wishlist_item' product.id %}" aria-label="Remove product from wishlist"
+            class="text-danger ml-3">
             <i class="fas fa-heart"></i>
-            <p class="small mt-1 mb-0 text-muted">Remove from Favourites</p>
+            <p class="small mt-1 mb-0 text-muted">Remove from Wishlist</p>
           </a>
           {% else %}
-          <a href="{% url 'add_to_wishlist' product.id %}" aria-label="add product to your favourites"
-            class="text-danger ml-3 favourites">
+          <a href="{% url 'add_to_wishlist' product.id %}" aria-label="Add product to wishlist"
+            class="text-danger ml-3">
             <i class="fa-regular fa-heart"></i>
             <p class="small mt-1 mb-0 text-muted">Add to Wishlist</p>
           </a>

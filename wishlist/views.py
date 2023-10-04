@@ -1,10 +1,8 @@
-from django.shortcuts import render, reverse, redirect, get_object_or_404
-from django.http import HttpResponseRedirect
-from django.views import View
-from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse
+from django.http import Http404
 
 from products.models import Product
 from .models import Wishlist
@@ -42,6 +40,7 @@ def add_to_wishlist(request, item_id):
     """View to add a product to favourites"""
 
     product = get_object_or_404(Product, pk=item_id)
+
     try:
         wishlist_item = get_object_or_404(Wishlist, user=request.user.id)
     except Http404:
@@ -58,3 +57,26 @@ def add_to_wishlist(request, item_id):
             to your wishlist!')
 
     return redirect(reverse('product_detail', args=[product.id]))
+
+
+@login_required
+def delete_wishlist_item(request, item_id, redirect_from):
+    """
+    A view to delete a wishlist product
+    """
+    product = get_object_or_404(Product, pk=item_id)
+    wishlist_item = get_object_or_404(Wishlist, user=request.user.id)
+
+    if product in wishlist_item.products.all():
+        wishlist_item.products.remove(product)
+        messages.success(request, f'{product.name} successfully removed \
+            from your wishlist!')
+    else:
+        messages.error(request, f'{product.name} is not in your wishlist!')
+
+    if redirect_from == 'wishlist_view':
+        redirect_url = reverse('wishlist_view')
+    else:
+        redirect_url = reverse('product_detail', args=[product.id])
+
+    return redirect(redirect_url)

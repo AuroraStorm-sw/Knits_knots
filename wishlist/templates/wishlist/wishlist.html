@@ -1,13 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Knits&Knots{% endblock %}
+{% block title %}Wishlist{% endblock %}
 
 {% block content %}
 
+{% for product in wishlist_item %}
+MY WISHLIST
+<div>
+  <p>
+    {% if product.image %}
+    <a href="{% url 'product_detail' product.id %}">
+        <img class="img-fluid product-img" src="{{ product.image.url }}"
+            alt="{{ product.name }}">
+    </a>
+    {% else %}
+    <a href="{% url 'product_detail' product.id %}">
+        <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.png"
+            alt="{{ product.name }}">
+    </a>
+    {% endif %}
+  </p>
+</div>
 
-<h1>WISHLIST</h1>
-
-
+{% endfor %}
 
 {% endblock %}

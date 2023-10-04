@@ -3,12 +3,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 
-from .models import Product, Category
+from .models import Product, Category, Tag
 from .forms import ProductForm
 
 
 def product_all(request):
-    """ A view to show all products, including sorting and search queries """
+    """ A view to show all products,
+    including sorting and search queries """
 
     products = Product.objects.all()
     query = None
@@ -92,6 +93,16 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
+
+def tags(request):
+    """
+    View to make categories available for customers
+    to browse through
+    """
+    return {
+        'tags': Tag.objects.all()
+    }
 
 
 @login_required

@@ -28,7 +28,7 @@
   <!-- ICONIFY-->
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
-   <!-- FONT AWESOME -->
+  <!-- FONT AWESOME -->
   <script src="https://kit.fontawesome.com/4863a75fd6.js" crossorigin="anonymous"></script>
 
   <!-- STRIPE -->
@@ -61,40 +61,47 @@
     <!-- TOP NAVBAR -->
     <ul class="nav justify-content-end">
       <li class="list-inline-item dropdown">
-          <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <div class="text-center">
-                  <div><iconify-icon icon="octicon:person-16" width="30" height="30"></iconify-icon></div>
-                  <p class="my-0">My Account</p>
-              </div>
-          </a>
-          <div class="dropdown-menu border-0" aria-labelledby="user-options">
-              {% if request.user.is_authenticated %}
-                  {% if request.user.is_superuser %}
-                      <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                  {% endif %}
-                  <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                  <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-              {% else %}
-                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-              {% endif %}
+        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <div class="text-center">
+            <div>
+              <iconify-icon icon="octicon:person-16" width="30" height="30"></iconify-icon>
+            </div>
+            <p class="my-0">My Account</p>
           </div>
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+          {% if request.user.is_authenticated %}
+          {% if request.user.is_superuser %}
+          <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+          {% endif %}
+          <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+          <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+          <a href="{% url 'wishlist_view' %}" class="dropdown-item">Wishlist</a>
+          {% else %}
+          <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+          <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+          {% endif %}
+        </div>
       </li>
       <li class="list-inline-item">
-          <a class="{% if grand_total %} font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'basket' %}">
-              <div class="text-center">
-                  <div><iconify-icon icon="tabler:shopping-bag" width="30" height="30"></iconify-icon></div>
-                  <p class="my-0">
-                      {% if grand_total %}
-                          ${{ grand_total|floatformat:2 }}
-                      {% else %}
-                          $0.00
-                      {% endif %}
-                  </p>
-              </div>
-          </a>
+        <a class="{% if grand_total %} font-weight-bold{% else %}text-black{% endif %} nav-link"
+          href="{% url 'basket' %}">
+          <div class="text-center">
+            <div>
+              <iconify-icon icon="tabler:shopping-bag" width="30" height="30"></iconify-icon>
+            </div>
+            <p class="my-0">
+              {% if grand_total %}
+              ${{ grand_total|floatformat:2 }}
+              {% else %}
+              $0.00
+              {% endif %}
+            </p>
+          </div>
+        </a>
       </li>
-  </ul>
+    </ul>
 
     <!-- BANNER -->
     <div class="container-fluid">
@@ -106,13 +113,14 @@
       </div>
     </div>
 
-
+    <!-- BOTTOM NAVBAR-->
+<nav>
     <ul class="nav justify-content-center">
       <div class="dropdown">
-        {% for category in categories %}
+        {% for tag in tags %}
         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          {{ category.name }}
+          {{ tag.name }}
         </button>
         {% endfor %}
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -122,18 +130,18 @@
         </div>
       </div>
     </ul>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-8">
+</nav>
+    <div class="container-fluid">
+      <div class="row">
         <p>Free delivery on orders over £{{ free_delivery_threshold }}!</p>
       </div>
-      <div class="col-6 col-md-4">
-        <form class="form-inline input-group" method="GET" action="{% url 'product' %}">
-          <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search product" aria-label="Search">
-          <span class="input-group-btn"><button class="btn btn-outline-success my-2 my-sm-0"
-              type="submit">Search</button></span>
-        </form>
-      </div>
+    </div>
+    <div class="col-6 col-md-4 mx-auto">
+      <form class="form-inline input-group" method="GET" action="{% url 'product' %}">
+        <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search product" aria-label="Search">
+        <span class="input-group-btn"><button class="btn btn-outline-success my-2 my-sm-0"
+            type="submit">Search</button></span>
+      </form>
     </div>
   </header>
 

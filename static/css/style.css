@@ -223,10 +223,11 @@ input::placeholder,
     color: rgb(116, 114, 114) !important;
 }
 
-.form-control:focus {
+.form-control:focus,
+.bth-check:focus+.btn, 
+.btn:focus {
     border-color: #C5C0F1 !important;
-    box-shadow: 0 0 0 0.25rem rgba(197,192,241,.5) !important;
-
+    box-shadow: 0 0 0 0.27rem rgba(197,192,241,.5) !important;
 }
 
 /*--------------- PROFILE  --------------- */

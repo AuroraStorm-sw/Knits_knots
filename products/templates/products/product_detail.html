@@ -19,9 +19,10 @@
 
       <div class="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
         <h1 class="mb-0 h4">{{ product.name }}</h1>
-        <p><span class="lead">{{ product.brand }}</span></p>
-        <p><span class="lead">{{ product.category }}</span></p>
-        <p>{{ product.description|slice:":355" }}...</p>
+        <p>Brand:<span class="lead">{{ product.brand }}</span></p>
+        <p>Category:<span class="lead">{{ product.category }}</span></p>
+        <p>Tag:<span class="lead">{{ product.tag }}</span></p>
+        <p>Description:{{ product.description|slice:":355" }}...</p>
 
         {% with product.has_colors as color %}
         {% if color %}

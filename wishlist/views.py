@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.urls import reverse
 from django.http import Http404
 
@@ -47,7 +48,6 @@ def add_to_wishlist(request, item_id):
         wishlist_item = Wishlist.objects.create(user=request.user)
 
     if product in wishlist_item.products.all():
-        messages.info(request, 'The product is already in your wishlist!')
         messages.info(request, f'{product.name} is already in your \
             wishlist!')
 
@@ -74,9 +74,5 @@ def delete_wishlist_item(request, item_id, redirect_from):
     else:
         messages.error(request, f'{product.name} is not in your wishlist!')
 
-    if redirect_from == 'wishlist_view':
-        redirect_url = reverse('wishlist_view')
-    else:
-        redirect_url = reverse('product_detail', args=[product.id])
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-    return redirect(redirect_url)

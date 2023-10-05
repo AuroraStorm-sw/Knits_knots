@@ -236,3 +236,29 @@ input::placeholder,
     max-height: 400px;
     overflow-y: auto;
 }
+
+/*--------------- TOASTS  --------------- */
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.bag-notification {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.free-delivery {
+    background-color: #C5C0F1;
+}

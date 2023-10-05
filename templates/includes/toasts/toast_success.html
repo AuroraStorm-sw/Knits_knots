@@ -1,36 +1,69 @@
-<div class="toast rounded-0" data-autohide="false">
-    <div class="alert alert-success" role="alert" id="toast">
-        <div class="toast-header">
-            <strong>
-                <p>Success!</p>
-            </strong>
-            <button type="button" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">X</span></button>
-        </div>
+<div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
+    <div class="arrow-up arrow-success"></div>
+    <div class="w-100 toast-capper bg-success"></div>
+    <div class="toast-header bg-white text-dark">
+        <strong class="mr-auto text-uppercase">Success!</strong>
+        <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">
+                <iconify-icon icon="ph:x" width="15" height="15" class="pt-1"></iconify-icon>
+            </span>
+        </button>
+    </div>
 
-        <div class="toast-body">
-            {{ message }}
-        </div>
-        {% if grand_total %}
-        <p>Your basket: {{ product_count }}</p>
-        <div class="toast-wrapper">
-            {% for item in basket_items %}
-            <div class="row">
-                <div class="col-3">
-                    {% if product.image %}
-                    <img class="img-fluid rounded" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    {% else %}
-                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
-                    {% endif %}
-
-                </div>
-                <div class=" col-9">
-                    <p>{{ product.name }}</p>
-                    <p>Quantity: {{ item.quantity }}</p>
-                </div>
-                {% endfor %}
-                {% endif %}
+    <!-- Toast Message -->
+    <div class="toast-body bg-white">
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                <hr>
             </div>
-            <a href="{% url 'basket' %}">Secure Checkout</a>
         </div>
+
+        <!-- Price Total -->
+        {% if grand_total and not on_profile_page %}
+        <p class="logo py-1">Basket items: ({{ product_count }})</p>
+        <div class="bag-notification">
+
+            {% for item in basket_items %}
+
+            <div class="row">
+                <div class="col-4 my-1">
+                    {% if item.product.image %}
+                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                    {% else %}
+                    <img class="w-100" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ item.product.name }}">
+                    {% endif %}
+                </div>
+                <div class="col-8">
+                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                    <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="mt-3 mb-1">
+                    Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
+                    <span class="float-right">£{{ total|floatformat:2 }}</span>
+                </p>
+                {% if free_delivery_delta > 0 %}
+
+                <p class="free-delivery mb-0 p-2 text-center">
+                    Spend £{{ free_delivery_delta }} more to get free next day delivery!
+                </p>
+
+                {% endif %}
+
+                <a href="{% url 'basket' %}" class="btn btn-block basket-add-btn">
+                    <span class="text-uppercase">
+                        <p>Checkout <iconify-icon class="mt-1" icon="material-symbols:lock-outline"></iconify-icon>
+                    </span></p>
+                </a>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>

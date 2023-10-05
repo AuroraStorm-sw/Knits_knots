@@ -95,16 +95,6 @@ def add_product(request):
     return render(request, template, context)
 
 
-def tags(request):
-    """
-    View to make categories available for customers
-    to browse through
-    """
-    return {
-        'tags': Tag.objects.all()
-    }
-
-
 @login_required
 def edit_product(request, product_id):
     """

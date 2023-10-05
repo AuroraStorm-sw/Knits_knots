@@ -232,8 +232,3 @@ if 'USE_AWS' in os.environ:
     # Override Static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
-    # Custom user model
-    AUTH_USER_MODEL = "account.Customer"
-    LOGIN_REDIRECT_URL = "home"
-    LOGIN_URL = "account/login"

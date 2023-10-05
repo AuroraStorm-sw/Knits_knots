@@ -43,16 +43,16 @@ def add_to_wishlist(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
 
     try:
-        wishlist_item = get_object_or_404(Wishlist, user=request.user.id)
+        wishlist = get_object_or_404(Wishlist, user=request.user.id)
     except Http404:
-        wishlist_item = Wishlist.objects.create(user=request.user)
+        wishlist = Wishlist.objects.create(user=request.user)
 
-    if product in wishlist_item.products.all():
+    if product in wishlist.products.all():
         messages.info(request, f'{product.name} is already in your \
             wishlist!')
 
     else:
-        wishlist_item.products.add(product)
+        wishlist.products.add(product)
         messages.success(request, f'{product.name} successfully added \
             to your wishlist!')
 
@@ -60,15 +60,15 @@ def add_to_wishlist(request, item_id):
 
 
 @login_required
-def delete_wishlist_item(request, item_id, redirect_from):
+def delete_wishlist_item(request, item_id):
     """
     A view to delete a wishlist product
     """
     product = get_object_or_404(Product, pk=item_id)
-    wishlist_item = get_object_or_404(Wishlist, user=request.user.id)
+    wishlist = get_object_or_404(Wishlist, user=request.user.id)
 
-    if product in wishlist_item.products.all():
-        wishlist_item.products.remove(product)
+    if product in wishlist.products.all():
+        wishlist.products.remove(product)
         messages.success(request, f'{product.name} successfully removed \
             from your wishlist!')
     else:

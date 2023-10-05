@@ -73,7 +73,8 @@
           {% else %}
           <a href="{% url 'add_to_wishlist' product.id %}" aria-label="Add product to wishlist"
             class="text-danger ml-3">
-            <i class="fa-regular fa-heart"></i>
+            <iconify-icon icon="ph:heart-duotone" style="color: #66b100;" width="40" height="40" class="fav-icon">
+            </iconify-icon>
             <p class="small mt-1 mb-0 text-muted">Add to Wishlist</p>
           </a>
           {% endif %}
@@ -88,6 +89,9 @@
     {% endif %}
 </div>
 </main>
-</div>
+<!--Source for previous page button:
+  https://stackoverflow.com/questions/2968425/ -->
+  <div class="col text-center"><button class="btn" type="button" onclick="history.back();">Back</button></div>
 
+</div>
 {% endblock %}

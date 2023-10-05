@@ -8,8 +8,10 @@ from .forms import ProductForm
 
 
 def product_all(request):
-    """ A view to show all products,
-    including sorting and search queries """
+    """
+    A view to show all products,
+    including sorting and search queries
+    """
 
     products = Product.objects.all()
     query = None

@@ -9,8 +9,8 @@ def home(request):
     return render(request, 'home/index.html')
 
 
-def error_404_page(request, exception):
-    """ 
+def handler404(request, exception):
+    """
     A view for an error page if the user
     tries to visit an unexisting page
     """

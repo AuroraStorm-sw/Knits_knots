@@ -13,6 +13,11 @@ class Category(models.Model):
         max_length=200,
         db_index=True)
 
+    friendly_name = models.CharField(
+        max_length=254,
+        null=True,
+        blank=True)
+
     slug = models.SlugField(
         max_length=100,
         null=True,
@@ -26,6 +31,10 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_friendly_name(self):
+        """returns the products friendly name if one"""
+        return self.friendly_name
 
 
 class Tag(models.Model):

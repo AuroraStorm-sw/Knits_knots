@@ -62,8 +62,8 @@
                         </div>
                     </div>
                 </form>
-                <a class="update-link text-info btn-link"><small>Update</small></a>
-                <a class="remove-item text-danger float-right basket-delete-btn" id="remove_{{ item.item_id }}"
+                <a class="update-link text-info btn-link" id="update-product-btn"><small>Update</small></a>
+                <a class="remove-item text-danger float-right btn-link basket-delete-btn" id="remove_{{ item.item_id }}"
                     data-product_color="{{ item.color }}"><small>Remove product</small></a>
             </div>
             {% endfor %}

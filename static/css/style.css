@@ -85,6 +85,13 @@ img {
     width: 50%;
 }
 
+.free-delivery-banner {
+    font-family: 'Palanquin', sans-serif;
+    background-color: #66B100;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
 /*--------------- Buttons --------------- */
 
 button {
@@ -102,7 +109,22 @@ button a:hover {
 }
 
 .home-btn {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-family: 'Autour One', cursive;
+    box-shadow: inset 0 0 0 0 #66B100;
+    background-color: transparent;
+    color: #54b3d6;
+
+    border: none;
+
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+}
+
+.home-btn:hover {
+    box-shadow: inset 400px 0 0 0 #C5C0F1;
+    color: white;
 }
 
 .increment-qty,
@@ -148,6 +170,10 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
 
 .btn-link {
     cursor: pointer;
+}
+
+#update-product-btn:hover {
+    color: #66B100 !important;
 }
 
 

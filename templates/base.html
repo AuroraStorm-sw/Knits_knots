@@ -12,6 +12,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% endblock %}
 
+  <meta name="description" 
+        content="Unleash your creativity with a variety of fiber-materials
+                 for all your creative works, from crochet to sewing, we have 
+                 what you need!">
+  <meta name="keywords"
+        content="Knits&Knots, yarn, lion brand yarn, macrame cord,
+        sewing materials, embroidery, hobby craft, hobby online,
+        hobby store online, best yarn for crochet">
+
   <!-- CSS -->
   {% block corecss %}
   <!-- BOOTSTRAP-->
@@ -114,26 +123,66 @@
     </div>
 
     <!-- BOTTOM NAVBAR-->
-<nav>
-    <ul class="nav justify-content-center">
-      <div class="dropdown">
-        {% for tag in tags %}
-        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          {{ tag.name }}
-        </button>
-        {% endfor %}
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
-    </ul>
-</nav>
+    <div class="collapse navbar-collapse" id="main-nav">
+      <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item d-block d-lg-none">
+          <a href="{% url 'home' %}" id="home-link" class="nav-link nav-link-drop mr-5 dropdown-item">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link mr-5 nav-link-drop" href="#" id="all-product-link" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            All Products
+          </a>
+          <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+            <a href="{% url 'product' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+            <a href="{% url 'product' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+            <a href="{% url 'product' %}" class="dropdown-item">All product</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link mr-5 nav-link-drop" href="#" id="earrings-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Earrings
+          </a>
+          <div class="dropdown-menu border-0" aria-labelledby="earrings-link">
+            <a href="{% url 'product' %}?category=yarn" class="dropdown-item">Yarn</a>
+            <a href="{% url 'product' %}?category=drops" class="dropdown-item">Drops</a>
+            <a href="{% url 'product' %}?category=clay" class="dropdown-item">Clay Earrings</a>
+            <a href="{% url 'product' %}?category=studs,drops,clay" class="dropdown-item">All Earrings</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link mr-5 nav-link-drop" href="#" id="necklaces-link" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Necklaces
+          </a>
+          <div class="dropdown-menu border-0" aria-labelledby="necklaces-link">
+            <a href="{% url 'product' %}?category=pendants" class="dropdown-item">Pendants</a>
+            <a href="{% url 'product' %}?category=statement" class="dropdown-item">Statement</a>
+            <a href="{% url 'product' %}?category=pendants,statement" class="dropdown-item">All Necklaces</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-drop" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Special Offers
+          </a>
+          <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+            <a href="{% url 'product' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+            <a href="{% url 'product' %}?category=deals" class="dropdown-item">Deals</a>
+            <a href="{% url 'product' %}?category=clearance" class="dropdown-item">Clearance</a>
+            <a href="{% url 'product' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
     <div class="container-fluid">
-      <div class="row">
-        <p>Free delivery on orders over £{{ free_delivery_threshold }}!</p>
+      <div class="row free-delivery-banner">
+        <h4>Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
       </div>
     </div>
     <div class="col-6 col-md-4 mx-auto">

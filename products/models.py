@@ -36,6 +36,9 @@ class Category(models.Model):
         """returns the products friendly name if one"""
         return self.friendly_name
 
+    def get_absolute_url(self):
+        return reverse('category_list', args=[self.slug])
+
 
 class Tag(models.Model):
     """

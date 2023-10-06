@@ -89,6 +89,7 @@ img {
     font-family: 'Palanquin', sans-serif;
     background-color: #66B100;
     margin-bottom: 1rem;
+    padding: 5px 5px;
     text-align: center;
 }
 
@@ -108,6 +109,10 @@ button a:hover {
     color: #000;
 }
 
+/*
+Home button design:
+https://css-tricks.com/css-link-hover-effects/#aa-the-sliding-highlight-link-hover-effect
+*/
 .home-btn {
     font-size: 3rem;
     font-family: 'Autour One', cursive;

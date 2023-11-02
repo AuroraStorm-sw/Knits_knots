@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Q
 
@@ -13,7 +14,10 @@ def product_all(request):
     including sorting and search queries
     """
 
-    products = Product.objects.all()
+    p = Paginator(Product.objects.all(), 9)
+    page = request.GET.get('page')
+    products = p.get_page(page)
+
     query = None
 
     if request.GET:

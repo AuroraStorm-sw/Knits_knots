@@ -21,6 +21,10 @@
         <br>
         <p class="fw-bold">Brand: <span class="lead">{{ product.brand }}</span></p>
         <p class="fw-bold">Category: <span class="lead">{{ product.category }}</span></p>
+        <!--
+          Displaying ManyToManyFields:
+          https://stackoverflow.com/questions/3891321/
+        -->
         <p class="fw-bold">Tag: <span class="lead">
           {% for tag in product.tags.all  %}
           {{ tag.name }}

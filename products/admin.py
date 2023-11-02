@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Category, Product, Tag, Videocall
+from django_summernote.admin import SummernoteModelAdmin
 
 
 @admin.register(Tag)
@@ -20,7 +21,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(SummernoteModelAdmin):
     list_display = (
         'name',
         'brand',
@@ -30,6 +31,7 @@ class ProductAdmin(admin.ModelAdmin):
         'image',
         'price',
     )
+    summernote_fields = ('description',)
 
     search_fields = [
         'name',

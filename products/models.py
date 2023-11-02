@@ -29,6 +29,27 @@ class Category(models.Model):
         return self.friendly_name
 
 
+class Tag(models.Model):
+    """
+    Model for product tags
+    """
+    name = models.CharField(
+        max_length=100,
+        null=False,
+        unique=True,
+        blank=False,
+        verbose_name='Tag name',
+    )
+
+    class Meta:
+        verbose_name = 'Tag'
+        verbose_name_plural = 'Tags'
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     """
     Model for products
@@ -57,6 +78,11 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=6,
         decimal_places=2)
+    tags = models.ManyToManyField(
+        Tag,
+        related_name='products',
+        verbose_name='Tags',
+    )
 
     class Meta:
         verbose_name = 'Product'
@@ -79,26 +105,6 @@ class Product(models.Model):
         if not self.sku:
             self.sku = self._generate_sku_number()
         super().save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name
-
-
-class Tag(models.Model):
-    """
-    Model for product tags
-    """
-    name = models.CharField(
-        max_length=100,
-        null=False,
-        unique=True, blank=False,
-        verbose_name='Tagname',
-    )
-
-    class Meta:
-        verbose_name = 'Tag'
-        verbose_name_plural = 'Tags'
-        ordering = ['name']
 
     def __str__(self):
         return self.name

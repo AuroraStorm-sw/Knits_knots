@@ -8,10 +8,10 @@
     <div class="row g-3">
       <div class="col-md-5 col-lg-5 order-md-first">
         {% if product.image %}
-        <a href="{{ product.image.url }}" target="_blank">
-          <img class="img-fluid rounded" src="{{ product.image.url }}" alt="{{ product.name }}">
-          {% else %}
-          <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+          <a class="align-items-center" href="{{ product.image.url }}" target="_blank">
+            <img class="img-fluid rounded mx-auto d-block" src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+            <img class="img-fluid rounded mx-auto d-block" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
           {% endif %}
         </a>
       </div>
@@ -32,21 +32,6 @@
         </span></p>
         <p class="fw-bold">Description:</p> <p>{{ product.description | safe }}</p>
 
-        {% with product.has_colors as color %}
-        {% if color %}
-        <div class="col-12">
-          <p><strong>Colors:</strong></p>
-          <select class="form-control rounded-0 w-50" name="product_color" id='id_product_color'>
-            <option value="red">red</option>
-            <option value="green">green</option>
-            <option value="yellow" selected>yellow</option>
-            <option value="purple">purple</option>
-            <option value="black">black</option>
-          </select>
-        </div>
-        {% else %}
-        <p>No color variations</p>
-        {% endif %}
         <div class="border">
           <div class="col border-bottom">
 
@@ -62,7 +47,6 @@
                 </div>
               </div>
           </div>
-          {% endwith %}
           <div class="col-12">
             <a href="{% url 'product' %}" class="btn btn-outline-success">
               <span>Keep shopping</span>

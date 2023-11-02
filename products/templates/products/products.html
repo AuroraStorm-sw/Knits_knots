@@ -25,9 +25,9 @@
           <div class="card product-card m-3 align-items-center">
             <a href="{% url 'product_detail' product.id %}">
               {% if product.image %}
-              <img class="img-fluid rounded" src="{{ product.image.url }}" alt="{{ product.name }}">
+              <img class="product-img img-fluid rounded mx-auto d-block" src="{{ product.image.url }}" alt="{{ product.name }}">
               {% else %}
-              <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+              <img class="product-img img-fluid rounded mx-auto d-block" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
               {% endif %}
             </a>
             <div class="card-body">
@@ -38,7 +38,7 @@
                 <small class="text-muted">{{ product.category }}</small>
                 <small class="text-muted">
                   {% for tag in product.tags.all  %}
-                  {{ tag.name }}
+                    {{ tag.name }}
                   {% endfor %}
                 </small>
                 <small class="text-muted fw-bold">£{{ product.price }}</small>

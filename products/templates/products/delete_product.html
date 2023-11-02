@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Ink{% endblock %}
+
+{% block content %}
+
+<!--
+    Template for the layout of
+    deleting a product
+-->
+
+<h2 class="text-center">Are you sure you want to delete this product?<br>
+    The decision is final.</h2> <br>
+
+<form class="text-center" method="POST">
+    {% csrf_token %}
+    <div class="button-wrap">
+        <div class="update-btn-group">
+            <button type="submit" class="btn delete-btn">Yes, delete it.</button>
+            <a href="{% url 'product' %}" role="button" class="btn btn-cancel">Cancel</a>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

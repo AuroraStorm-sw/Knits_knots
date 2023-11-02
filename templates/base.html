@@ -131,14 +131,14 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           {% for category in categories %}
           <li class="nav-item mx-auto">
-            <a class="nav-link" href=" {{ category.get_absolute_url }}">{{ category.name|title }} <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href=" {{ category.get_absolute_url }}">{{ category.name }}</a>
           </li>
           {% endfor %}
           <li>
-            <a href="{% url 'product' %}?category=cotton">Cotton</a>
+            <a href="{% url 'product' %}?category=yarn">Yarn</a>
           </li>
           <li>
-            <a href="{% url 'product' %}?category=wool">Wool</a>
+            <a href="{% url 'product' %}?category=sewing-thread">Sewing Thread</a>
           </li>
         </ul>
       </div>

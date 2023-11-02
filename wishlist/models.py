@@ -18,14 +18,14 @@ class Wishlist(models.Model):
         on_delete=models.CASCADE,
         related_name='wishlist'
     )
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        editable=False
+    )
     products = models.ManyToManyField(
         Product,
         blank=True,
         related_name='wishlist'
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        editable=False
     )
 
     class Meta:

@@ -74,5 +74,11 @@ def delete_wishlist_item(request, item_id):
     else:
         messages.error(request, f'{product.name} is not in your wishlist!')
 
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    if redirect_from == 'wishlist':
+        redirect_url = reverse('wishlist')
+    else:
+        redirect_url = reverse('product_detail', args=[product.id])
 
+    return redirect(redirect_url)
+
+    # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

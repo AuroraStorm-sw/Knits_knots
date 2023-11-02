@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from products.models import Product
+# from products.models import Product
 from .models import Order, OrderLineItem
 from basket.context import basket_contents
 from profile.forms import UserProfileForm

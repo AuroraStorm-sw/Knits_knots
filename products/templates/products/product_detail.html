@@ -18,10 +18,11 @@
 
       <div class="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
         <h1 class="mb-0 h4">{{ product.name }}</h1>
-        <p>Brand:<span class="lead">{{ product.brand }}</span></p>
-        <p>Category:<span class="lead">{{ product.category }}</span></p>
-        <p>Tag:<span class="lead">{{ product.tag }}</span></p>
-        <p>Description:{{ product.description|slice:":355" }}...</p>
+        <br>
+        <p class="fw-bold">Brand: <span class="lead">{{ product.brand }}</span></p>
+        <p class="fw-bold">Category: <span class="lead">{{ product.category }}</span></p>
+        <p class="fw-bold">Tag: <span class="lead">{{ product.tag }}</span></p>
+        <p class="fw-bold">Description:</p> <p>{{ product.description|slice:":355" }}</p>
 
         {% with product.has_colors as color %}
         {% if color %}
@@ -65,22 +66,26 @@
 
           {% if user.is_authenticated %}
 
-            {% if is_in_wishlist %}
+            {% if 'product' in wishlist %}
 
             <a href="{% url 'delete_wishlist_item' product.id 'product' %}" aria-label="Remove product from wishlist"
               class="text-danger ml-3">
               <iconify-icon icon="ph:heart-fill" style="color: #66b100;" width="30" height="30"></iconify-icon>
               <p class="small mt-1 mb-0 text-muted">Remove from Wishlist</p>
             </a>
+
           {% else %}
+
             <a href="{% url 'add_to_wishlist' product.id %}" aria-label="Add product to wishlist"
               class="text-danger ml-3">
               <iconify-icon icon="ph:heart-duotone" style="color: #66b100;" width="40" height="40" class="fav-icon">
               </iconify-icon>
               <p class="small mt-1 mb-0 text-muted">Add to Wishlist</p>
             </a>
+
             {% endif %}
           {% endif %}
+
         </div>
       </div>
     </div>

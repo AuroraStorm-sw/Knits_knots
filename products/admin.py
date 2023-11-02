@@ -6,10 +6,7 @@ from .models import Category, Product, Tag, Videocall
 class TagAdmin(admin.ModelAdmin):
     list_display = (
         'name',
-        'slug'
         )
-
-    prepopulated_fields = {'slug': ('name',)}
 
 
 @admin.register(Category)
@@ -17,9 +14,9 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'friendly_name',
-        'slug',
         )
-    prepopulated_fields = {'slug': ('name',)}
+
+    prepopulated_fields = {"friendly_name": ["name",]}
 
 
 @admin.register(Product)

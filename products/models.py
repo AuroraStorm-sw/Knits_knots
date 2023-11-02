@@ -18,14 +18,6 @@ class Category(models.Model):
         null=True,
         blank=True)
 
-    slug = models.SlugField(
-        max_length=100,
-        null=True,
-        unique=True,
-        blank=False,
-        verbose_name='Category Slug',
-    )
-
     class Meta:
         verbose_name_plural = 'categories'
 
@@ -35,36 +27,6 @@ class Category(models.Model):
     def get_friendly_name(self):
         """returns the products friendly name if one"""
         return self.friendly_name
-
-    def get_absolute_url(self):
-        return reverse('category_list', args=[self.slug])
-
-
-class Tag(models.Model):
-    """
-    Model for product tags
-    """
-    name = models.CharField(
-        max_length=100,
-        null=False,
-        unique=True, blank=False,
-        verbose_name='Tagname',
-    )
-    slug = models.SlugField(
-        max_length=120,
-        null=False,
-        unique=True,
-        blank=False,
-        verbose_name='TagSlug',
-    )
-
-    class Meta:
-        verbose_name = 'Tag'
-        verbose_name_plural = 'Tags'
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name
 
 
 class Product(models.Model):
@@ -95,10 +57,6 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=6,
         decimal_places=2)
-    tags = models.ManyToManyField(
-        Tag,
-        related_name='products',
-        verbose_name='Tags',)
 
     class Meta:
         verbose_name = 'Product'
@@ -121,6 +79,26 @@ class Product(models.Model):
         if not self.sku:
             self.sku = self._generate_sku_number()
         super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+
+
+class Tag(models.Model):
+    """
+    Model for product tags
+    """
+    name = models.CharField(
+        max_length=100,
+        null=False,
+        unique=True, blank=False,
+        verbose_name='Tagname',
+    )
+
+    class Meta:
+        verbose_name = 'Tag'
+        verbose_name_plural = 'Tags'
+        ordering = ['name']
 
     def __str__(self):
         return self.name

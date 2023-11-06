@@ -133,6 +133,12 @@ class Videocall(models.Model):
         choices=CALL_CHOICES,
         default='Material'
     )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
     booking_date = models.DateTimeField()
     comment = models.TextField(
         max_length=500,

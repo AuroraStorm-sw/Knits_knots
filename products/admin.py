@@ -23,6 +23,7 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
     list_display = (
+        'id',
         'name',
         'brand',
         'category',
@@ -44,6 +45,7 @@ class ProductAdmin(SummernoteModelAdmin):
 @admin.register(Videocall)
 class VideocallAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'calltype',
         'booking_date',
         'comment',

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Category
+from .models import Product, Category, Videocall
 
 
 class ProductForm(forms.ModelForm):
@@ -11,3 +11,10 @@ class ProductForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
+
+
+class VideocallForm(forms.ModelForm):
+
+    class Meta:
+        model = Videocall
+        fields = '__all__'

@@ -4,8 +4,8 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Q
 
-from .models import Product, Category, Tag
-from .forms import ProductForm
+from .models import Product, Category, Tag, Videocall
+from .forms import ProductForm, VideocallForm
 
 
 def product_all(request):
@@ -58,6 +58,31 @@ def categories(request):
     return {
         'categories': Category.objects.all()
     }
+
+
+def videocall(request):
+    """
+    View for customers to order a
+    videocall
+    """
+    if request.method == 'POST':
+        video_form = VideocallForm(request.POST, request.FILES)
+        if video_form.is_valid():
+            videocall = video_form.save()
+            messages.success(request, 'Successfully booked videocall!')
+        else:
+            messages.error(request, 'Failed to book videocall!'
+                           'Please ensure the form is valid.')
+    else:
+        video_form = VideocallForm()
+
+    template = 'products/videocall.html'
+    
+    context = {
+        'video_form': video_form,
+    }
+
+    return render(request, template, context)
 
 
 @login_required

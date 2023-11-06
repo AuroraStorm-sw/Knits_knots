@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+Videocall form
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form|crispy}}
+    <fieldset class="rounded px-3 mb-5">
+        <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+        {{ video_form.calltype | as_crispy_field }}
+        {{ video_form.booking_date | as_crispy_field }}
+        {{ video_form.comment | as_crispy_field }}
+    </fieldset>
+
+</form>
+
+{% endblock%}

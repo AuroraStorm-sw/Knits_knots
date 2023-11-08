@@ -17,6 +17,7 @@ def product_all(request):
     p = Paginator(Product.objects.all(), 9)
     page = request.GET.get('page')
     products = p.get_page(page)
+    categories = Category.objects.all()
 
     query = None
 
@@ -37,6 +38,51 @@ def product_all(request):
     }
 
     return render(request, 'products/products.html', context)
+
+    # p = Paginator(Product.objects.all(), 12)
+    # page = request.GET.get('page')
+    # products = p.get_page(page)
+    # categories = Category.objects.all()
+    # context = {
+    #         'products': products,
+    #         'categories': categories,
+    #     }
+    # query = request.POST.get('search_query')
+
+    # if 'search_query' in request.GET:
+    #         query = request.GET.get('search_query')
+    #         if query == '' or query == 'All Categories':
+    #             p = Paginator(Product.objects.all(), 12)
+    #             page = request.GET.get('page')
+    #             products = p.get_page(page)
+    #             context = {
+    #                 'products': products,
+    #                 'categories': categories,
+    #             }
+    #             return render(
+    #                 request,
+    #                 'products/products.html',
+    #                 context
+    #             )
+    #         else:
+    #             products = Product.objects.filter(
+    #                 Q(name__icontains=query) |
+    #                 Q(description__icontains=query) |
+    #                 Q(category__name__icontains=query) |
+    #                 Q(brand__name__icontains=query) |
+    #                 Q(tags__name__icontains=query)
+    #             ).distinct()
+    #             p = Paginator(products, 12)
+    #             page = request.GET.get('page')
+    #             products = p.get_page(page)
+    #             context = {
+    #                 'products': products,
+    #                 'categories': categories,
+    #                 'search_term': query,
+    #             }
+    #             return render(request, 'products/products.html', context)
+    # return render(request, 'products/products.html', context)
+
 
 
 def product_detail(request, product_id):

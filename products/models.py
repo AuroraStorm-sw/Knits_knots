@@ -139,6 +139,11 @@ class Videocall(models.Model):
         null=True,
         blank=True,
     )
+    email = models.EmailField(
+        max_length=254,
+        null=False,
+        blank=False,
+        )
     booking_date = models.DateTimeField()
     comment = models.TextField(
         max_length=500,

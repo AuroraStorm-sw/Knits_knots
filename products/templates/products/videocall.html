@@ -1,26 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-<link rel="stylesheet" type="text/css" href="{% static 'admin/css/forms.css' %} " />
-<link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %} " />
-<link rel="stylesheet" type="text/css" href="{% static 'admin/css/global.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'admin/css/widgets.css' %}" />
-{% endblock %}
-
 {% block content %}
 <div class="videocall-container">
-    <div class="text-center">
-      <h3>All these fantastic ideas but no clue where to start?</h3>
-      <br>
-      <p>No worries! Here at Knits&Knots, we're eager to get you started on your <br>
-        journey, so whatever you might need help with, we are here for you! <br><br>
-        As a member, we offer free advice via video to get going on that passion project, <br>
-        pick out the most suitable yarn, or decide what size knitting needle goes with that sweater! <br><br>
+  <div class="text-center">
+    <h3>All these fantastic ideas but no clue where to start?</h3>
+    <br>
+    <p>No worries! Here at Knits&Knots, we're eager to get you started on your <br>
+      journey, so whatever you might need help with, we are here for you! <br><br>
+      As a member, we offer free advice via video to get going on that passion project, <br>
+      pick out the most suitable yarn, or decide what size knitting needle goes with that sweater! <br><br>
 
-        All you need to to is fill out the form, and we'll contact you with a time and instructions to help you <br>
-        get your knots knitting!</p>
-    </div>
+      All you need to to is fill out the form, and we'll contact you with a time and instructions to help you <br>
+      get your knots knitting!</p>
+  </div>
 </div>
 
 <br>
@@ -30,27 +23,24 @@
 <div class="form-control form-control-sm w-75 p-3 mx-auto">
   <form action="" method="POST">
     {% csrf_token %}
-    {{ video_form | crispy}}
+    {{ video_form | crispy }}
   </form>
 </div>
 
-<form action="">
-  <a href="{% url 'product' %}" class="btn btn-outline-success">
-    <span>Keep shopping</span>
-  </a>
-  </div>
-  <input type="hidden" name="redirect_url" value="{{ request.path }}">
-</form>
-
-{% block postloadjs %}
-<script type="text/javascript" src="/admin/jsi18n/"></script>
-<script type="text/javascript" src="{% static 'admin/js/core.js' %}"></script>
-<script type="text/javascript" src="{% static 'admin/js/admin/RelatedObjectLookups.js' %}"></script>
-<script type="text/javascript" src="{% static 'admin/js/jquery.js' %}"></script>
-<script type="text/javascript" src="{% static 'admin/js/jquery.init.js' %}"></script>
-<script type="text/javascript" src="{% static 'admin/js/actions.js' %}"></script>
-<script type="text/javascript" src="{% static 'admin/js/calendar.js' %}"></script>
-<script type="text/javascript" src="{% static 'admin/js/admin/DateTimeShortcuts.js' %}"></script>
-{% endblock %}
+<div class="w-75 p-3 mx-auto">
+  <form action="{% url 'videocall_success' %}" method="POST">
+    {% csrf_token %}
+    <button id="submit-button" class="btn btn-outline-success">
+      <span class="font-weight-bold">Complete Order</span>
+      <span class="icon">
+          <i class="fas fa-lock"></i>
+      </span>
+  </button>
+    <a href="{% url 'product' %}" class="btn btn-outline-info">
+      <span>Keep shopping</span>
+    </a>
+    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+  </form>
+</div>
 
 {% endblock %}

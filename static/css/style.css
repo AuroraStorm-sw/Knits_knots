@@ -206,10 +206,6 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
     transition: ease-in-out 400ms;
 }
 
-.product-img {
-
-}
-
 /*--------------- FOOTER --------------- */
 
 /*Split footer into 2 columns:
@@ -271,25 +267,6 @@ form p {
 .signup-form {
     margin-top: 5rem;
     text-align: center;
-}
-
-/*--------------- CHECKOUT FORM --------------- */
-
-.form-control,
-#id_default_country {
-    color: #000 !important;
-}
-
-input::placeholder,
-#id_default_country {
-    color: rgb(116, 114, 114) !important;
-}
-
-.form-control:focus,
-.bth-check:focus+.btn, 
-.btn:focus {
-    border-color: #C5C0F1 !important;
-    box-shadow: 0 0 0 0.27rem rgba(197,192,241,.5) !important;
 }
 
 /*--------------- PROFILE  --------------- */

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
 
-# from products.models import Product
+from products.models import Product
 
 
 def basket(request):
@@ -24,19 +24,6 @@ def add_to_basket(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
     color = None
-
-    if 'product_color' in request.POST:
-        color = request.POST['product_color']
-    basket = request.session.get('basket', {})
-
-    if color:
-        if item_id in list(basket.keys()):
-            if color in basket[item_id]['items_by_color'].keys():
-                basket[item_id]['items_by_color'][color] += quantity
-            else:
-                basket[item_id]['items_by_color'][color] = quantity
-        else:
-            basket[item_id] = {'items_by_color': {color: quantity}}
 
     if item_id in list(basket.keys()):
         basket[item_id] += quantity

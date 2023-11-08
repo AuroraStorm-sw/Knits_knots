@@ -14,75 +14,51 @@ def product_all(request):
     including sorting and search queries
     """
 
-    p = Paginator(Product.objects.all(), 9)
-    page = request.GET.get('page')
-    products = p.get_page(page)
-    categories = Category.objects.all()
-
+    products = Product.objects.all()
     query = None
+    categories = None
+    sort = None
+    direction = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                product = products.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+            
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(
-                    request, "You didn't enter any search criteria!")
-                return redirect(reverse('product'))
-
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse('products'))
+            
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
+
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'products': products,
         'search_term': query,
+        'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
-
-    # p = Paginator(Product.objects.all(), 12)
-    # page = request.GET.get('page')
-    # products = p.get_page(page)
-    # categories = Category.objects.all()
-    # context = {
-    #         'products': products,
-    #         'categories': categories,
-    #     }
-    # query = request.POST.get('search_query')
-
-    # if 'search_query' in request.GET:
-    #         query = request.GET.get('search_query')
-    #         if query == '' or query == 'All Categories':
-    #             p = Paginator(Product.objects.all(), 12)
-    #             page = request.GET.get('page')
-    #             products = p.get_page(page)
-    #             context = {
-    #                 'products': products,
-    #                 'categories': categories,
-    #             }
-    #             return render(
-    #                 request,
-    #                 'products/products.html',
-    #                 context
-    #             )
-    #         else:
-    #             products = Product.objects.filter(
-    #                 Q(name__icontains=query) |
-    #                 Q(description__icontains=query) |
-    #                 Q(category__name__icontains=query) |
-    #                 Q(brand__name__icontains=query) |
-    #                 Q(tags__name__icontains=query)
-    #             ).distinct()
-    #             p = Paginator(products, 12)
-    #             page = request.GET.get('page')
-    #             products = p.get_page(page)
-    #             context = {
-    #                 'products': products,
-    #                 'categories': categories,
-    #                 'search_term': query,
-    #             }
-    #             return render(request, 'products/products.html', context)
-    # return render(request, 'products/products.html', context)
-
 
 
 def product_detail(request, product_id):
@@ -112,8 +88,17 @@ def videocall(request):
     videocall
     """
     if request.method == 'POST':
-        video_form = VideocallForm(request.POST, request.FILES)
+
+        form_data = {
+            'calltype': request.POST['calltype'],
+            'email': request.POST['email'],
+            'booking_date': request.POST['booking_date'],
+            'comment': request.POST['comment'],
+        }
+        video_form = VideocallForm(form_data)
+
         if video_form.is_valid():
+            video_form.instance.email = request.user.email
             videocall = video_form.save()
             messages.success(request, 'Successfully booked videocall!')
         else:
@@ -129,6 +114,20 @@ def videocall(request):
     }
 
     return render(request, template, context)
+
+
+def videocall_success(request):
+    """
+    Handle successful videocall orders
+    """
+
+    messages.success(request, f'Call successfully booked! \
+        A confirmation email will be sent to.')
+
+    template = 'products/videocall_success.html'
+
+    return render(request, template, )
+
 
 
 @login_required

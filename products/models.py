@@ -25,7 +25,9 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
-        """returns the products friendly name if one"""
+        """
+        Returns the products friendly name
+        """
         return self.friendly_name
 
 

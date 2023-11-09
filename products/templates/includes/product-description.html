@@ -1,0 +1,13 @@
+{% load static %}
+
+{% block title %}{{ product.category.name }}{% endblock %}
+
+{% block content %}
+
+{% if category == "Yarn" %}
+<p>This is a category</p>
+{% else %}
+<p>This is not a category.</p>
+{% endif %}
+
+{% endblock %}

@@ -7,6 +7,7 @@ from django_summernote.admin import SummernoteModelAdmin
 class TagAdmin(admin.ModelAdmin):
     list_display = (
         'name',
+        'slug',
         )
 
 
@@ -15,10 +16,11 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'friendly_name',
+        'slug',
         )
 
     prepopulated_fields = {"friendly_name": ["name",]}
-
+    prepopulated_fields = {"slug": ["slug",]}
 
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):

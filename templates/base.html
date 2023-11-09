@@ -127,18 +127,28 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="/">Home</a>
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav mr-auto mx-auto mt-2 mt-lg-0">
 
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="{% url 'product' %}">All products</a>
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="{% url 'product' %}?category=Yarn">Yarn</a>
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="{% url 'product' %}?category=Sewing thread">Sewing Thread</a>
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="{% url 'product' %}?category=Macramé">Macramé</a>
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="{% url 'product' %}?category=Embroidery">Embroidery</a>
+          </li>
           {% if user.is_authenticated %}
           <li class="nav-item mx-auto">
             <a class="nav-link" href="{% url 'videocall' %}">Free video tutorial</a>
           </li>
           {% endif %}
-
-          <li class="nav-item mx-auto">
-            <a href="{% url 'product' %}?category=Linen">Linen</a>
-          </li>
         </ul>
       </div>
     </nav>

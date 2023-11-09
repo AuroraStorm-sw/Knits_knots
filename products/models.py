@@ -18,6 +18,13 @@ class Category(models.Model):
         null=True,
         blank=True)
 
+    slug = models.CharField(
+        max_length=254,
+        unique=True,
+        null=True,
+        blank=True,
+    )
+
     class Meta:
         verbose_name_plural = 'categories'
 
@@ -41,6 +48,13 @@ class Tag(models.Model):
         unique=True,
         blank=False,
         verbose_name='Tag name',
+    )
+
+    slug = models.CharField(
+        max_length=254,
+        unique=True,
+        null=True,
+        blank=True,
     )
 
     class Meta:

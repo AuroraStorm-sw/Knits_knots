@@ -31,7 +31,7 @@ DEBUG = True
 # 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    "8000-aurorastorms-knitsknots-nbv9ea6ia1o.ws-eu105.gitpod.io",
+    "8000-aurorastorms-knitsknots-nbv9ea6ia1o.ws-eu106.gitpod.io",
     "knits-knots-3cc8ac17064e.herokuapp.com"
     ]
 

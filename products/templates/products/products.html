@@ -9,10 +9,25 @@
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="h1 fw-bold">Products title</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
-          etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <p class="lead text-muted">
+          <div>
+            <div>
+              <p>Explore tags!</p>
+              {% for tag in product.tags.all %}
+              <ul>
+                <li>
+                  {{ tag.name }}
+                </li>
+              </ul>
+              {% endfor %}
+            </div>
+        </p>
       </div>
     </div>
+  </section>
+
+  <section>
+    {% include 'includes/product-description.html' %}
   </section>
 
   <div class="album py-5">
@@ -22,19 +37,19 @@
         {% for product in products %}
 
         <div class="col">
-          <div class="card product-card m-3 align-items-center">
+          <div class="card product-card m-2 align-items-center">
             <a href="{% url 'product_detail' product.id %}">
               {% if product.image %}
-              <img class="product-img img-fluid rounded mx-auto d-block" src="{{ product.image.url }}" alt="{{ product.name }}">
+              <img class="product-img img-fluid rounded mx-auto d-block w-100" src="{{ product.image.url }}" alt="{{ product.name }}">
               {% else %}
               <img class="product-img img-fluid rounded mx-auto d-block" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
               {% endif %}
             </a>
-            <div class="card-body">
-              <p class="card-text">
+            <div class="card-body w-100">
+              <p>
                 <a class="text-dark text-decoration-none" href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
               </p>
-              <div class="d-flex justify-content-between align-items-center">
+              <div class="justify-content-between">
                 <small class="text-muted">{{ product.category }}</small>
                 <small class="text-muted">
                   {% for tag in product.tags.all  %}
@@ -42,12 +57,6 @@
                   {% endfor %}
                 </small>
                 <small class="text-muted fw-bold">£{{ product.price }}</small>
-                <small class="text-muted">
-                  {% if request.user.is_superuser %}
-                  <a href="{% url 'edit_product' product.id %}"><small class="text-muted">Edit</small></a>
-                  <a href="{% url 'delete_product' product.id %}"><small class="text-muted">Delete</small></a>
-                  {% endif %}
-                </small>
               </div>
             </div>
           </div>

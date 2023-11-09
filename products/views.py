@@ -72,17 +72,6 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', {'product': product})
 
-
-def categories(request):
-    """
-    View to make categories available for customers
-    to browse through
-    """
-    return {
-        'categories': Category.objects.all()
-    }
-
-
 def videocall(request):
     """
     View for customers to order a

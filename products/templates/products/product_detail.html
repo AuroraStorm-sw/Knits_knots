@@ -3,15 +3,25 @@
 
 {% block content %}
 
+<!--
+Displaying ManyToManyFields:
+https://stackoverflow.com/questions/3891321/
+-->
+<p class="fw-bold">Tag: <span class="lead">
+    {% for tag in product.tags.all  %}
+    {{ tag.name }}
+    {% endfor %}
+  </span></p>
+
 <div class="container">
   <main class="pt-5">
     <div class="row g-3">
       <div class="col-md-5 col-lg-5 order-md-first">
         {% if product.image %}
-          <a class="align-items-center" href="{{ product.image.url }}" target="_blank">
-            <img class="img-fluid rounded mx-auto d-block" src="{{ product.image.url }}" alt="{{ product.name }}">
-            {% else %}
-            <img class="img-fluid rounded mx-auto d-block" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+        <a class="align-items-center" href="{{ product.image.url }}" target="_blank">
+          <img class="img-fluid rounded mx-auto d-block" src="{{ product.image.url }}" alt="{{ product.name }}">
+          {% else %}
+          <img class="img-fluid rounded mx-auto d-block" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
           {% endif %}
         </a>
       </div>
@@ -21,20 +31,11 @@
         <br>
         <p class="fw-bold">Brand: <span class="lead">{{ product.brand }}</span></p>
         <p class="fw-bold">Category: <span class="lead">{{ product.category }}</span></p>
-        <!--
-          Displaying ManyToManyFields:
-          https://stackoverflow.com/questions/3891321/
-        -->
-        <p class="fw-bold">Tag: <span class="lead">
-          {% for tag in product.tags.all  %}
-          {{ tag.name }}
-          {% endfor %}
-        </span></p>
-        <p class="fw-bold">Description:</p> <p>{{ product.description | safe }}</p>
+        <p class="fw-bold">Description:</p>
+        <p>{{ product.description | safe }}</p>
 
         <div class="border">
           <div class="col border-bottom">
-
             <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
               {% csrf_token %}
               <div class="form-row">
@@ -48,8 +49,11 @@
               </div>
           </div>
           <div class="col-12">
-            <a href="{% url 'product' %}" class="btn btn-outline-success">
-              <span>Keep shopping</span>
+            <a href="{% url 'product' %}" class="btn rounded-0 btn-lg basket-btn bag-back-btn">
+              <span class="icon text-uppercase">
+                <i class="fas fa-chevron-left"></i>
+                Keep Shopping
+              </span>
             </a>
             <input type="submit" class="btn btn-outline-success" id="add-basket" value="{{product.id}}">
           </div>
@@ -58,24 +62,24 @@
 
           {% if user.is_authenticated %}
 
-            {% if 'product' in wishlist %}
+          {% if 'product' in wishlist %}
 
-            <a href="{% url 'delete_wishlist_item' product.id 'product' %}" aria-label="Remove product from wishlist"
-              class="text-danger ml-3">
-              <iconify-icon icon="ph:heart-fill" style="color: #66b100;" width="30" height="30"></iconify-icon>
-              <p class="small mt-1 mb-0 text-muted">Remove from Wishlist</p>
-            </a>
+          <a href="{% url 'delete_wishlist_item' product.id 'product' %}" aria-label="Remove product from wishlist"
+            class="text-danger ml-3">
+            <iconify-icon icon="ph:heart-fill" style="color: #66b100;" width="30" height="30"></iconify-icon>
+            <p class="small mt-1 mb-0 text-muted">Remove from Wishlist</p>
+          </a>
 
           {% else %}
 
-            <a href="{% url 'add_to_wishlist' product.id %}" aria-label="Add product to wishlist"
-              class="text-danger ml-3">
-              <iconify-icon icon="ph:heart-duotone" style="color: #66b100;" width="40" height="40" class="fav-icon">
-              </iconify-icon>
-              <p class="small mt-1 mb-0 text-muted">Add to Wishlist</p>
-            </a>
+          <a href="{% url 'add_to_wishlist' product.id %}" aria-label="Add product to wishlist"
+            class="text-danger ml-3">
+            <iconify-icon icon="ph:heart-duotone" style="color: #66b100;" width="40" height="40" class="fav-icon">
+            </iconify-icon>
+            <p class="small mt-1 mb-0 text-muted">Add to Wishlist</p>
+          </a>
 
-            {% endif %}
+          {% endif %}
           {% endif %}
 
         </div>
@@ -87,6 +91,7 @@
     {% endif %}
 </div>
 </main>
+
 <!--Source for previous page button:
   https://stackoverflow.com/questions/2968425/ -->
 <div class="col text-center"><button class="btn" type="button" onclick="history.back();">Back</button></div>

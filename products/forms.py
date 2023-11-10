@@ -7,6 +7,10 @@ from django.forms.fields import DateField
 
 
 class ProductForm(forms.ModelForm):
+    """
+    A form for the superuser to add or
+    edit products on the webpage
+    """
 
     class Meta:
         model = Product
@@ -22,23 +26,8 @@ class VideocallForm(forms.ModelForm):
     class Meta:
         model = Videocall
         fields = ('email', 'calltype', 'booking_date', 'comment',)
-        email = forms.EmailField(required=True)
 
-    # Date input source:
-    # https://stackoverflow.com/questions/5449604
-    booking_date = forms.DateTimeField(
-        label="Date",
-        required=True,
-        widget=NumberInput(attrs={'type':'date'})
-    )
-
-    def __init__(self, *args, **kwargs):
-        super(VideocallForm, self).__init__(*args, **kwargs)
-        self.fields['booking_date'].widget = widgets.AdminSplitDateTime()
-        
-        super().__init__(*args, **kwargs)
-        placeholders = {
-            'email': 'Email Address',
+        widgets = {
+            'comment':  forms.Textarea(
+                attrs={'placeholder': 'Tell us where you are in your crafting journey so we can help you get where you want to be!'}),
         }
-        # Auto focuses on the email field 
-        self.fields['email'].widget.attrs['autofocus'] = True

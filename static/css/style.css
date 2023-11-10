@@ -121,8 +121,6 @@ https://css-tricks.com/css-link-hover-effects/#aa-the-sliding-highlight-link-hov
     background-color: transparent;
     color: #54b3d6;
 
-    border: none;
-
     margin: 0 -.25rem;
     padding: 0 .25rem;
     transition: color .4s ease-in-out, box-shadow .4s ease-in-out;

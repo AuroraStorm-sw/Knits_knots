@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
-import uuid
+import uuid, datetime
 
 
 class Category(models.Model):
@@ -128,9 +128,10 @@ class Product(models.Model):
 
 class Videocall(models.Model):
     """
-    A model for customers to purchase a private
-    video call tutorial
+    A model for registered users to book a private
+    videocall tutorial
     """
+    
     MATERIAL = 'Material'
     CROCHET = 'Crochet'
     KNITTING = 'Knitting'
@@ -149,21 +150,20 @@ class Videocall(models.Model):
         choices=CALL_CHOICES,
         default='Material'
     )
-    user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-    )
     email = models.EmailField(
-        max_length=254,
-        null=False,
         blank=False,
-        )
-    booking_date = models.DateTimeField()
+    )
+    booking_date = models.DateTimeField(
+        default=datetime.datetime.now,
+        editable=True, 
+        blank=True
+    )
     comment = models.TextField(
         max_length=500,
-        default='Anything we should know?'
+    )
+    created_on = models.DateTimeField(
+        default=datetime.datetime.now,
+        blank=True,
     )
 
     def __str__(self):

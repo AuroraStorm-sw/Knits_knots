@@ -1,13 +1,18 @@
 {% load static %}
-
-{% block title %}{{ product.category.name }}{% endblock %}
-
 {% block content %}
 
-{% if category == "Yarn" %}
-<p>This is a category</p>
-{% else %}
-<p>This is not a category.</p>
-{% endif %}
+{% for category in categories %}
+
+    {% if category == Yarn %}
+    <h1>Yarn</h1>
+    {% elif category == Macramé %}
+    <h1>Macrame</h1>
+    {% elif category == Embroidery %}
+        <h1>Embroidery</h1>
+    {% else %}
+    <h1>Sewing thread</h1>
+    {% endif %}
+
+{% endfor %}
 
 {% endblock %}

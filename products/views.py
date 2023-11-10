@@ -1,11 +1,32 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.db.models import Q
 
 from .models import Product, Category, Tag, Videocall
 from .forms import ProductForm, VideocallForm
+
+
+def tags(request):
+    """
+    View to make tags available for customers
+    to browse through
+    """
+    return {
+        'tags': Tag.objects.all()
+    }
+
+
+def category(request):
+    """
+    View to make categories available for customers
+    to browse through
+    """
+    return {
+        'categories': Category.objects.all()
+    }
+
 
 
 def product_all(request):
@@ -72,39 +93,35 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', {'product': product})
 
+
 def videocall(request):
     """
-    View for customers to order a
+    View for customers to book a
     videocall
     """
     if request.method == 'POST':
+        form = VideocallForm(request.POST)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'Your booking is complete!')
+            return redirect('/products/videocall_success')
 
-        form_data = {
-            'calltype': request.POST['calltype'],
-            'email': request.POST['email'],
-            'booking_date': request.POST['booking_date'],
-            'comment': request.POST['comment'],
-        }
-        video_form = VideocallForm(form_data)
-
-        if video_form.is_valid():
-            video_form.instance.email = request.user.email
-            videocall = video_form.save()
-            messages.success(request, 'Successfully booked videocall!')
         else:
-            messages.error(request, 'Failed to book videocall!'
-                           'Please ensure the form is valid.')
-    else:
-        video_form = VideocallForm()
+            form = VideocallForm()
+            messages.warning(request, 'Booking failed! Please try again.')
 
+    else:
+        form = VideocallForm()
+        if 'submitted' in request.GET:
+            form = VideocallForm()
+
+    form = VideocallForm()
     template = 'products/videocall.html'
-    
     context = {
-        'video_form': video_form,
+        'form': form,
     }
 
     return render(request, template, context)
-
 
 def videocall_success(request):
     """

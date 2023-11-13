@@ -1,6 +1,7 @@
 Hi {{ order.full_name}}!
 
-Confirmation stuff goes here
+Thank you for choosing Knits&Knots as your material provider
+for your amazing projects!
 
 Order Number: {{ order.order_number }}
 Order Date: {{ order.dare }}

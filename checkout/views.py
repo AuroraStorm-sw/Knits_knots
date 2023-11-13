@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-# from products.models import Product
+from products.models import Product
 from .models import Order, OrderLineItem
 from basket.context import basket_contents
 from profile.forms import UserProfileForm
@@ -49,6 +49,7 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
         }
+        
         order_form = OrderForm(form_data)
  
         if order_form.is_valid():

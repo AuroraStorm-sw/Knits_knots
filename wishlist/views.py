@@ -60,7 +60,7 @@ def add_to_wishlist(request, item_id):
 
 
 @login_required
-def delete_wishlist_item(request, item_id):
+def delete_wishlist_item(request, item_id, redirect_from):
     """
     A view to delete a wishlist product
     """
@@ -75,7 +75,7 @@ def delete_wishlist_item(request, item_id):
         messages.error(request, f'{product.name} is not in your wishlist!')
 
     if redirect_from == 'wishlist':
-        redirect_url = reverse('wishlist')
+        redirect_url = reverse('wishlist_view')
     else:
         redirect_url = reverse('product_detail', args=[product.id])
 

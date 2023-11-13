@@ -2,9 +2,11 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.http import Http404
 from django.db.models import Q
 
 from .models import Product, Category, Tag, Videocall
+from wishlist.models import  Wishlist
 from .forms import ProductForm, VideocallForm
 
 
@@ -101,7 +103,19 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
-    return render(request, 'products/product_detail.html', {'product': product})
+    try:
+        wishlist = get_object_or_404(Wishlist, user=request.user)
+    except Http404:
+        is_in_wishlist = False
+    else:
+        is_in_wishlist = bool(product in wishlist.products.all())
+
+    context = {
+        'is_in_wishlist': is_in_wishlist,
+        'product': product,
+    }
+
+    return render(request, 'products/product_detail.html', context)
 
 
 def videocall(request):

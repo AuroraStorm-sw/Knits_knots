@@ -24,9 +24,6 @@ def wishlist_view(request):
         wishlist_item = all_wishlist_items.products.all()
         wishlist_item_count = all_wishlist_items.products.all().count()
 
-    if not wishlist_item:
-        messages.info(request, 'Your wishlist is empty!')
-
     template = 'wishlist/wishlist.html'
     context = {
         'wishlist_item': wishlist_item,

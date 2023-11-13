@@ -46,24 +46,13 @@ def update_basket(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
 
     quantity = int(request.POST.get('quantity'))
-    color = None
 
-    if 'product_color' in request.POST:
-        color = request.POST['product_color']
     basket = request.session.get('basket', {})
 
-    if color:
-        if quantity > 0:
-            basket[item_id]['items_by_color'][color] = quantity
-        else:
-            del basket[item_id]['items_by_color'][color]
-            if not basket[item_id]['items_by_color']:
-                basket.pop(item_id)
-    else:
-        if quantity > 0:
+    if quantity > 0:
             basket[item_id] = quantity
-        else:
-            basket.pop(item_id)
+    else:
+        basket.pop(item_id)
 
     messages.success(request, f'Successfully updated basket!')
 

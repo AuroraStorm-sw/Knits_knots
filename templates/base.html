@@ -148,6 +148,10 @@
           <li class="nav-item mx-auto">
             <a class="nav-link" href="{% url 'videocall' %}">Free video tutorial</a>
           </li>
+          {% else %}
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="{% url 'videocall_description' %}">Need help getting started?</a>
+          </li>
           {% endif %}
         </ul>
       </div>
@@ -169,8 +173,9 @@
 
   </header>
 
-  {% if messages %}
 
+  <!-- MESSAGES -->
+  {% if messages %}
   <div class="message-container">
     {% for message in messages %}
     {% with message.level as level %}
@@ -220,6 +225,7 @@
         <iconify-icon icon="mdi:pinterest"></iconify-icon>
       </a>
     </div>
+    <!-- NEWSLETTER LINK-->
     <div id="newsletter-subscribe">
       <a href="#">Subscribe to our newsletter!</a>
     </div>

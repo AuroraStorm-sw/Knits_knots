@@ -8,34 +8,52 @@
 
 <div class="container-fluid">
   <div class="row">
-      <div class="col text-center mt-3">
-          <h2 class="logo-font">Wishlist</h2>
-          <hr class="w-100 mb-1">
-      </div>
+    <div class="col text-center mt-3">
+      <h1 class="logo-font">Wishlist</h1>
+      <hr class="w-100 mb-1">
+    </div>
   </div>
+
+  {% if wishlist_item %}
+
+  <!-- Wishlist products display -->
   <div class="row wish-row">
     {% for product in wishlist_item %}
-      <div class="col-md-4 wish-custom-card">
-          <div class="card mb-4 box-shadow wish-box">
-            {% if product.image %}
-            <a href="{% url 'product_detail' product.id %}">
-              <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-            </a>
-            {% else %}
-            <a href="{% url 'product_detail' product.id %}">
-              <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
-            </a>
-            {% endif %}
-              <div class="card-body pb-0">
-                  <div class="card-title">{{ product.name }}</div>
+    <div class="col-md-4 wish-custom-card">
+      <div class="card mb-4 box-shadow wish-box">
+        {% if product.image %}
+        <a href="{% url 'product_detail' product.id %}">
+          <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+        </a>
+        {% else %}
+        <a href="{% url 'product_detail' product.id %}">
+          <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+        </a>
+        {% endif %}
+        <div class="card-body pb-0">
+          <div class="card-title">{{ product.name }}</div>
 
-                  <small class="text-muted">${{ product.price }}</small>
-              </div>
-              <a href="{% url 'delete_wishlist_item' product.id 'wishlist' %}" class="btn btn-sm btn-outline-secondary">Remove from wishlist</a>
-          </div>
+          <small class="text-muted">${{ product.price }}</small>
+        </div>
+        <a href="{% url 'delete_wishlist_item' product.id 'wishlist' %}" class="btn btn-sm btn-outline-secondary">Remove
+          from wishlist</a>
       </div>
-      {% endfor %}
+    </div>
+    {% endfor %}
+
+    {% else %}
+
+    <div class="col-12 text-center">
+      <h2 class="m-5">Your wishlist is empty!</h2>
+      <a href="{% url 'product' %}" class="btn rounded-0 btn-lg shop-btn logo">
+        <span>
+          <i class="fas fa-chevron-left"></i>
+        </span>
+        Let's find a new favourite!
+      </a>
+    </div>
   </div>
 </div>
+{% endif %}
 
 {% endblock %}

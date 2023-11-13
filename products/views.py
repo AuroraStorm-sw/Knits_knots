@@ -147,6 +147,15 @@ def videocall(request):
 
     return render(request, template, context)
 
+
+def videocall_description(request):
+    """
+    Handle successful videocall orders
+    """
+
+    return render(request, 'products/videocall_description.html')
+
+
 def videocall_success(request):
     """
     Handle successful videocall orders
@@ -157,7 +166,7 @@ def videocall_success(request):
 
     template = 'products/videocall_success.html'
 
-    return render(request, template, )
+    return render(request, template,)
 
 
 

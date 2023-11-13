@@ -1,16 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!--
-Displaying ManyToManyFields:
-https://stackoverflow.com/questions/3891321/
--->
-<p class="fw-bold">Tag: <span class="lead">
-    {% for tag in product.tags.all  %}
-    {{ tag.name }},
-    {% endfor %}
-  </span></p>
-
 <div class="container">
   <main class="pt-5">
     <div class="row g-3">

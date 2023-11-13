@@ -14,14 +14,14 @@
             <div>
               <p>Explore tags!</p>
               <div class="">
-                <a class="btn tag-btn" href="{% url 'product' %}?tags=Cake" role="button">Cake</a>
-                <a class="btn tag-btn" href="{% url 'product' %}?tags=Colorful" role="button">Colorful</a>
-                <a class="btn tag-btn" href="{% url 'product' %}?tags=Cotton" role="button">Cotton</a>
-                <a class="btn tag-btn" href="{% url 'product' %}?tags=Holiday" role="button">Holiday</a>
-                <a class="btn tag-btn" href="{% url 'product' %}?tags=Polyester" role="button">Polyester</a>
-                <a class="btn tag-btn" href="{% url 'product' %}?tags=Wool" role="button">Wool</a>
-                <a class="btn tag-btn" href="{% url 'product' %}?tags=Beginner friendly" role="button">Beginner friendly</a>
-                <a class="btn tag-btn" href="{% url 'product' %}?tags=Cozy" role="button">Cozy</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Cake" role="button">#Cake</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Colorful" role="button">#Colorful</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Cotton" role="button">#Cotton</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Holiday" role="button">#Holiday</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Polyester" role="button">#Polyester</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Wool" role="button">#Wool</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Beginner friendly" role="button">#Beginner friendly</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Cozy" role="button">#Cozy</a>
               </div>
             </div>
         </p>
@@ -56,13 +56,8 @@
                   href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
               </p>
               <div class="justify-content-between">
-                <small class="text-muted">{{ product.category }}</small>
-                <small class="text-muted">
-                  {% for tag in product.tags.all  %}
-                  {{ tag.name }}
-                  {% endfor %}
-                </small>
                 <small class="text-muted fw-bold">£{{ product.price }}</small>
+                <small class="text-muted">{{ product.category }}</small>
               </div>
             </div>
           </div>

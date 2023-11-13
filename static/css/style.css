@@ -197,10 +197,8 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
 /*Tag buttons*/
 
 .tag-btn {
-    background-color: #C5C0F1 !important;
-    
-    border: #66B100 solid 1px;
-    border-radius: 50%;
+    background-color: #66B100 !important;
+    margin: 10px;
 }
 
 .tag-btn:hover {

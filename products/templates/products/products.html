@@ -13,19 +13,14 @@
           <div>
             <div>
               <p>Explore tags!</p>
-
-              <ul>
-                <li class="nav-item mx-auto">
-                  <a class="nav-link" href="{% url 'product' %}?tags=Bamboo">Tag check bamboo</a>
-                </li>
-              </ul>
-              <!-- {% for tag in tags %}
-              <ul>
-                <li>
-                  {{ tag.name }}
-                </li>
-              </ul>
-              {% endfor %} -->
+              <div class="">
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Cake" role="button">Cake</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Colorful" role="button">Colorful</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Cotton" role="button">Cotton</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Holiday" role="button">Holiday</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Polyester" role="button">Polyester</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Wool" role="button">Wool</a>
+              </div>
             </div>
         </p>
       </div>

@@ -95,6 +95,8 @@ img {
 
 /*--------------- Buttons --------------- */
 
+/*General buttons*/
+
 button {
     cursor: pointer;
     margin: .1em;
@@ -107,6 +109,18 @@ button a {
 
 button a:hover {
     color: #000;
+}
+
+.btn-link {
+    cursor: pointer;
+}
+
+.delete-btn {
+    border: #66B100 2px solid;
+}
+
+.btn-cancel {
+    border: red 2px solid;
 }
 
 /*
@@ -130,6 +144,8 @@ https://css-tricks.com/css-link-hover-effects/#aa-the-sliding-highlight-link-hov
     box-shadow: inset 400px 0 0 0 #C5C0F1;
     color: white;
 }
+
+/*Basket buttons*/
 
 .increment-qty,
 .decrement-qty {
@@ -172,20 +188,26 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
     background-color: #66B100;
 }
 
-.btn-link {
-    cursor: pointer;
-}
+/*Update product qty*/
 
 #update-product-btn:hover {
     color: #66B100 !important;
 }
 
-.delete-btn {
-    border: #66B100 2px solid;
+/*Tag buttons*/
+
+.tag-btn {
+    background-color: #C5C0F1 !important;
+    
+    border: #66B100 solid 1px;
+    border-radius: 50%;
 }
 
-.btn-cancel {
-    border: red 2px solid;
+.tag-btn:hover {
+    transform: translate(0, -7px);
+    transition: ease-in-out 400ms;
+
+    background-color: #66B100 !important;
 }
 
 

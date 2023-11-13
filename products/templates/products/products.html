@@ -13,13 +13,19 @@
           <div>
             <div>
               <p>Explore tags!</p>
-              {% for tag in product.tags.all %}
+
+              <ul>
+                <li class="nav-item mx-auto">
+                  <a class="nav-link" href="{% url 'product' %}?tags=Bamboo">Tag check bamboo</a>
+                </li>
+              </ul>
+              <!-- {% for tag in tags %}
               <ul>
                 <li>
                   {{ tag.name }}
                 </li>
               </ul>
-              {% endfor %}
+              {% endfor %} -->
             </div>
         </p>
       </div>

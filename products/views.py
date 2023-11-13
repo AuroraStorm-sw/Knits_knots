@@ -8,7 +8,7 @@ from .models import Product, Category, Tag, Videocall
 from .forms import ProductForm, VideocallForm
 
 
-def tags(request):
+def tag(request):
     """
     View to make tags available for customers
     to browse through
@@ -33,10 +33,12 @@ def product_all(request):
     """
     A view to show all products,
     including sorting and search queries
+    from name, category, and tags
     """
 
     products = Product.objects.all()
     categories = None
+    tags = None
     query = None
     sort = None
     direction = None
@@ -50,6 +52,8 @@ def product_all(request):
                 product = products.annotate(lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
+            if sortkey == 'tag':
+                sortkey == 'tag__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -60,6 +64,11 @@ def product_all(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+
+        if 'tags' in request.GET:
+            tags = request.GET['tags'].split(',')
+            products = products.filter(tags__name__in=tags)
+            tags = Tag.objects.filter(name__in=tags)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -75,6 +84,7 @@ def product_all(request):
     context = {
         'products': products,
         'categories': categories,
+        'tags': tags,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,

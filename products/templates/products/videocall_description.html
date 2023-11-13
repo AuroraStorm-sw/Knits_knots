@@ -1,5 +1,31 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}Free video tutorial{% endblock %}
 
 {% block content %}
+
+<div class="container">
+    <div class="text-center">
+        <h3>All these fantastic ideas but no clue where to start?</h3>
+        <br>
+        <p>No worries! Here at Knits&Knots, we're eager to get you started on your
+            journey, so whatever you might need help with, we are here for you! <br><br>
+            As a member, we offer free advice via video to get going on that passion project,
+            pick out the most suitable yarn, or decide what size knitting needle goes with that sweater! <br><br>
+
+            Becoming a member is as easy as creating an account, and you'll instantly be offered the opportunity 
+            to schedule a videocall with one of our crafting enthusiasts to help you with whatever material or 
+            tool questions you might have! <br><br>
+
+            So, what are you waiting for? <br><br>
+
+            <a href="{% url 'account_signup' %}" class="btn tag-btn btn-lg">Sign up</a> or
+            <a href="{% url 'account_login' %}" class="btn tag-btn btn-lg">Sign in</a> <br><br>
+
+            to get started on your journey!
+        </p>
+    </div>
+</div>
+
 {% endblock %}

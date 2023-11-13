@@ -35,6 +35,12 @@ ALLOWED_HOSTS = [
     "knits-knots-3cc8ac17064e.herokuapp.com"
     ]
 
+# Setting for django version above 3.2 for Allauth to trust site CSRF token
+# Source: https://stackoverflow.com/questions/70285834/
+CSRF_TRUSTED_ORIGINS = [
+    'https://knits-knots-3cc8ac17064e.herokuapp.com/',
+    'https://8000-aurorastorms-knitsknots-nbv9ea6ia1o.ws-eu106.gitpod.io'
+    ]
 
 # Application definition
 

@@ -115,7 +115,12 @@ button a:hover {
     cursor: pointer;
 }
 
-.delete-btn {
+.btn-green {
+    background-color: #66B100 !important;
+    margin: 10px;
+}
+
+.btn-delete {
     border: #66B100 2px solid;
 }
 

@@ -24,8 +24,8 @@
   <form action="{% url 'videocall' %}" method="POST">
     {% csrf_token %}
     {{ form | crispy }}
-    <button id="submit-button" class="btn btn-outline-success rounded-0">
-      <span class="font-weight-bold">Book videocall</span>
+    <button id="submit-button" class="btn btn-green rounded-0">
+      <span class="font-weight-bold text-uppercase">Book videocall</span>
     </button>
     <a href="{% url 'product' %}" class="btn btn-outline-danger rounded-0">
       <span class="icon text-uppercase">

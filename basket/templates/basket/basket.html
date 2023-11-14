@@ -66,13 +66,12 @@
                             </div>
                         </div>
                     </form>
-                    <a class="update-link text-info btn-link" id="update-product-btn"><small>Update</small></a>
+                    <a class="update-link btn-green btn-link" id="update-product-btn"><small>Update</small></a>
                     <a class="remove-item text-danger float-right btn-link basket-delete-btn" id="remove_{{ item.item_id }}">
                     <small>Remove product</small></a>
             </div>
             {% endfor %}
         </div>
-    </div>
 
         <div class="row">
             <div class="col-12 mt-4 text-right">
@@ -103,7 +102,7 @@
                 </a>
 
                 <a href="{% url 'checkout' %}" class="btn rounded-0 btn-lg basket-btn checkout">
-                    <span class="text-uppercase">Secure Checkout</span>
+                    <span class="text-uppercase btn-green">Secure Checkout</span>
                     <span>
                         <iconify-icon class="mt-1" icon="material-symbols:lock-outline"></iconify-icon>
                         <i class="fas fa-chevron-right"></i>
@@ -114,7 +113,7 @@
 
             <div class="col-12 text-center">
                 <h2 class="m-5">Your basket is empty!</h2>
-                <a href="{% url 'product' %}" class="btn rounded-0 btn-lg shop-btn logo">
+                <a href="{% url 'product' %}" class="btn btn-green rounded-0 btn-lg shop-btn logo">
                   <span>
                     <i class="fas fa-chevron-left"></i>
                   </span>

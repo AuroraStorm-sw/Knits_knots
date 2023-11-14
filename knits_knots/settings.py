@@ -27,19 +27,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# 'DEVELOPMENT' in os.environ
+DEBUG ='DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     "8000-aurorastorms-knitsknots-nbv9ea6ia1o.ws-eu106.gitpod.io",
     "knits-knots-3cc8ac17064e.herokuapp.com"
     ]
 
-# Setting for django version above 3.2 for Allauth to trust site CSRF token
+# Setting for Django version above 3.2 for Allauth to trust site CSRF token
 # Source: https://stackoverflow.com/questions/70285834/
 CSRF_TRUSTED_ORIGINS = [
     'https://knits-knots-3cc8ac17064e.herokuapp.com/',
-    'https://8000-aurorastorms-knitsknots-nbv9ea6ia1o.ws-eu106.gitpod.io'
+    'https://8000-aurorastorms-knitsknots-nbv9ea6ia1o.ws-eu106.gitpod.io/'
     ]
 
 # Application definition

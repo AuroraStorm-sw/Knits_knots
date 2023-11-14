@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-
 from django.contrib import messages
 
 from .models import UserProfile
@@ -10,26 +9,32 @@ from checkout.models import Order
 
 @login_required
 def profile(request):
-    """ A view to return the profile page """
+    """
+    A view to return the profile page
+    """
 
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
-        form = UserProfileForm(instance=profile)
+        form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated profile!')
+            messages.success(request, 'Profile updated successfully')
         else:
             messages.error(request, 'Update failed, please ensure the form is valid!')
     else:
         form = UserProfileForm(instance=profile)
+    
     orders = profile.orders.all()
 
+    template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'on_profile_page': True
     }
-    return render(request, 'profile/profile.html', context)
+
+    return render(request, template, context)
 
 
 def order_history(request, order_number):

@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'order',
     'wishlist',
     'profile',
+    'company',
 
     # crispy forms
     'crispy_forms',

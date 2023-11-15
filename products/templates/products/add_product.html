@@ -3,6 +3,8 @@
 
 {% block title %}Product management{% endblock %}
 
+<!-- Template for Superuser to add a new products
+    directly on the website -->
 {% block content %}
 <div class="container">
     <div class="row">
@@ -13,6 +15,7 @@
             <hr>
         </div>
         <div class="row">
+            <!-- Submit new product -->
             <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}

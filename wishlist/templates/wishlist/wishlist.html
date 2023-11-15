@@ -5,7 +5,8 @@
 
 {% block content %}
 
-
+<!-- Template for authorised user's
+      wishlist -->
 <div class="container-fluid">
   <div class="row">
     <div class="col text-center mt-3">
@@ -16,8 +17,9 @@
 
   {% if wishlist_item %}
 
-  <!-- Wishlist products display -->
+  <!-- Displays wishlist products -->
   <div class="row wish-row">
+    <!-- Wishlist product img -->
     {% for product in wishlist_item %}
     <div class="col-md-4 wish-custom-card">
       <div class="card mb-4 box-shadow wish-box">
@@ -30,6 +32,8 @@
           <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
         </a>
         {% endif %}
+
+        <!-- Wishlist product details -->
         <div class="card-body pb-0">
           <div class="card-title">{{ product.name }}</div>
 
@@ -43,6 +47,8 @@
 
     {% else %}
 
+    <!-- If the user's wishlist is empty, links
+        them back to all products -->
     <div class="col-12 text-center">
       <h2 class="m-5">Your wishlist is empty!</h2>
       <a href="{% url 'product' %}" class="btn rounded-0 btn-lg shop-btn logo">

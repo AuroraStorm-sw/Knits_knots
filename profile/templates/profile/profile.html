@@ -3,6 +3,10 @@
 
 {% block title %}{{request.user.username}}'s Profile{% endblock %}
 
+<!-- Template for registered users 
+    private profile page, including a
+    history of orders -->
+
 {% block content %}
 
 <div class="container">
@@ -14,6 +18,8 @@
         </div>
     </div>
     <a href="{% url 'wishlist_view' %}">Wishlist</a>
+
+    <!-- Form to update personal information for deliveries -->
     <div class="row">
         <div>Default Delivery Information</div>
         <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
@@ -21,6 +27,8 @@
             {{ form | crispy}}
             <button class="btn btn-green text-uppercase">Update Information</button>
         </form>
+
+        <!-- Order history -->
         <div>Order History</div>
         <div class="table-responsive order-history-table">
             <table class="table table-sm table-borderless">

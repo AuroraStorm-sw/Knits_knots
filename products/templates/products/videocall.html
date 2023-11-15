@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}Videocall{% endblock %}
+
+<!-- Template for users to fill out a
+      form to be gifted a free videocall -->
+
 {% block content %}
 <div class="videocall-container">
   <div class="text-center">
@@ -19,6 +24,8 @@
 <br>
 <hr class="mx-auto" style="max-width: 60rem;">
 <br>
+
+<!-- Form -->
 
 <div class="form-control form-control-sm w-75 p-3 mx-auto">
   <form action="{% url 'videocall' %}" method="POST">

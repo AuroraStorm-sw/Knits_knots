@@ -13,7 +13,7 @@
             <hr class="mx-auto">
         </div>
     </div>
-
+    <!-- Product img and details -->
     {% if basket_items %}
     <div class="row">
         {% for item in basket_items %}
@@ -66,13 +66,14 @@
                             </div>
                         </div>
                     </form>
+                    <!-- Edit/delete product for superuser -->
                     <a class="update-link btn-green btn-link" id="update-product-btn"><small>Update</small></a>
                     <a class="remove-item text-danger float-right btn-link basket-delete-btn" id="remove_{{ item.item_id }}">
                     <small>Remove product</small></a>
             </div>
             {% endfor %}
         </div>
-
+        <!-- Product totals -->
         <div class="row">
             <div class="col-12 mt-4 text-right">
                 <h6><strong>
@@ -100,7 +101,7 @@
                         Keep Shopping
                     </span>
                 </a>
-
+                <!-- Go to checkout page -->
                 <a href="{% url 'checkout' %}" class="btn rounded-0 btn-lg basket-btn checkout">
                     <span class="text-uppercase btn-green">Secure Checkout</span>
                     <span>
@@ -110,7 +111,7 @@
                 </a>
             </div>
             {% else %}
-
+            <!-- If there are no products in the basket -->
             <div class="col-12 text-center">
                 <h2 class="m-5">Your basket is empty!</h2>
                 <a href="{% url 'product' %}" class="btn btn-green rounded-0 btn-lg shop-btn logo">
@@ -126,7 +127,7 @@
 </div>
 {% endblock %}
 
-
+<!-- Scripts -->
 {% block postloadjs %}
 {{ block.super }}
 {% include 'includes/quantity_btn_script.html' %}
@@ -145,7 +146,7 @@
         var url = `remove/${itemId}`;
         var data = {
             'csrfmiddlewaretoken': csrfToken,
-            'product_color': color,
+            
         };
 
         $.post(url, data)

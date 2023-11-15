@@ -5,6 +5,10 @@
 
 {% block content %}
 
+<!-- Template for non-authenticated users to 
+     read about the free video tutorial and links
+     to sign in or sign up -->
+
 <div class="container">
     <div class="text-center">
         <h3>All these fantastic ideas but no clue where to start?</h3>
@@ -20,6 +24,7 @@
 
             So, what are you waiting for? <br><br>
 
+            <!-- Signup / sign in links-->
             <a href="{% url 'account_signup' %}" class="btn btn-green btn-lg">Sign up</a> or
             <a href="{% url 'account_login' %}" class="btn btn-green btn-lg">Sign in</a> <br><br>
 

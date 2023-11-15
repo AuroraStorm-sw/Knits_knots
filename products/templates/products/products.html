@@ -1,18 +1,21 @@
 {% extends "base.html" %}
-
+{% load static %}
+{% block title %}Products{% endblock %}
 
 {% block content %}
 
-<main>
+<!-- Template for viewing all products -->
 
+<main>
   <section class="py-5 text-center container">
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="h1 fw-bold">Products title</h1>
+        <h1 class="h1">Welcome!</h1>
         <p class="lead text-muted">
           <div>
             <div>
-              <p>Explore tags!</p>
+              <!-- Tag section for browsing -->
+              <p>Explore the tags!</p>
               <div class="">
                 <a class="btn tag-btn" href="{% url 'product' %}?tags=Cake" role="button">#Cake</a>
                 <a class="btn tag-btn" href="{% url 'product' %}?tags=Colorful" role="button">#Colorful</a>
@@ -33,12 +36,14 @@
     {% include 'includes/product-description.html' %}
   </section>
 
+  <!-- Displaying all products -->
   <div class="album py-5">
     <div class="container-fluid">
       <div class="row d-flex justify-content-around p-3 m-1">
 
         {% for product in products %}
 
+        <!-- Product img and link to product detail -->
         <div class="col">
           <div class="card product-card m-2 align-items-center">
             <a href="{% url 'product_detail' product.id %}">
@@ -52,6 +57,8 @@
             </a>
             <div class="card-body w-100">
               <p>
+
+                <!-- Quick product details -->
                 <a class="text-dark text-decoration-none"
                   href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
               </p>
@@ -62,16 +69,20 @@
             </div>
           </div>
         </div>
-
         {% endfor %}
-
       </div>
     </div>
   </div>
 </main>
 
-<!-- BACK TO TOP BUTTON -->
-
-
+<!-- Back to top button -->
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+{% endblock %}
+
+<!-- Script -->
+{% block postloadjs %}
+{{ block.super }}
+
+<!-- Back to top button js -->
+<script type="text/javascript" src="{% static 'js/back-to-top-button.js' %}"></script>
 {% endblock %}

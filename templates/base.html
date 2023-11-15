@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 
+<!-- Base template -->
+
 <head>
 
   <!-- META-->
@@ -64,7 +66,8 @@
 
 <body>
   <header>
-    <!-- TOP NAVBAR -->
+
+    <!-- Top navbar -->
     <ul class="nav justify-content-end">
       <li class="list-inline-item dropdown">
         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
@@ -109,7 +112,7 @@
       </li>
     </ul>
 
-    <!-- BANNER -->
+    <!-- Banner -->
     <div class="container-fluid">
       <div class="banner">
         <a class="d-none d-md-block" href="/" style="vertical-align:right"><img src="{% static 'img/logo-big.png' %}"
@@ -119,8 +122,7 @@
       </div>
     </div>
 
-    <!-- BOTTOM NAVBAR-->
-
+    <!-- Bottom navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
         aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -157,7 +159,7 @@
       </div>
     </nav>
 
-    <!-- FREE DELIVERY BANNER -->
+    <!-- Free delivery banner -->
     <div class="container-fluid">
       <div class="row free-delivery-banner">
         <h4>Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
@@ -166,15 +168,15 @@
     <div class="col-6 col-md-4 mx-auto">
       <form class="form-inline input-group" method="GET" action="{% url 'product' %}">
         <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search product" aria-label="Search">
-        <span class="input-group-btn "><button class="btn btn-outline-success my-2 my-sm-0"
-            type="submit"><iconify-icon icon="mingcute:search-line" width="30" height="30"></iconify-icon></button></span>
+        <span class="input-group-btn "><button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <iconify-icon icon="mingcute:search-line" width="30" height="30"></iconify-icon>
+          </button></span>
       </form>
     </div>
 
   </header>
 
-
-  <!-- MESSAGES -->
+  <!-- Messages -->
   {% if messages %}
   <div class="message-container">
     {% for message in messages %}
@@ -194,6 +196,7 @@
   {% endif %}
 
 
+  <!-- Block content container -->
   <div class="background">
 
     {% block content %}
@@ -201,15 +204,7 @@
     {% endblock %}
   </div>
 
-
-  <!-- BACK TO TOP BUTTON -->
-
-
-  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
   <!-- FOOTER -->
-
-
   <footer class="footer container-fluid">
     <div id="social-media-links">
       <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
@@ -231,12 +226,17 @@
     </div>
   </footer>
 
+  <!-- Back to top button -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
+  <!-- Script -->
   {% block postloadjs %}
+  {{ block.super }}
 
-  <!-- LOCAL -->
+  <!-- Back to top button -->
   <script src="{% static 'js/back-to-top-button.js' %}"></script>
 
+  <!-- Display toasts -->
   <script type="text/javascript">
     $('.toast').toast('show');
   </script>

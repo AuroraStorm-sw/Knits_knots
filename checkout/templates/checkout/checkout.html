@@ -18,7 +18,9 @@
             <hr>
         </div>
     </div>
-
+    
+    <!-- A summary of the customers order with
+        items and costs -->
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <p class="text-muted">Order Summary ({{ product_count }})</p>
@@ -49,6 +51,8 @@
                 </div>
             </div>
             {% endfor %}
+
+            <!-- Order totals -->
             <hr class="my-0">
             <div class="row text-black text-right">
                 <div class="col-7 offset-2">
@@ -63,6 +67,10 @@
                 </div>
             </div>
         </div>
+
+        <!-- Form for the customer to complete their orderm
+            the info can be saved to their profile if they're 
+            signed in -->
         <div class="col-12 col-lg-6">
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -105,6 +113,7 @@
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                 </fieldset>
 
+                <!-- Update products or complete the order -->
                 <div class="submit-button text-right mt-5 mb-2">
                     <a href="{% url 'basket' %}" class="btn btn-outline-black rounded-0">
                         <span class="icon">

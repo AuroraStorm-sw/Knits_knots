@@ -272,7 +272,11 @@ footer a:hover {
     clear: left;
     font: 14px Helvetica, Arial, sans-serif;
     width: 300px;
-  }
+}
+
+
+.newletter-container {
+}
 
 /*--------------- FORMS --------------- */
 

@@ -57,11 +57,7 @@ img {
 
 .nav {
     background-color: #C5C0F1;
-}
-
-.navbar-nav {
-    float: none;
-    text-align: center;
+    align-items: center;
 }
 
 .nav-link,

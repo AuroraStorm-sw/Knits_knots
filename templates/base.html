@@ -130,53 +130,65 @@
     </div>
 
     <!-- Bottom navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+
+    <nav class="navbar nav navbar-expand-lg navbar-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul class="navbar-nav mr-auto mx-auto mt-2 mt-lg-0">
-          <li class="nav-item mx-auto">
-            <a class="nav-link" href="{% url 'product' %}">All products</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link" href="{% url 'product' %}?category=Yarn">Yarn</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link" href="{% url 'product' %}?category=Sewing thread">Sewing Thread</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link" href="{% url 'product' %}?category=Macramé">Macramé</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link" href="{% url 'product' %}?category=Embroidery">Embroidery</a>
-          </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item mx-auto">
-            <a class="nav-link" href="{% url 'videocall' %}">Free video tutorial</a>
-          </li>
-          {% else %}
-          <li class="nav-item mx-auto">
-            <a class="nav-link" href="{% url 'videocall_description' %}">Need help getting started?</a>
-          </li>
-          {% endif %}
 
-          <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              About us
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="nav-link" href="{% url 'company_info' %}">About us</a></li>
-              <li><a class="nav-link" href="{% url 'company_faq' %}">F.A.Q</a></li>
-              <li><a class="nav-link" href="{% url 'company_contact' %}">Contact us</a></li>
-            </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item dropdown mx-auto">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <p>All products</p>
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="all-products-link">
+            <a href="{% url 'product' %}" class="dropdown-item">All Products</a>
+            <a href="{% url 'product' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+            <a href="{% url 'product' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
           </div>
+        </li>
 
-          <li class="nav-item mx-auto">
-            
-          </li>
-        </ul>
+        <li class="nav-item dropdown mx-auto">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <p>Material</p>
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="all-category-links">
+            <a class="nav-link" href="{% url 'product' %}?category=Yarn">Yarn</a>
+            <a class="nav-link" href="{% url 'product' %}?category=Sewing thread">Sewing Thread</a>
+            <a class="nav-link" href="{% url 'product' %}?category=Macramé">Macramé</a>
+            <a class="nav-link" href="{% url 'product' %}?category=Embroidery">Embroidery</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mx-auto">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <p>About us</p>
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="about-company-links">
+            <a class="nav-link" href="{% url 'company_info' %}">About us</a>
+            <a class="nav-link" href="{% url 'company_faq' %}">F.A.Q</a>
+            <a class="nav-link" href="{% url 'company_contact' %}">Contact us</a>
+          </div>
+        </li>
+
+        {% if user.is_authenticated %}
+        <li class="nav-item mx-auto">
+          <a class="nav-link" href="{% url 'videocall' %}">
+            <p>Free video tutorial</p>
+          </a>
+        </li>
+        {% else %}
+        <li class="nav-item mx-auto">
+          <a class="nav-link" href="{% url 'videocall_description' %}">Need help getting started?</a>
+        </li>
+        {% endif %}
       </div>
     </nav>
 

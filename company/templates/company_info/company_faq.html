@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}FAQ{% endblock %}
 
@@ -6,18 +7,47 @@
 
 <!-- Template for F.A.Q -->
 
-<div class="text-center">
+<div class="">
     <h1 class="m-3">Frequenty asked questions</h1>
 
     <br>
     <hr class="mx-auto" style="max-width: 60rem;">
     <br>
 
-    <!-- AI generated company biography
-            Source: https://writerbuddy.ai/free-tools/company-bio -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'returns')">Returns</button>
+        <button class="tablinks" onclick="openTab(event, 'order')">Order</button>
+        <button class="tablinks" onclick="openTab(event, 'delivery')">Delivery</button>
+        <button class="tablinks" onclick="openTab(event, 'products')">Products</button>
+    </div>
 
+    <!-- F.A.Q from https://hobbii.se/ -->
+
+
+    <div id="returns" class="tabcontent">
+        <h3>returns</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="order" class="tabcontent">
+        <h3>order</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="delivery" class="tabcontent">
+        <h3>delivery</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <div id="products" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+
+    <!--
     <div class="container about-us-container">
-        <div class="row mb-3">
+        <div class="row mb-3 tabcontent" id="returns">
             <div class="col-12">
                 <div class="card">
                     <div class="card-title m-3">
@@ -31,10 +61,11 @@
                             make any exchanges, so if you wish to order another product, you must place a new order!
                             <br><br>
 
-                            <!--
+                            
                                 Address generator:
                                 https://www.prepostseo.com/tool/fake-address-generator
                             -->
+    <!--
                             <b>Return address:</b><br>
                             <address>
                                 7 Victoria Road <br>
@@ -102,7 +133,7 @@
             </div>
         </div>
 
-        <div class="row mb-3">
+        <div class="row mb-3 tabcontent" id="order">
             <div class="col-12">
                 <div class="card">
                     <div class="card-title m-3">
@@ -151,7 +182,7 @@
             </div>
         </div>
 
-        <div class="row mb-3">
+        <div class="row mb-3 tabcontent" id="delivery">
             <div class="col-12">
                 <div class="card">
                     <div class="card-title m-3">
@@ -193,7 +224,7 @@
             </div>
         </div>
 
-        <div class="row mb-3">
+        <div class="row mb-3 tabcontent" id="products">
             <div class="col-12">
                 <div class="card">
                     <div class="card-title m-3">
@@ -217,6 +248,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
+{% endblock %}
 
-    {% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+
+<!-- Horizontal tabs functionality -->
+<script src="{% static 'js/horizontal-tabs.js' %}"></script>
+
+{% endblock %}

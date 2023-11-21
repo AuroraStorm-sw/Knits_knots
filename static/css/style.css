@@ -271,9 +271,6 @@ footer a:hover {
 }
 
 
-.newletter-container {
-}
-
 /*--------------- FORMS --------------- */
 
 /*Form styling based on my previous project:
@@ -336,4 +333,8 @@ form p {
 }
 
 
+
+.faq-list {
+    list-style: none;
+}
 

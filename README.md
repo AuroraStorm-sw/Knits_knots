@@ -75,11 +75,19 @@ When planning this website, I went with the idea of it being as simple as possib
 <summary>View Wireframes</summary>
 <br>
 
-![Home]()
+Home page
+![Home](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-home-page.PNG)
 
-![Product]()
+![Products](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-products-page.PNG)
 
-![Basket]()
+Product detail
+![Product detail](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-products-detail-page.PNG)
+
+![Products]()
+![Products]()
+![Products]()
+![Products]()
+![Products]()
 
 </details>
 <br>

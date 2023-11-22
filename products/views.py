@@ -102,17 +102,21 @@ def product_detail(request, product_id):
     """
 
     product = get_object_or_404(Product, pk=product_id)
+    is_in_wishlist = False
 
-    try:
-        wishlist = get_object_or_404(Wishlist, user=request.user)
-    except Http404:
-        is_in_wishlist = False
+    if request.user.is_authenticated:
+        try:
+            wishlist = get_object_or_404(Wishlist, user=request.user)
+            is_in_wishlist = bool(product in wishlist.products.all())
+        except Http404:
+            pass  
     else:
-        is_in_wishlist = bool(product in wishlist.products.all())
+        wishlist = None 
 
     context = {
         'is_in_wishlist': is_in_wishlist,
         'product': product,
+        'wishlist': wishlist,
     }
 
     return render(request, 'products/product_detail.html', context)

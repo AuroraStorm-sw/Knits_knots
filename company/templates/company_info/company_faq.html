@@ -1,260 +1,229 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/faq.css' %}">
+{% endblock %}
+
 {% block title %}FAQ{% endblock %}
 
 {% block content %}
 
 <!-- Template for F.A.Q -->
 
-<div class="">
-    <h1 class="m-3">Frequenty asked questions</h1>
+<!-- Horizontal tab
+    Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs -->
 
-    <br>
-    <hr class="mx-auto" style="max-width: 60rem;">
-    <br>
+<h1 class="m-3 text-center">Frequenty asked questions</h1>
 
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'returns')">Returns</button>
-        <button class="tablinks" onclick="openTab(event, 'order')">Order</button>
-        <button class="tablinks" onclick="openTab(event, 'delivery')">Delivery</button>
-        <button class="tablinks" onclick="openTab(event, 'products')">Products</button>
-    </div>
+<br>
+<hr class="mx-auto" style="max-width: 60rem;">
+<br>
 
-    <!-- F.A.Q from https://hobbii.se/ -->
+<button class="tablink" onclick="openPage('Returns', this)" id="defaultOpen">Returns</button>
+<button class="tablink" onclick="openPage('Order', this)">Order</button>
+<button class="tablink" onclick="openPage('Delivery', this)">Delivery</button>
+<button class="tablink" onclick="openPage('Products', this)">Products</button>
 
+<!-- F.A.Q from https://hobbii.se/ -->
 
-    <div id="returns" class="tabcontent">
-        <h3>returns</h3>
-        <p>London is the capital city of England.</p>
-    </div>
+<div id="Returns" class="tabcontent text-center">
+    <h3>Returns</h3>
+    <h5><b>What if I want to return a product?</b></h5>
+    <p>
+        You are always welcome to make a return to us if you do not want to keep the products, as
+        long as it has not been more than 3 months since you ordered the goods. However, we cannot
+        make any exchanges, so if you wish to order another product, you must place a new order!
+        <br><br>
 
-    <div id="order" class="tabcontent">
-        <h3>order</h3>
-        <p>Paris is the capital of France.</p>
-    </div>
+        <!--
+                    Address generator:
+                    https://www.prepostseo.com/tool/fake-address-generator
+                -->
+        <b>Return address:</b><br>
+        <address>
+            7 Victoria Road <br>
+            Little Corby <br>
+            CA4 8BG Bilzen <br>
+        </address>
+        <br><br>
 
-    <div id="delivery" class="tabcontent">
-        <h3>delivery</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
+        <p><b>Important!</b></p>
+        <ul class="faq-list">
+            <li>
+                <p>The product must be in the same condition as when you received it.</p>
+            </li>
+            <li>
+                <p>Remember to send your name and order number in the package, so it will be faster
+                    for
+                    us to process your return. Also mark which products you have returned.</p>
+            </li>
+            <li>
+                <p>Be aware that it may take some time before the warehouse has received and
+                    registered
+                    your return. Normally it takes around 3 weeks, but it can also take longer. <br>
+                    If you still haven't heard from us, don't hesitate to reach out!</p>
+            </li>
+            <li>
+                <p>You as the customer are responsible for the return cost and are responsible for
+                    the
+                    return until it has arrived at our warehouse, so it is important that you make
+                    sure
+                    that it is packaged safely and well!</p>
+            </li>
+        </ul>
 
-    <div id="products" class="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
+        <br><br>
+        <h4><b>Can I return a product if I regret my purchase?</b></h4>
+        <p>
+            If a product was not what you expected, you do not need it or you do not wish to keep
+            the
+            product for any reason, you are of course welcome to return it to us.
 
+            When we receive the return into our warehouse, we will issue a refund on it.
 
-    <!--
-    <div class="container about-us-container">
-        <div class="row mb-3 tabcontent" id="returns">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-title m-3">
-                        <h4>Returns</h4>
-                    </div>
-                    <div class="card-text">
-                        <h5><b>What if I want to return a product?</b></h5>
-                        <p>
-                            You are always welcome to make a return to us if you do not want to keep the products, as
-                            long as it has not been more than 3 months since you ordered the goods. However, we cannot
-                            make any exchanges, so if you wish to order another product, you must place a new order!
-                            <br><br>
+            The return is only accepted if the product is in new condition and has not been opened
+            or
+            used.
+        </p>
+        <br><br>
+    </p>
+    <h4><b>What if my product is damaged?</b></h4>
+    <p>
+        The right of complaint covers products that are defective or have errors according to
+        current
+        law. If your product arrives broken or with defects, please contact us as soon as you
+        discovered the error.
 
-                            
-                                Address generator:
-                                https://www.prepostseo.com/tool/fake-address-generator
-                            -->
-    <!--
-                            <b>Return address:</b><br>
-                            <address>
-                                7 Victoria Road <br>
-                                Little Corby <br>
-                                CA4 8BG Bilzen <br>
-                            </address>
-                            <br><br>
+        We ask that you contact us by email when you make a complaint because we need pictures or a
+        video of the defective product. Always write the order number in the email so we know which
+        order applies.
 
-                            <p><b>Important!</b></p>
-                            <ul class="faq-list">
-                                <li>
-                                    <p>The product must be in the same condition as when you received it.</p>
-                                </li>
-                                <li>
-                                    <p>Remember to send your name and order number in the package, so it will be faster
-                                        for
-                                        us to process your return. Also mark which products you have returned.</p>
-                                </li>
-                                <li>
-                                    <p>Be aware that it may take some time before the warehouse has received and
-                                        registered
-                                        your return. Normally it takes around 3 weeks, but it can also take longer. <br>
-                                        If you still haven't heard from us, don't hesitate to reach out!</p>
-                                </li>
-                                <li>
-                                    <p>You as the customer are responsible for the return cost and are responsible for
-                                        the
-                                        return until it has arrived at our warehouse, so it is important that you make
-                                        sure
-                                        that it is packaged safely and well!</p>
-                                </li>
-                            </ul>
+        We are of course responsible for the return shipping in the event of approved complaints.
+        <br><br>
+    </p>
 
-                            <br><br>
-                            <h4><b>Can I return a product if I regret my purchase?</b></h4>
-                            <p>
-                                If a product was not what you expected, you do not need it or you do not wish to keep
-                                the
-                                product for any reason, you are of course welcome to return it to us.
+</div>
 
-                                When we receive the return into our warehouse, we will issue a refund on it.
+<div id="Order" class="tabcontent text-center">
+    <h3>Order</h3>
+    <h5><b>Can I make changes to my order?</b></h5>
+    <p>
+        Unfortunately, we are unable to make any changes to your order. This includes i.a. choice of
+        agent, delivery address, payment method and adding or removing products.
 
-                                The return is only accepted if the product is in new condition and has not been opened
-                                or
-                                used.
-                            </p>
-                            <br><br>
-                        </p>
-                        <h4><b>What if my product is damaged?</b></h4>
-                        <p>
-                            The right of complaint covers products that are defective or have errors according to
-                            current
-                            law. If your product arrives broken or with defects, please contact us as soon as you
-                            discovered the error.
+        But if the warehouse hasn't had time to pack your order, we can see if we can cancel it. If
+        you want help with this, you can either contact our customer service, or log into your
+        member account here on the website and cancel your order there.
+        <br><br>
+    </p>
 
-                            We ask that you contact us by email when you make a complaint because we need pictures or a
-                            video of the defective product. Always write the order number in the email so we know which
-                            order applies.
+    <h4><b>Check my order confirmation</b></h4>
 
-                            We are of course responsible for the return shipping in the event of approved complaints.
-                            <br><br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mb-3 tabcontent" id="order">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-title m-3">
-                        <h4>Order</h4>
-                    </div>
-                    <h5><b>Can I make changes to my order?</b></h5>
-                    <div class="card-text">
-                        <p>
-                            Unfortunately, we are unable to make any changes to your order. This includes i.a. choice of
-                            agent, delivery address, payment method and adding or removing products.
-
-                            But if the warehouse hasn't had time to pack your order, we can see if we can cancel it. If
-                            you want help with this, you can either contact our customer service, or log into your
-                            member account here on the website and cancel your order there.
-                            <br><br>
-                        </p>
-
-                        <h4><b>Check my order confirmation</b></h4>
-
-                        <p>
-                            When you have placed your order, you will receive an order confirmation from us. It can be
-                            good to double-check that all information regarding your order is correct, such as personal
-                            information and that the correct products have been included in your order. Should you
-                            discover an
-                            error in the order, please contact us as soon as possible so that we can correct the error.
-                            <br>
-                            We cannot guarantee that we will have time to change anything, as our warehouse packs and
-                            ships the orders as quickly as they can.
-                        </p>
-                        <br><br>
+    <p>
+        When you have placed your order, you will receive an order confirmation from us. It can be
+        good to double-check that all information regarding your order is correct, such as personal
+        information and that the correct products have been included in your order. Should you
+        discover an
+        error in the order, please contact us as soon as possible so that we can correct the error.
+        <br>
+        We cannot guarantee that we will have time to change anything, as our warehouse packs and
+        ships the orders as quickly as they can.
+    </p>
+    <br><br>
 
 
-                        <h4><b>I have received the wrong product.</b></h4>
+    <h4><b>I have received the wrong product.</b></h4>
 
-                        <p>
-                            Contact our Customer Service team with the following information as soon as possible if you
-                            discover that you have received an incorrect item in your order: <br> <br>
+    <p>
+        Contact our Customer Service team with the following information as soon as possible if you
+        discover that you have received an incorrect item in your order: <br> <br>
 
-                            Order number <br>
-                            Name & product number of the incorrect item <br>
-                            Picture of the faulty item <br>
-                            Which product is it that you are missing <br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        Order number <br>
+        Name & product number of the incorrect item <br>
+        Picture of the faulty item <br>
+        Which product is it that you are missing <br>
+    </p>
+</div>
 
-        <div class="row mb-3 tabcontent" id="delivery">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-title m-3">
-                        <h4>Delivery</h4>
-                    </div>
-                    <div class="card-text">
-                        <h5><b>How do I get free shipping?</b></h5>
-                        <p>
-                            If you shop for more than 30$, you get free shipping.
-                            <br><br>
-                        </p>
+<div id="Delivery" class="tabcontent text-center">
+    <h4>Delivery</h4>
+    <h5><b>How do I get free shipping?</b></h5>
+    <p>
+        If you shop for more than 30$, you get free shipping.
+        <br><br>
+    </p>
 
-                        <h5><b>How long is the delivery time?</b></h5>
-                        <p>
-                            We usually pack our orders within 48 hours, you can see the current delivery time on the
-                            website or in the shopping cart. <br>
+    <h5><b>How long is the delivery time?</b></h5>
+    <p>
+        We usually pack our orders within 48 hours, you can see the current delivery time on the
+        website or in the shopping cart. <br>
 
-                            Please note that during certain periods the packing time & delivery time may be longer.
-                            <br><br>
-                        </p>
+        Please note that during certain periods the packing time & delivery time may be longer.
+        <br><br>
+    </p>
 
-                        <h5><b>How do I get free shipping?</b></h5>
-                        <p>
-                            If you shop for more than 30$, you get free shipping.
-                            <br><br>
-                        </p>
+    <h5><b>How do I get free shipping?</b></h5>
+    <p>
+        If you shop for more than 30$, you get free shipping.
+        <br><br>
+    </p>
 
-                        <h5><b>Have you sent my order?</b></h5>
-                        <p>
-                            Usually we have time to pack your order within 48 hours after you have placed your order.
-                            You will then receive a shipping confirmation via email with a tracking link where you can
-                            track your package.
-                            <br><br>
-                        </p>
+    <h5><b>Have you sent my order?</b></h5>
+    <p>
+        Usually we have time to pack your order within 48 hours after you have placed your order.
+        You will then receive a shipping confirmation via email with a tracking link where you can
+        track your package.
+        <br><br>
+    </p>
+</div>
+
+<div id="Products" class="tabcontent text-center">
+    <h4>Products</h4>
+    <p>
+        If you receive an order of lower quality than expected or if, for example, the color of the
+        yarn does not correspond to the pictures we have on the website, you are welcome to get back
+        to us with pictures of the product you are dissatisfied with & explain what it is that makes
+        you want a new product or money back. <br><br>
+    </p>
+
+    <h5><b>Can I reserve a product?</b></h5>
+    <p>
+        Unfortunately, you cannot reserve any products with us, here it is first come, first served.
+        <br><br>
+    </p>
+</div>
 
 
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row mb-3 tabcontent" id="products">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-title m-3">
-                        <h4>Products</h4>
-                    </div>
-                    <h5><b>The product I received does not meet my expectations</b></h5>
-                    <div class="card-text">
-                        <p>
-                            If you receive an order of lower quality than expected or if, for example, the color of the
-                            yarn does not correspond to the pictures we have on the website, you are welcome to get back
-                            to us with pictures of the product you are dissatisfied with & explain what it is that makes
-                            you want a new product or money back. <br><br>
-                        </p>
-
-                        <h5><b>Can I reserve a product?</b></h5>
-                        <p>
-                            Unfortunately, you cannot reserve any products with us, here it is first come, first served.
-                            <br><br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 
 <!-- Horizontal tabs functionality -->
-<script src="{% static 'js/horizontal-tabs.js' %}"></script>
+<script>
+    function openPage(pageName, elmnt, color) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove the background color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(pageName).style.display = "block";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
 
 {% endblock %}

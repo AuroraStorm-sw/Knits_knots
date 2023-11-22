@@ -17,19 +17,20 @@
             <hr>
         </div>
     </div>
-    <a href="{% url 'wishlist_view' %}">Wishlist</a>
 
     <!-- Form to update personal information for deliveries -->
     <div class="row">
-        <div>Default Delivery Information</div>
+        <h4>Default Delivery Information</h4>
+    </div>
+    <div class="row">
         <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
             {% csrf_token %}
             {{ form | crispy}}
             <button class="btn btn-green text-uppercase">Update Information</button>
         </form>
-
+    </div>
         <!-- Order history -->
-        <div>Order History</div>
+        <h4>Order History</h4>
         <div class="table-responsive order-history-table">
             <table class="table table-sm table-borderless">
                 <thead>

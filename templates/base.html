@@ -138,57 +138,59 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <li class="nav-item dropdown mx-auto">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <p>All products</p>
-          </button>
+        <div class="navbar-nav mx-auto">
+          <li class="nav-item dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <p>All products</p>
+            </button>
 
-          <div class="dropdown-menu" aria-labelledby="all-products-link">
-            <a href="{% url 'product' %}" class="dropdown-item">All Products</a>
-            <a href="{% url 'product' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-            <a href="{% url 'product' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-          </div>
-        </li>
+            <div class="dropdown-menu" aria-labelledby="all-products-link">
+              <a href="{% url 'product' %}" class="dropdown-item">All Products</a>
+              <a href="{% url 'product' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+              <a href="{% url 'product' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+            </div>
+          </li>
 
-        <li class="nav-item dropdown mx-auto">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <p>Material</p>
-          </button>
+          <li class="nav-item dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <p>Material</p>
+            </button>
 
-          <div class="dropdown-menu" aria-labelledby="all-category-links">
-            <a class="nav-link" href="{% url 'product' %}?category=Yarn">Yarn</a>
-            <a class="nav-link" href="{% url 'product' %}?category=Sewing thread">Sewing Thread</a>
-            <a class="nav-link" href="{% url 'product' %}?category=Macramé">Macramé</a>
-            <a class="nav-link" href="{% url 'product' %}?category=Embroidery">Embroidery</a>
-          </div>
-        </li>
+            <div class="dropdown-menu" aria-labelledby="all-category-links">
+              <a class="nav-link" href="{% url 'product' %}?category=Yarn">Yarn</a>
+              <a class="nav-link" href="{% url 'product' %}?category=Sewing thread">Sewing Thread</a>
+              <a class="nav-link" href="{% url 'product' %}?category=Macramé">Macramé</a>
+              <a class="nav-link" href="{% url 'product' %}?category=Embroidery">Embroidery</a>
+            </div>
+          </li>
 
-        <li class="nav-item dropdown mx-auto">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <p>About us</p>
-          </button>
+          <li class="nav-item dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <p>About us</p>
+            </button>
 
-          <div class="dropdown-menu" aria-labelledby="about-company-links">
-            <a class="nav-link" href="{% url 'company_info' %}">About us</a>
-            <a class="nav-link" href="{% url 'company_faq' %}">F.A.Q</a>
-            <a class="nav-link" href="{% url 'company_contact' %}">Contact us</a>
-          </div>
-        </li>
+            <div class="dropdown-menu" aria-labelledby="about-company-links">
+              <a class="nav-link" href="{% url 'company_info' %}">About us</a>
+              <a class="nav-link" href="{% url 'company_faq' %}">F.A.Q</a>
+              <a class="nav-link" href="{% url 'company_contact' %}">Contact us</a>
+            </div>
+          </li>
 
-        {% if user.is_authenticated %}
-        <li class="nav-item mx-auto">
-          <a class="nav-link" href="{% url 'videocall' %}">
-            <p>Free video tutorial</p>
-          </a>
-        </li>
-        {% else %}
-        <li class="nav-item mx-auto">
-          <a class="nav-link" href="{% url 'videocall_description' %}">Need help getting started?</a>
-        </li>
-        {% endif %}
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'videocall' %}">
+              <p>Free video tutorial</p>
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'videocall_description' %}">Need help getting started?</a>
+          </li>
+          {% endif %}
+        </div>
       </div>
     </nav>
 
@@ -202,7 +204,7 @@
       <form class="form-inline input-group" method="GET" action="{% url 'product' %}">
         <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search product" aria-label="Search">
         <span class="input-group-btn "><button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            <iconify-icon icon="mingcute:search-line" width="30" height="30"></iconify-icon>
+            <iconify-icon icon="mingcute:search-line" width="30" height="20"></iconify-icon>
           </button></span>
       </form>
     </div>
@@ -296,13 +298,16 @@
 
         <!-- Contact -->
         <div class="col-md-4 text-center">
-            <a class="nav-link" href="{% url 'company_info' %}">About us</a>
-            <a class="nav-link" href="{% url 'company_faq' %}">F.A.Q</a>
-            <a class="nav-link" href="{% url 'company_contact' %}">Contact us</a>
+          <a class="nav-link" href="{% url 'company_info' %}">About us</a>
+          <a class="nav-link" href="{% url 'company_faq' %}">F.A.Q</a>
+          <a class="nav-link" href="{% url 'company_contact' %}">Contact us</a>
+          <a class="nav-link"
+            href="https://www.privacypolicygenerator.info/live.php?token=7bTcOCbpPZD3daPrWvystp7Nw1OBoaXp"
+            target="_blank">Privacy Policy</a>
 
           <!-- Copyright -->
           <div class="copyright mt-5 ml-5">
-            
+
             <p>Knits&Knots 2023 <i class="bi bi-badge-tm"></i></p>
           </div>
         </div>

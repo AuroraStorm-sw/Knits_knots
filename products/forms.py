@@ -3,7 +3,7 @@ from .models import Product, Category, Videocall
 from django.forms.widgets import NumberInput
 from django.contrib.admin.widgets import AdminDateWidget
 from django.contrib.admin import widgets
-from django.forms.fields import DateField
+from django.forms.fields import DateInput, TimeInput
 
 
 class ProductForm(forms.ModelForm):
@@ -25,9 +25,11 @@ class VideocallForm(forms.ModelForm):
 
     class Meta:
         model = Videocall
-        fields = ('email', 'calltype', 'booking_date', 'comment',)
+        fields = ('email', 'calltype', 'booking_date', 'booking_time', 'comment',)
 
         widgets = {
+            'booking_date': DateInput(),
+            'booking_time': TimeInput(),
             'comment':  forms.Textarea(
                 attrs={'placeholder': 'Tell us where you are in your crafting journey so we can help you get where you want to be!'}),
         }

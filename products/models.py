@@ -158,6 +158,10 @@ class Videocall(models.Model):
         editable=True, 
         blank=True
     )
+    booking_time = models.TimeField(
+        editable=True,
+        blank=True
+    )
     comment = models.TextField(
         max_length=500,
     )

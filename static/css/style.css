@@ -301,6 +301,17 @@ form p {
     text-align: center;
 }
 
+/* Videocall form */
+
+.videocall-container {
+    min-height: 105vh;
+}
+
+#id_comment {
+    max-height: 200px;
+    resize: none;
+}
+
 /*--------------- PROFILE  --------------- */
 
 .order-history-table {

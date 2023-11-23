@@ -17,6 +17,7 @@
 
 <!-- Displays wishlist products -->
 <div class="row wish-row">
+  
   <!-- Wishlist product img -->
   {% for product in wishlist_item %}
   <div class="col-md-4 wish-custom-card">
@@ -40,9 +41,9 @@
       <a href="{% url 'delete_wishlist_item' product.id 'wishlist' %}" class="btn btn-sm btn-outline-secondary">Remove
         from wishlist</a>
     </div>
-  </div>
+  </div>  
   {% endfor %}
-
+</div>
   {% else %}
 
   <!-- If the user's wishlist is empty, links

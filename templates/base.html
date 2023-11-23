@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <!-- Base template -->
 
@@ -10,7 +10,7 @@
   <!-- META-->
   {% block meta %}
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% endblock %}
 
@@ -27,8 +27,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
   <!-- LOCAL -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -50,8 +48,6 @@
   <script src="https://js.stripe.com/v3/"></script>
 
   <!-- JQUERY -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
@@ -126,9 +122,9 @@
     <!-- Banner -->
     <div class="container-fluid">
       <div class="banner">
-        <a class="d-none d-md-block" href="/" style="vertical-align:right"><img src="{% static 'media/logo-big.png' %}"
+        <a class="d-none d-md-block" href="/" style="text-align:right"><img src="{% static 'media/logo-big.png' %}"
             alt=""></a>
-        <a class="d-md-none" href="/" style="vertical-align:right"><img src="{% static 'media/logo-small.png' %}"
+        <a class="d-md-none" href="/" style="text-align:right"><img src="{% static 'media/logo-small.png' %}"
             alt=""></a>
       </div>
     </div>
@@ -142,14 +138,14 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mx-auto">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <p>All products</p>
+              All products
             </button>
 
-            <div class="dropdown-menu" aria-labelledby="all-products-link">
+            <div class="dropdown-menu" id="all-products" aria-labelledby="all-products">
               <a href="{% url 'product' %}" class="dropdown-item">All Products</a>
               <a href="{% url 'product' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
               <a href="{% url 'product' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
@@ -157,26 +153,26 @@
           </li>
 
           <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <p>Material</p>
+              Material
             </button>
 
-            <div class="dropdown-menu" aria-labelledby="all-category-links">
+            <div class="dropdown-menu" id="category" aria-labelledby="category">
               <a class="nav-link" href="{% url 'product' %}?category=Yarn">Yarn</a>
-              <a class="nav-link" href="{% url 'product' %}?category=Sewing thread">Sewing Thread</a>
+              <a class="nav-link" href="{% url 'product' %}?category=Sewing-thread">Sewing Thread</a>
               <a class="nav-link" href="{% url 'product' %}?category=Macramé">Macramé</a>
               <a class="nav-link" href="{% url 'product' %}?category=Embroidery">Embroidery</a>
             </div>
           </li>
 
           <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <p>About us</p>
+              About us
             </button>
 
-            <div class="dropdown-menu" aria-labelledby="about-company-links">
+            <div class="dropdown-menu" id="about-us" aria-labelledby="about-us">
               <a class="nav-link" href="{% url 'company_info' %}">About us</a>
               <a class="nav-link" href="{% url 'company_faq' %}">F.A.Q</a>
               <a class="nav-link" href="{% url 'company_contact' %}">Contact us</a>
@@ -184,17 +180,18 @@
           </li>
 
           {% if user.is_authenticated %}
-          <li>
-            <a class="nav-link" style="color: black;" href="{% url 'videocall' %}">
-              <p>Free video tutorial</p>
-            </a>
+          <li class="nav-item">
+              <a class="nav-link" style="color: black;" href="{% url 'videocall' %}">
+                Free video tutorial
+              </a>
           </li>
           {% else %}
-          <li>
-            <a class="nav-link" style="color: black;" href="{% url 'videocall_description' %}">Need help getting started?</a>
+          <li class="nav-item ">
+            <a class="nav-link" style="color: black;" href="{% url 'videocall_description' %}">Need help getting
+              started?</a>
           </li>
           {% endif %}
-        </div>
+        </ul>
       </div>
     </nav>
 
@@ -251,7 +248,7 @@
           <div>
             <p class="mt-5">Come say hi over on our social media!</p>
           </div>
-          <div id="social-media-links ml-1">
+          <div id="social-media-links" class="ml-1">
             <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <iconify-icon icon="mdi:twitter"></iconify-icon>
             </a>
@@ -327,8 +324,8 @@
   {{ block.super }}
 
   <!-- Mailchimp -->
-  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-  <script type="text/javascript">
+  <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script>
     (function ($) {
       window.fnames = new Array();
       window.ftypes = new Array();
@@ -352,7 +349,7 @@
   <script src="{% static 'js/back-to-top-button.js' %}"></script>
 
   <!-- Display toasts -->
-  <script type="text/javascript">
+  <script>
     $('.toast').toast('show');
   </script>
 

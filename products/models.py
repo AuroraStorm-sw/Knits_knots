@@ -156,11 +156,11 @@ class Videocall(models.Model):
     booking_date = models.DateTimeField(
         default=datetime.datetime.now,
         editable=True, 
-        blank=True
+        blank=False
     )
     booking_time = models.TimeField(
         editable=True,
-        blank=True
+        blank=False,
     )
     comment = models.TextField(
         max_length=500,

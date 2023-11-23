@@ -11,29 +11,25 @@
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="h1">Welcome!</h1>
-        <p class="lead text-muted">
           <div>
             <div>
               <!-- Tag section for browsing -->
               <p>Explore the tags!</p>
-              <div class="">
+              <div>
                 <a class="btn tag-btn" href="{% url 'product' %}?tags=Cake" role="button">#Cake</a>
                 <a class="btn tag-btn" href="{% url 'product' %}?tags=Colorful" role="button">#Colorful</a>
                 <a class="btn tag-btn" href="{% url 'product' %}?tags=Cotton" role="button">#Cotton</a>
                 <a class="btn tag-btn" href="{% url 'product' %}?tags=Holiday" role="button">#Holiday</a>
                 <a class="btn tag-btn" href="{% url 'product' %}?tags=Polyester" role="button">#Polyester</a>
                 <a class="btn tag-btn" href="{% url 'product' %}?tags=Wool" role="button">#Wool</a>
-                <a class="btn tag-btn" href="{% url 'product' %}?tags=Beginner friendly" role="button">#Beginner friendly</a>
+                <a class="btn tag-btn" href="{% url 'product' %}?tags=Beginner-friendly" role="button">#Beginner
+                  friendly</a>
                 <a class="btn tag-btn" href="{% url 'product' %}?tags=Cozy" role="button">#Cozy</a>
               </div>
             </div>
-        </p>
+          </div>
       </div>
     </div>
-  </section>
-
-  <section>
-    {% include 'includes/product-description.html' %}
   </section>
 
   <!-- Displaying all products -->
@@ -75,8 +71,6 @@
   </div>
 </main>
 
-<!-- Back to top button -->
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 {% endblock %}
 
 <!-- Script -->
@@ -84,5 +78,5 @@
 {{ block.super }}
 
 <!-- Back to top button js -->
-<script type="text/javascript" src="{% static 'js/back-to-top-button.js' %}"></script>
+<script src="{% static 'js/back-to-top-button.js' %}"></script>
 {% endblock %}

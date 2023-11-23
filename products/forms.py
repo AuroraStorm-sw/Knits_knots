@@ -43,7 +43,7 @@ class VideocallForm(forms.ModelForm):
     class Meta:
         model = Videocall
         fields = ('email', 'calltype', 'booking_date', 'booking_time', 'comment',)
-
+        
         widgets = {
             'booking_date': DateInput(),
             'booking_time': TimeInput(),

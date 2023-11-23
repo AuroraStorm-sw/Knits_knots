@@ -14,17 +14,30 @@
             <h2 class="logo-font mb-4">Product management</h2>
             <h3>Edit product</h3>
             <hr>
+            <div class="col-md-5 col-lg-5 order-md-first">
+                {% if product.image %}
+                <a class="align-items-center" href="{{ product.image.url }}" target="_blank">
+                    <img class="img-fluid rounded mx-auto d-block" src="{{ product.image.url }}"
+                        alt="{{ product.name }}">
+                    {% else %}
+                    <img class="img-fluid rounded mx-auto d-block" src="{{ MEDIA_URL }}noimage.jpg"
+                        alt="{{ product.name }}">
+                    {% endif %}
+                </a>
+            </div>
         </div>
         <!-- Submit edit -->
         <div class="row">
-            <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2"
+                enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-right">
-                    <a class="btn btn-outline-danger rounded-0" href="{% url 'product' %}">Cancel</a>
                     <button class="btn btn-green rounded-0" type="submit">Update Product</button>
+                    <a class="btn btn-outline-danger rounded-0" href="{% url 'product' %}">Cancel</a>
                 </div>
             </form>
         </div>
     </div>
+</div>
 {% endblock %}

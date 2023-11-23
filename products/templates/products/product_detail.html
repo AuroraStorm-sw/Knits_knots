@@ -36,12 +36,18 @@
               <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                 {% csrf_token %}
 
-                <p>Price:<span class="h4 fw-bold"> £{{ product.price }}</span></p>
+                <p>Price:
+                  <span class="h4 fw-bold"> £{{ product.price }}</span>
+                </p>
 
                 <!-- Choose the number of products -->
                 <div class="form-group w-25">
-                  <p>Amount: <span><input class="form-control qty_input" type="number" name="quantity" value="1" min="1"
-                        max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}"></p></span>
+                  <p>Amount:
+                    <span>
+                      <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                        data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                    </span>
+                  </p>
                 </div>
 
                 <div class="container">
@@ -49,11 +55,10 @@
                     <input type="submit" class="btn btn-green" id="add-basket" value="Add to basket">
                   </div>
                   <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                  
+
                   <!-- Add/Remove to Wishlist -->
                   {% if user.is_authenticated %}
                   {% if is_in_wishlist %}
-                  <span>
                     <a href="{% url 'delete_wishlist_item' product.id 'product' %}"
                       aria-label="Remove product from wishlist" class="text-danger ml-3">
                       <iconify-icon icon="ph:heart-fill" style="color: #c5c0f1;" width="40" height="40"></iconify-icon>
@@ -66,24 +71,21 @@
                       class="text-danger ml-3">
                       <iconify-icon icon="ph:heart-duotone" style="color: #c5c0f1;" width="40" height="40">
                       </iconify-icon>
-                      <span class="small mt-1 mb-0 text-muted" aria-label="add product to your favourites">
-                        Add to wishlist
-                      </span>
+                      <span class="small mt-1 mb-0 text-muted">Add to
+                        wishlist</span>
                     </a>
-
-                    {% endif %}
-                    {% endif %}
-                  </span>
+                  {% endif %}
+                  {% endif %}
                 </div>
+              </form>
+
+              <!-- Edit/Delete product for superuser -->
+              {% if request.user.is_superuser %}
+              <a href="{% url 'edit_product' product.id %}"><small class="text-muted">Edit</small></a>
+              <a href="{% url 'delete_product' product.id %}"><small class="text-muted">Delete</small></a>
+              {% endif %}
             </div>
           </div>
-          </form>
-          
-          <!-- Edit/Delete product for superuser -->
-          {% if request.user.is_superuser %}
-          <a href="{% url 'edit_product' product.id %}"><small class="text-muted">Edit</small></a>
-          <a href="{% url 'delete_product' product.id %}"><small class="text-muted">Delete</small></a>
-          {% endif %}
         </div>
       </div>
 

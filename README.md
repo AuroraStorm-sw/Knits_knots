@@ -240,16 +240,19 @@ For paragraphs, I went with Palanquin, which is a very simple and straight-forwa
 
 ## CRUD
 
-- Create: An authenticated user can create and submit an Ink post.
-- Read: A user can browse all the posted Inks.
-- Update: An authenticated user can edit their own submitted Ink posts.
-- Delete: An authenticated user can delete their own submitted Ink posts.
+- Create: A user can create an order for purchase.
+- Read: A user can browse the products on the webpage.
+- Update: A user can update their order with more or fewer products when browsing and in the shopping basket, and an authenticated user can update their profile information.
+- Delete: A user can delete items from their shopping basket.
 
 ## Custom model
 
-The Ink and Feedback models are both based on the [Code Institute Courseware](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/dabfed30d1fc4d078b6de270117dbe50/) walkthrough for I Think Therefore I Blog, with modification to both the models and the visual result to better fit the project.
+The basic structure of the website is based on [Code Institute Boutique Ado](https://github.com/Code-Institute-Solutions/Boutique-Ado) courseware walkthrough, though with 4 added custom models:
 
-The Comment model is a custom model not included in the courseware.
+Wishlist: Allowing authorized users to save products to a wishlist connected to their account
+Tags: Tags for users to browse through as sub-categories
+Videocall: Allows authorized users to book a free videocall to get project or material help with email confirmation.
+Contact: A contact form for user to reach out and ask questions or leave feedback with email confirmation.
 
 # Testing
 

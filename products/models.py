@@ -2,7 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
-import uuid, datetime
+import uuid
+import datetime
 
 
 class Category(models.Model):
@@ -131,7 +132,7 @@ class Videocall(models.Model):
     A model for registered users to book a private
     videocall tutorial
     """
-    
+
     MATERIAL = 'Material'
     CROCHET = 'Crochet'
     KNITTING = 'Knitting'
@@ -155,7 +156,7 @@ class Videocall(models.Model):
     )
     booking_date = models.DateTimeField(
         default=datetime.datetime.now,
-        editable=True, 
+        editable=True,
         blank=False
     )
     booking_time = models.TimeField(

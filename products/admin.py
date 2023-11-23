@@ -19,8 +19,9 @@ class CategoryAdmin(admin.ModelAdmin):
         'slug',
         )
 
-    prepopulated_fields = {"friendly_name": ["name",]}
-    prepopulated_fields = {"slug": ["slug",]}
+    prepopulated_fields = {"friendly_name": ["name", ]}
+    prepopulated_fields = {"slug": ["slug", ]}
+
 
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):

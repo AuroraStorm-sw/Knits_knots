@@ -8,7 +8,7 @@ from django.http import Http404
 from django.db.models import Q
 
 from .models import Product, Category, Tag, Videocall
-from wishlist.models import  Wishlist
+from wishlist.models import Wishlist
 from .forms import ProductForm, VideocallForm
 
 
@@ -30,7 +30,6 @@ def category(request):
     return {
         'categories': Category.objects.all()
     }
-
 
 
 def product_all(request):
@@ -63,7 +62,7 @@ def product_all(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -77,10 +76,12 @@ def product_all(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't enter any \
+                    search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -111,9 +112,9 @@ def product_detail(request, product_id):
             wishlist = get_object_or_404(Wishlist, user=request.user)
             is_in_wishlist = bool(product in wishlist.products.all())
         except Http404:
-            pass  
+            pass
     else:
-        wishlist = None 
+        wishlist = None
 
     context = {
         'is_in_wishlist': is_in_wishlist,
@@ -140,15 +141,15 @@ def videocall(request):
             date = request.POST.get('booking_date')
             time = request.POST.get('booking_time')
             email_subject = f'Videocall booking for {videocall_type}'
-            email_message = f'Thank you for booking a vidocall so we can help you with {videocall_type}! \
+            email_message = f'Thank you for booking a vidocall so we \
+                can help you with {videocall_type}! \
                 Your call is booked at {date}, {time}. \
                     We will contact you with further information and links! \
-                        Until then, should you need anything, please, contact us! \
-                            Best regards, \
-                                Knits&Knots'
+                            Best regards, Knits&Knots'
             send_mail(email_subject, email_message, sender, [recipient])
-            messages.info(request, 'Your booking is complete! You will recieve an email from us soon!')
-            return redirect('/products/products')
+            messages.info(request, 'Your booking is complete! \
+                You will recieve an email from us soon!')
+            return redirect('/products/')
 
         else:
             form = VideocallForm()

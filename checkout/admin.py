@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Order, OrderLineItem
 
 # Add all model fields to the admin page
-# Source: https://stackoverflow.com/questions/10543032/how-to-show-all-fields-of-model-in-admin-page
+# Source: https://stackoverflow.com/questions/10543032/
 
 
 class OrderLineItemAdminInline(admin.TabularInline):

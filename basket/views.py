@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
 from django.contrib import messages
 
 from products.models import Product
@@ -49,7 +50,7 @@ def update_basket(request, item_id):
     basket = request.session.get('basket', {})
 
     if quantity > 0:
-            basket[item_id] = quantity
+        basket[item_id] = quantity
     else:
         basket.pop(item_id)
 

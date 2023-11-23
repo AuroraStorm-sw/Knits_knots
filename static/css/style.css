@@ -394,7 +394,15 @@ input[type=text], input[type=email], textarea {
     height: 100%;
   }
 
-#Returns {background-color: rgb(197, 202, 149)}
-#Order {background-color: rgb(91, 179, 91);}
-#Delivery {background-color: #C5C0F1}
-#Products {background-color: rgb(238, 180, 73);}
+#Returns {
+    background-color: rgb(197, 202, 149);
+}
+#Order {
+    background-color: rgb(117, 197, 117);
+}
+#Delivery {
+    background-color: #C5C0F1;
+}
+#Products {
+    background-color: rgb(238, 180, 73);
+}

@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+{% endblock %}
+
 {% block title %}Videocall{% endblock %}
 
 <!-- Template for users to fill out a
@@ -27,6 +31,9 @@
 
   <!-- Form -->
 
+  <input type="text" name="datetimes" />
+
+
   <div class="form-control-sm w-75 p-3 mx-auto">
     <form action="{% url 'videocall' %}" method="POST">
       {% csrf_token %}
@@ -43,4 +50,25 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+  $(function() {
+    $('input[name="datetimes"]').daterangepicker({
+      timePicker: true,
+      singleDatePicker: true,
+      minYear: 2023,
+      minDate: 11/23/2023,
+      maxYear: parseInt(moment().format('YYYY'),10),
+      locale: {
+        format: 'M/DD hh:mm A'
+      }
+    });
+  });
+  </script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 {% endblock %}

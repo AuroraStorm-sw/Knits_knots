@@ -160,15 +160,18 @@ def videocall_description(request):
     return render(request, 'products/videocall_description.html')
 
 
-def videocall_success(request):
+def videocall_success(request, videocall_id):
     """
     Handle successful videocall orders
     """
 
-    messages.success(request, f'Call successfully booked! \
-        A confirmation email will be sent to.')
+    videocalls = Videocall.objects.filter(pk = videocall_id)
 
     template = 'products/videocall_success.html'
+
+    context = {
+        'videocall': videocall,
+    }
 
     return render(request, template,)
 

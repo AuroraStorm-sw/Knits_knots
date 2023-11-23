@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.contrib import messages
+
+from .forms import ContactForm
 
 def company_info(request):
     """
@@ -21,4 +24,16 @@ def company_contact(request):
     View to display the template for
     company contact form
     """
-    return render (request, 'contact/company_contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'contact/contact_success.html')
+        else:
+            messages.error(request, 'There was an error with your message. \
+                Please double check your information.')
+    form = ContactForm()
+    context = {
+        'form': form
+        }
+    return render (request, 'contact/company_contact.html', context)

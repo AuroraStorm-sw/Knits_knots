@@ -307,16 +307,30 @@ form p {
     min-height: 105vh;
 }
 
-#id_comment {
+#id_comment,
+#id_message {
     max-height: 200px;
     resize: none;
 }
+
+/* Contact form */
+
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+   }
 
 /*--------------- PROFILE  --------------- */
 
 .order-history-table {
     max-height: 400px;
     overflow-y: auto;
+}
+
+.wishlist-container {
+    min-height: 180vh;
 }
 
 /*--------------- TOASTS  --------------- */

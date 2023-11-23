@@ -50,7 +50,7 @@ def add_to_wishlist(request, item_id):
 
     else:
         wishlist.products.add(product)
-        messages.success(request, f'{product.name} successfully added \
+        messages.info(request, f'{product.name} successfully added \
             to your wishlist!')
 
     return redirect(reverse('product_detail', args=[product.id]))
@@ -66,7 +66,7 @@ def delete_wishlist_item(request, item_id, redirect_from):
 
     if product in wishlist.products.all():
         wishlist.products.remove(product)
-        messages.success(request, f'{product.name} successfully removed \
+        messages.info(request, f'{product.name} successfully removed \
             from your wishlist!')
     else:
         messages.error(request, f'{product.name} is not in your wishlist!')

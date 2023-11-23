@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
 from django.contrib import messages
+from django.conf import settings
 from django.http import Http404
 from django.db.models import Q
 
@@ -129,10 +131,24 @@ def videocall(request):
     """
     if request.method == 'POST':
         form = VideocallForm(request.POST)
+
         if form.is_valid:
             form.save()
-            messages.success(request, 'Your booking is complete!')
-            return redirect('/products/videocall_success')
+            sender = settings.DEFAULT_FROM_EMAIL
+            recipient = request.POST.get('email')
+            videocall_type = request.POST.get('calltype')
+            date = request.POST.get('booking_date')
+            time = request.POST.get('booking_time')
+            email_subject = f'Videocall booking for {videocall_type}'
+            email_message = f'Thank you for booking a vidocall so we can help you with {videocall_type}! \
+                Your call is booked at {date}, {time}. \
+                    We will contact you with further information and links! \
+                        Until then, should you need anything, please, contact us! \
+                            Best regards, \
+                                Knits&Knots'
+            send_mail(email_subject, email_message, sender, [recipient])
+            messages.info(request, 'Your booking is complete! You will recieve an email from us soon!')
+            return redirect('/products/products')
 
         else:
             form = VideocallForm()
@@ -158,23 +174,6 @@ def videocall_description(request):
     """
 
     return render(request, 'products/videocall_description.html')
-
-
-def videocall_success(request, videocall_id):
-    """
-    Handle successful videocall orders
-    """
-
-    videocalls = Videocall.objects.filter(pk = videocall_id)
-
-    template = 'products/videocall_success.html'
-
-    context = {
-        'videocall': videocall,
-    }
-
-    return render(request, template,)
-
 
 
 @login_required
@@ -253,7 +252,7 @@ def delete_product(request, product_id):
 
     if request.method == 'POST':
         product.delete()
-        messages.success(request, f'{product.name} has been deleted!')
+        messages.info(request, f'{product.name} has been deleted!')
         return redirect(reverse('product'))
 
     return render(request, 'products/delete_product.html')

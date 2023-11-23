@@ -184,14 +184,14 @@
           </li>
 
           {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'videocall' %}">
+          <li>
+            <a class="nav-link" style="color: black;" href="{% url 'videocall' %}">
               <p>Free video tutorial</p>
             </a>
           </li>
           {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'videocall_description' %}">Need help getting started?</a>
+          <li>
+            <a class="nav-link" style="color: black;" href="{% url 'videocall_description' %}">Need help getting started?</a>
           </li>
           {% endif %}
         </div>

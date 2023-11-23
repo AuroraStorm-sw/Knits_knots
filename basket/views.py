@@ -26,7 +26,7 @@ def add_to_basket(request, item_id):
 
     if item_id in list(basket.keys()):
         basket[item_id] += quantity
-        messages.success(request, f'Updated quantity')
+        messages.info(request, f'Updated quantity')
     else:
         basket[item_id] = quantity
         messages.success(request,
@@ -53,7 +53,7 @@ def update_basket(request, item_id):
     else:
         basket.pop(item_id)
 
-    messages.success(request, f'Successfully updated basket!')
+    messages.info(request, f'Successfully updated basket!')
 
     request.session['basket'] = basket
     return redirect(reverse('basket'))

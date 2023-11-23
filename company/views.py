@@ -4,7 +4,6 @@ from django.contrib import messages
 from django.core.mail import send_mail
 
 from .forms import ContactForm
-from .models import Contact
 
 def company_info(request):
     """
@@ -40,6 +39,7 @@ def company_contact(request):
                 Best regards, \
                     Knits&Knots'
             send_mail(email_subject, email_message, sender, [recipient])
+            return render(request, 'contact/contact_success.html')
         else:
             messages.error(request, 'There was an error with your message. \
                 Please double check your information.')

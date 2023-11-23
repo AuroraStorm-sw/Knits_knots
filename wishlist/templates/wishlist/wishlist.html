@@ -5,57 +5,56 @@
 
 <!-- Template for authorised user's
       wishlist -->
-<div class="wishlist-container">
-  <div class="row">
-    <div class="col text-center mt-3">
-      <h1 class="logo-font">Wishlist</h1>
-      <hr class="w-100 mb-1">
+
+<div class="row">
+  <div class="col text-center mt-3">
+    <h1 class="logo-font">Wishlist</h1>
+    <hr class="w-100 mb-1">
+  </div>
+</div>
+
+{% if wishlist_item %}
+
+<!-- Displays wishlist products -->
+<div class="row wish-row">
+  <!-- Wishlist product img -->
+  {% for product in wishlist_item %}
+  <div class="col-md-4 wish-custom-card">
+    <div class="card mb-4 box-shadow wish-box">
+      {% if product.image %}
+      <a href="{% url 'product_detail' product.id %}">
+        <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+      </a>
+      {% else %}
+      <a href="{% url 'product_detail' product.id %}">
+        <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+      </a>
+      {% endif %}
+
+      <!-- Wishlist product details -->
+      <div class="card-body pb-0">
+        <div class="card-title">{{ product.name }}</div>
+
+        <small class="text-muted">${{ product.price }}</small>
+      </div>
+      <a href="{% url 'delete_wishlist_item' product.id 'wishlist' %}" class="btn btn-sm btn-outline-secondary">Remove
+        from wishlist</a>
     </div>
   </div>
+  {% endfor %}
 
-  {% if wishlist_item %}
+  {% else %}
 
-  <!-- Displays wishlist products -->
-  <div class="row wish-row">
-    <!-- Wishlist product img -->
-    {% for product in wishlist_item %}
-    <div class="col-md-4 wish-custom-card">
-      <div class="card mb-4 box-shadow wish-box">
-        {% if product.image %}
-        <a href="{% url 'product_detail' product.id %}">
-          <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-        </a>
-        {% else %}
-        <a href="{% url 'product_detail' product.id %}">
-          <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
-        </a>
-        {% endif %}
-
-        <!-- Wishlist product details -->
-        <div class="card-body pb-0">
-          <div class="card-title">{{ product.name }}</div>
-
-          <small class="text-muted">${{ product.price }}</small>
-        </div>
-        <a href="{% url 'delete_wishlist_item' product.id 'wishlist' %}" class="btn btn-sm btn-outline-secondary">Remove
-          from wishlist</a>
-      </div>
-    </div>
-    {% endfor %}
-
-    {% else %}
-
-    <!-- If the user's wishlist is empty, links
+  <!-- If the user's wishlist is empty, links
         them back to all products -->
-    <div class="col-12 text-center">
-      <h2 class="m-5">Your wishlist is empty!</h2>
-      <a href="{% url 'product' %}" class="btn rounded-0 btn-lg shop-btn logo">
-        <span>
-          <i class="fas fa-chevron-left"></i>
-        </span>
-        Let's find a new favourite!
-      </a>
-    </div>
+  <div class="col-12 text-center">
+    <h2 class="m-5">Your wishlist is empty!</h2>
+    <a href="{% url 'product' %}" class="btn rounded-0 btn-lg shop-btn logo">
+      <span>
+        <i class="fas fa-chevron-left"></i>
+      </span>
+      Let's find a new favourite!
+    </a>
   </div>
 </div>
 {% endif %}

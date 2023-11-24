@@ -51,13 +51,14 @@
                 alt="{{ product.name }}">
               {% endif %}
             </a>
-            <div class="card-body w-100">
-              <p>
 
-                <!-- Quick product details -->
-                <div class="text-dark text-decoration-none">
-                  {{ product.name }}</div>
-              </p>
+            <!-- Quick product details -->
+            <div class="card-body w-100">
+
+              <div class="text-dark text-decoration-none">
+                <p>{{ product.name }}</p>
+              </div>
+
               <div class="justify-content-between">
                 <small class="text-muted fw-bold">£{{ product.price }}</small>
                 <small class="text-muted">{{ product.category }}</small>

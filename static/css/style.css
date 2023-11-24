@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Palanquin&display=swap');
 
 
-/*--------------- BASE SETTINGS --------------- */
+/*  ------------------------------ BASE SETTINGS  ------------------------------ */
 * {
     box-sizing: border-box
 }
@@ -47,7 +47,7 @@ img {
 }
 
 
-/*--------------- BANNER --------------- */
+/*  ------------------------------ BANNER  ------------------------------ */
 
 .banner {
     margin: auto;
@@ -56,7 +56,7 @@ img {
 }
 
 
-/*--------------- NAVBAR --------------- */
+/*  ------------------------------ NAVBAR  ------------------------------ */
 
 .nav {
     background-color: #C5C0F1;
@@ -92,7 +92,7 @@ img {
     text-align: center;
 }
 
-/*--------------- Buttons --------------- */
+/*  ------------------------------ Buttons  ------------------------------ */
 
 /*General buttons*/
 
@@ -212,7 +212,7 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
 }
 
 
-/*--------------- PRODUCT CARDS --------------- */
+/*  ------------------------------ PRODUCT CARDS  ------------------------------ */
 
 .card-body {
     width: 30vw;
@@ -228,7 +228,7 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
     transition: ease-in-out 400ms;
 }
 
-/*--------------- FOOTER --------------- */
+/*  ------------------------------ FOOTER  ------------------------------ */
 
 /*Split footer into 2 columns:
 https://stackoverflow.com/questions/867587/css-footer-trying-to-split-into-2-columns*/
@@ -263,7 +263,7 @@ footer a:hover {
 }
 
 
-/*--------------- MAILCHIMP --------------- */
+/*  ------------------------------ MAILCHIMP  ------------------------------ */
 
 #mc_embed_signup {
     background: #fff;
@@ -273,7 +273,7 @@ footer a:hover {
 }
 
 
-/*--------------- FORMS --------------- */
+/*  ------------------------------ FORMS  ------------------------------ */
 
 /*Form styling based on my previous project:
 https://github.com/AuroraStorm-sw/Inspired-Ink*/
@@ -322,7 +322,7 @@ input[type=text], input[type=email], textarea {
     display: inline-block;
    }
 
-/*--------------- PROFILE  --------------- */
+/*  ------------------------------ PROFILE   ------------------------------ */
 
 .order-history-table {
     max-height: 400px;
@@ -333,7 +333,7 @@ input[type=text], input[type=email], textarea {
     min-height: 100vh;
 }
 
-/*--------------- TOASTS  --------------- */
+/*  ------------------------------ TOASTS   ------------------------------ */
 
 .message-container {
     position: fixed;
@@ -360,22 +360,16 @@ input[type=text], input[type=email], textarea {
     background-color: #C5C0F1;
 }
 
-/* FAQ */
 
-.faq-list {
-    list-style: none;
-}
-
-
-/*--------------- CHECKOUT OVERLAY  --------------- */
+/* ------------------------------ CHECKOUT OVERLAY  ------------------------------ */
 
 .loading-icon {
     color: #66B100;
     font-size: xx-large;
-  }
+}
   
   /* Overlay styling from Boutique Ado walkthrough */
-  #loading-overlay {
+#loading-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -384,15 +378,23 @@ input[type=text], input[type=email], textarea {
     height: 100%;
     background: #c5c0f16c;
     z-index: 9999;
-  }
+}
   
-  .loading-spinner {
+.loading-spinner {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
     height: 100%;
-  }
+}
+
+/*------------------------------ ABOUT US  ------------------------------ */
+
+/* FAQ */
+
+.faq-list {
+    list-style: none;
+}
 
 /*Horizontal tab
     Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs
@@ -409,11 +411,11 @@ input[type=text], input[type=email], textarea {
     padding: 14px 16px;
     font-size: 17px;
     width: 25%;
-  }
+}
   
-  .tablink:hover {
+.tablink:hover {
     background-color: #C5C0F1;
-  }
+}
   
   /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
@@ -421,7 +423,7 @@ input[type=text], input[type=email], textarea {
     display: none;
     padding: 100px 20px;
     min-height: 100%;
-  }
+}
 
 #Returns {
     background-color: rgb(197, 202, 149);

@@ -304,7 +304,7 @@ form p {
 /* Videocall form */
 
 .videocall-container {
-    min-height: 105vh;
+    min-height: 70vh;
 }
 
 #id_comment,
@@ -320,7 +320,7 @@ input[type=text], input[type=email], textarea {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-   }
+}
 
 /*  ------------------------------ PROFILE   ------------------------------ */
 
@@ -328,6 +328,8 @@ input[type=text], input[type=email], textarea {
     max-height: 400px;
     overflow-y: auto;
 }
+
+/*  ------------------------------ WISHLIST   ------------------------------ */
 
 .wish-row {
     min-height: 100vh;
@@ -368,7 +370,7 @@ input[type=text], input[type=email], textarea {
     font-size: xx-large;
 }
   
-  /* Overlay styling from Boutique Ado walkthrough */
+/* Overlay styling from Boutique Ado walkthrough */
 #loading-overlay {
     display: none;
     position: fixed;
@@ -397,8 +399,8 @@ input[type=text], input[type=email], textarea {
 }
 
 /*Horizontal tab
-    Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs
-    */
+Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs
+*/
 
 /* Style tab links */
 .tablink {
@@ -416,8 +418,13 @@ input[type=text], input[type=email], textarea {
 .tablink:hover {
     background-color: #C5C0F1;
 }
-  
-  /* Style the tab content (and add height:100% for full page content) */
+
+.tablink:active {
+    background-color: #C5C0F1;
+}
+
+
+/* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
     color: rgb(0, 0, 0);
     display: none;

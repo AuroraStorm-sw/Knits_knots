@@ -13,37 +13,39 @@
   </div>
 </div>
 
-{% if wishlist_item %}
+<div class="wishlist-div">
 
-<!-- Displays wishlist products -->
-<div class="row wish-row">
-  
-  <!-- Wishlist product img -->
-  {% for product in wishlist_item %}
-  <div class="col-md-4 wish-custom-card">
-    <div class="card mb-4 box-shadow wish-box">
-      {% if product.image %}
-      <a href="{% url 'product_detail' product.id %}">
-        <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-      </a>
-      {% else %}
-      <a href="{% url 'product_detail' product.id %}">
-        <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
-      </a>
-      {% endif %}
+  {% if wishlist_item %}
 
-      <!-- Wishlist product details -->
-      <div class="card-body pb-0">
-        <div class="card-title">{{ product.name }}</div>
+  <!-- Displays wishlist products -->
+  <div class="row wish-row">
 
-        <small class="text-muted">${{ product.price }}</small>
+    <!-- Wishlist product img -->
+    {% for product in wishlist_item %}
+    <div class="col-md-4 wish-custom-card">
+      <div class="card mb-4 box-shadow wish-box">
+        {% if product.image %}
+        <a href="{% url 'product_detail' product.id %}">
+          <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+        </a>
+        {% else %}
+        <a href="{% url 'product_detail' product.id %}">
+          <img class="img-fluid product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+        </a>
+        {% endif %}
+
+        <!-- Wishlist product details -->
+        <div class="card-body pb-0">
+          <div class="card-title">{{ product.name }}</div>
+
+          <small class="text-muted">${{ product.price }}</small>
+        </div>
+        <a href="{% url 'delete_wishlist_item' product.id 'wishlist' %}" class="btn btn-sm btn-outline-secondary">Remove
+          from wishlist</a>
       </div>
-      <a href="{% url 'delete_wishlist_item' product.id 'wishlist' %}" class="btn btn-sm btn-outline-secondary">Remove
-        from wishlist</a>
     </div>
-  </div>  
-  {% endfor %}
-</div>
+    {% endfor %}
+  </div>
   {% else %}
 
   <!-- If the user's wishlist is empty, links
@@ -59,5 +61,4 @@
   </div>
 </div>
 {% endif %}
-
 {% endblock %}

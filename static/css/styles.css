@@ -92,7 +92,7 @@ img {
     text-align: center;
 }
 
-/*  ------------------------------ Buttons  ------------------------------ */
+/*  ------------------------------ BUTTONS  ------------------------------ */
 
 /*General buttons*/
 
@@ -191,13 +191,13 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
     background-color: #66B100;
 }
 
-/*Update product qty*/
+/* Update product qty */
 
 #update-product-btn:hover {
     color: #66B100 !important;
 }
 
-/*Tag buttons*/
+/* Tag buttons */
 
 .tag-btn {
     background-color: #66B100 !important;
@@ -211,6 +211,12 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
     background-color: #66B100 !important;
 }
 
+/* Add to wishlist */
+
+.btn-wishlist {
+    background-color: #C5C0F1 !important;
+    margin: 10px;
+}
 
 /*  ------------------------------ PRODUCT CARDS  ------------------------------ */
 

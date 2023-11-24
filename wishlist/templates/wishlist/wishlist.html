@@ -21,7 +21,7 @@
   <!-- Wishlist product img -->
   {% for product in wishlist_item %}
   <div class="col-md-4 wish-custom-card">
-    <div class="card mb-4 box-shadow wish-box">
+    <div class="card mb-4 box-shadow wish-box align-items-center">
       {% if product.image %}
       <a href="{% url 'product_detail' product.id %}">
         <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">

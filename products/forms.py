@@ -49,7 +49,6 @@ class VideocallForm(forms.ModelForm):
             'booking_date': DateInput(),
             'booking_time': TimeInput(),
             'comment':  forms.Textarea(
-                attrs={'placeholder': 'Tell us where you are in your \
-                    crafting journey so we can help you get where \
-                        you want to be!'}),
+                attrs={
+                    'placeholder': 'How can we help you on your journey?'}),
         }

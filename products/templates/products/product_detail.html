@@ -27,7 +27,7 @@
           <br>
           <p class="fw-bold">Brand: <span class="lead">{{ product.brand }}</span></p>
           <p class="fw-bold">Category: <span class="lead">{{ product.category }}</span></p>
-          <p class="fw-bold">Description:</p>  {{ product.description | safe }}
+          <p class="fw-bold">Description:</p> {{ product.description | safe }}
 
           <!-- Add product to shopping basket -->
           <div class="border">
@@ -44,37 +44,37 @@
                   <p>Amount:
                     <span>
                       <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
-                        data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}" aria-label="Increase and decrease number of products">
+                        data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}"
+                        aria-label="Increase and decrease number of products">
                     </span>
                   </p>
                 </div>
 
                 <div class="container">
                   <div class="row">
-                    <input type="submit" class="btn btn-green" id="add-basket" value="Add to basket">
+                    <div class="col-6">
+                      <input type="submit" class="btn btn-green" id="add-basket" value="Add to basket">
+                      <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+
+                    <!-- Add/Remove to Wishlist -->
+                    <div class="col-6">
+                      {% if user.is_authenticated %}
+                      {% if is_in_wishlist %}
+                      <a class="ml-3 btn btn-wishlist" href="{% url 'delete_wishlist_item' product.id 'product' %}"
+                        aria-label="Remove product from wishlist">
+                        <span>Remove from Wishlist</span>
+                      </a>
+
+                      {% else %}
+
+                      <a class="ml-3 btn btn-wishlist" href="{% url 'add_to_wishlist' product.id %}" aria-label="Add product to wishlist">
+                        <span>Add to wishlist</span>
+                      </a>
+                      {% endif %}
+                      {% endif %}
+                    </div>
                   </div>
-                  <input type="hidden" name="redirect_url" value="{{ request.path }}">
-
-                  <!-- Add/Remove to Wishlist -->
-                  {% if user.is_authenticated %}
-                  {% if is_in_wishlist %}
-                    <a href="{% url 'delete_wishlist_item' product.id 'product' %}"
-                      aria-label="Remove product from wishlist" class="text-danger ml-3">
-                      <iconify-icon icon="ph:heart-fill" style="color: #c5c0f1;" width="40" height="40"></iconify-icon>
-                      <span class="small mt-1 mb-0 text-muted">Remove from Wishlist</span>
-                    </a>
-
-                    {% else %}
-
-                    <a href="{% url 'add_to_wishlist' product.id %}" aria-label="Add product to wishlist"
-                      class="text-danger ml-3">
-                      <iconify-icon icon="ph:heart-duotone" style="color: #c5c0f1;" width="40" height="40">
-                      </iconify-icon>
-                      <span class="small mt-1 mb-0 text-muted">Add to
-                        wishlist</span>
-                    </a>
-                  {% endif %}
-                  {% endif %}
                 </div>
               </form>
 

@@ -51,9 +51,9 @@
                             </button>
                         </div>
 
-                        <input class="form-control form-control-sm qty_input text-center" aria-label="Product quantity" type="number" name="quantity"
-                            value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
-                            id="id_qty_{{ item.item_id }}">
+                        <input class="form-control form-control-sm qty_input text-center" aria-label="Product quantity"
+                            type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                         <div class="input-group-append">
                             <button class="increment-qty btn btn-sm rounded-0" data-item_id="{{ item.item_id }}"
                                 id="increment-qty_{{ item.item_id }}" aria-label="Increment quantity">
@@ -66,9 +66,9 @@
                 </div>
             </form>
             <!-- Edit/delete product for superuser -->
-            <a class="update-link btn-green btn-link" id="update-product-btn"><small>Update</small></a>
-            <a class="remove-item text-danger float-right btn-link basket-delete-btn" id="remove_{{ item.item_id }}">
-                <small>Remove product</small></a>
+            <a class="update-link btn btn-green btn-link" id="update-product-btn">Update</a>
+            <a class="remove-item btn btn-red float-right btn-link basket-delete-btn" id="remove_{{ item.item_id }}">
+                Remove Product</a>
         </div>
         {% endfor %}
     </div>

@@ -1,8 +1,12 @@
+from django.forms import CharField, TextInput
 from django import forms
 from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    phone_number = CharField( 
+        widget=TextInput(attrs={'type':'number'}))
+
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',

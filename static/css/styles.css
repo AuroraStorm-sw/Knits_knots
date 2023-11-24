@@ -23,12 +23,12 @@ body {
 }
 
 .background {
-    min-height: 80vh;
-
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    min-height: 80vh;
 
     background-image: url("https://res.cloudinary.com/dg4yefryk/image/upload/v1694707711/background_2_rolxdf.png");
 }
@@ -115,6 +115,25 @@ button a:hover {
 
 .btn-green {
     background-color: #66B100 !important;
+    color: #000 !important;
+    margin: 10px;
+}
+
+.btn-green:hover {
+    background-color: #4d7e08 !important;
+    color: #000 !important;
+    margin: 10px;
+}
+
+.btn-red {
+    background-color: #e21313 !important;
+    color: #000 !important;
+    margin: 10px;
+}
+
+.btn-red:hover {
+    background-color: #b30e0e !important;
+    color: #000 !important;
     margin: 10px;
 }
 
@@ -157,14 +176,6 @@ https://css-tricks.com/css-link-hover-effects/#aa-the-sliding-highlight-link-hov
 
 .basket-btn {
     cursor: pointer;
-}
-
-.basket-update-btn:hover {
-    color: #66B100 !important;
-}
-
-.basket-delete-btn:hover {
-    color: #550404 !important;
 }
 
 /*Button for scrolling back to the top of tha page
@@ -258,6 +269,8 @@ footer a {
 
 footer a:hover {
     color: #66B100;
+
+    text-decoration: none;
 }
 
 #social-media-links {
@@ -335,6 +348,17 @@ input[type=text], input[type=email], textarea {
     overflow-y: auto;
 }
 
+/* Profile data form */
+
+input[type=number]#id_default_phone_number::-webkit-inner-spin-button, 
+input[type=number]#id_default_phone_number::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+     margin: 0; 
+}
+
+input[type=number]#id_default_phone_number {
+    -moz-appearance: textfield;
+}
 /*  ------------------------------ WISHLIST   ------------------------------ */
 
 .wish-row {
@@ -369,7 +393,13 @@ input[type=text], input[type=email], textarea {
 }
 
 
-/* ------------------------------ CHECKOUT OVERLAY  ------------------------------ */
+/* ------------------------------ CHECKOUT  ------------------------------ */
+
+.payment-border {
+    border: 3px solid #000;
+}
+
+/* Checkout Overlay */
 
 .loading-icon {
     color: #66B100;
@@ -395,6 +425,21 @@ input[type=text], input[type=email], textarea {
     margin: 0;
     height: 100%;
 }
+
+/* Remove increment on forms inputs for phone number
+    Source: https://stackoverflow.com/questions/28320349
+*/
+
+input[type=number]#id_phone_number::-webkit-inner-spin-button, 
+input[type=number]#id_phone_number::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+     margin: 0; 
+}
+
+input[type=number]#id_phone_number {
+    -moz-appearance: textfield;
+}
+
 
 /*------------------------------ ABOUT US  ------------------------------ */
 

@@ -1,8 +1,12 @@
+from django.forms import CharField, TextInput
 from django import forms
 from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    default_phone_number = CharField( 
+        widget=TextInput(attrs={'type':'number',}))
+        
     class Meta:
         model = UserProfile
         exclude = ('user',)
@@ -14,6 +18,8 @@ class UserProfileForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
+            'default_full_name': 'Full Name',
+            'default_email_adress': 'Email Address',
             'default_phone_number': 'Phone Number',
             'default_postcode': 'Postal Code',
             'default_town_or_city': 'Town or City',
@@ -23,6 +29,12 @@ class UserProfileForm(forms.ModelForm):
         }
 
         # Add aria label to form fields
+        self.fields['default_full_name'].widget.attrs.update({
+            'aria-label': 'Full Name'
+        })
+        self.fields['default_full_name'].widget.attrs.update({
+            'aria-label': 'Email Address'
+        })
         self.fields['default_phone_number'].widget.attrs.update({
             'aria-label': 'Phone number'
         })

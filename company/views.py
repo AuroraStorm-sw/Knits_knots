@@ -42,8 +42,7 @@ def company_contact(request):
             send_mail(email_subject, email_message, sender, [recipient])
             return render(request, 'contact/contact_success.html')
         else:
-            messages.error(request, 'There was an error with your message. \
-                Please double check your information.')
+            messages.error(request, 'Please enter a proper email address.')
     form = ContactForm()
     context = {
         'form': form

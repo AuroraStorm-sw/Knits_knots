@@ -106,6 +106,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     is_in_wishlist = False
+    wishlist = True
 
     if request.user.is_authenticated:
         try:
@@ -114,7 +115,7 @@ def product_detail(request, product_id):
         except Http404:
             pass
     else:
-        wishlist = None
+        wishlist = False
 
     context = {
         'is_in_wishlist': is_in_wishlist,

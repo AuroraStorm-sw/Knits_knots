@@ -44,20 +44,19 @@
 
                             <!-- Decrement Quantity -->
                             <button class="decrement-qty btn btn-sm rounded-0" data-item_id="{{ item.item_id }}"
-                                id="decrement-qty_{{ item.item_id }}">
+                                id="decrement-qty_{{ item.item_id }}" aria-label="Decrement quantity">
                                 <span class="icon">
                                     <i class="fas fa-minus fa-sm"></i>
                                 </span>
                             </button>
                         </div>
 
-                        <input class="form-control form-control-sm qty_input text-center" type="number" name="quantity"
+                        <input class="form-control form-control-sm qty_input text-center" aria-label="Product quantity" type="number" name="quantity"
                             value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
                             id="id_qty_{{ item.item_id }}">
                         <div class="input-group-append">
-
                             <button class="increment-qty btn btn-sm rounded-0" data-item_id="{{ item.item_id }}"
-                                id="increment-qty_{{ item.item_id }}">
+                                id="increment-qty_{{ item.item_id }}" aria-label="Increment quantity">
                                 <span class="icon">
                                     <i class="fas fa-plus fa-sm"></i>
                                 </span>
@@ -76,15 +75,15 @@
     <!-- Product totals -->
     <div class="row">
         <div class="col-12 mt-4 text-right">
-            <h6>
+            <p>
                 <strong>Total products: ${{ total|floatformat:2 }}</strong>
-            </h6>
-            <h6>
-                Delivery: ${{ delivery|floatformat:2 }}
-            </h6>
-            <h4 class="mt-4">
+            </p>
+            <p>
+                <strong>Delivery: ${{ delivery|floatformat:2 }}</strong>
+            </p>
+            <h2 class="mt-4">
                 <strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong>
-            </h4>
+            </h2>
             {% if free_delivery_delta > 0 %}
             <p class="mb-1 text-danger">
                 Spend an extra <strong>${{ free_delivery_delta }}</strong> to get free delivery!

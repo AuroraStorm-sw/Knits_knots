@@ -22,6 +22,7 @@ class UserProfileForm(forms.ModelForm):
             'default_county': 'County/State/Locality',
         }
 
+        # Add aria label to form fields
         self.fields['default_phone_number'].widget.attrs.update({
             'aria-label': 'Phone number'
         })

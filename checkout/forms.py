@@ -27,6 +27,32 @@ class OrderForm(forms.ModelForm):
             'county': 'County/State/Locality',
         }
 
+        # Add aria label to form fields
+        self.fields['full_name'].widget.attrs.update({
+            'aria-label': 'Full Name'
+        })
+        self.fields['email'].widget.attrs.update({
+            'aria-label': 'Email Address'
+        })
+        self.fields['phone_number'].widget.attrs.update({
+            'aria-label': 'Phone Number'
+        })
+        self.fields['postcode'].widget.attrs.update({
+            'aria-label': 'Postal Code'
+        })
+        self.fields['town_or_city'].widget.attrs.update({
+            'aria-label': 'Town or City'
+        })
+        self.fields['street_address1'].widget.attrs.update({
+            'aria-label': 'Street Address 1'
+        })
+        self.fields['street_address2'].widget.attrs.update({
+            'aria-label': 'Street Address 2'
+        })
+        self.fields['county'].widget.attrs.update({
+            'aria-label': 'County/State/Locality'
+        })
+
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             # If-statement to ignore country field as it throws an HTML error

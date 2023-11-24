@@ -20,7 +20,7 @@
         <p>Sign in to get the most out of your hobby!</p>
         <br>
         If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up</a> first.
+        <a class="btn btn-green" href="{{ signup_url }}">sign up</a> first.
         <br>
         <br>
         {% endblocktrans %}
@@ -35,7 +35,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-success" type="submit">{% trans "Sign In" %}</button>
+        <button class="btn btn-green btn-lg" type="submit">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>

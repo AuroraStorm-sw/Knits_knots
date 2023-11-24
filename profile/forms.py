@@ -22,6 +22,25 @@ class UserProfileForm(forms.ModelForm):
             'default_county': 'County/State/Locality',
         }
 
+        self.fields['default_phone_number'].widget.attrs.update({
+            'aria-label': 'Phone number'
+        })
+        self.fields['default_postcode'].widget.attrs.update({
+            'aria-label': 'Postal Code'
+        })
+        self.fields['default_town_or_city'].widget.attrs.update({
+            'aria-label': 'Town or City'
+        })
+        self.fields['default_street_address1'].widget.attrs.update({
+            'aria-label': 'Street Address 1'
+        })
+        self.fields['default_street_address2'].widget.attrs.update({
+            'aria-label': 'Street Address 2'
+        })
+        self.fields['default_county'].widget.attrs.update({
+            'aria-label': 'County/State/Locality'
+        })
+
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True
         for field in self.fields:
             # If-statement to ignore country field as it throws an HTML error

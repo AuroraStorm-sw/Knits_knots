@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/videocall/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/accounts/login/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/basket/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?sort=category&amp;direction=asc</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?category=Yarn</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?category=Sewing-thread</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?category=Macram%C3%A9</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?category=Embroidery</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/company/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/company/faq</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/company/contact</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/videocall_description/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?tags=Cake</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?tags=Colorful</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?tags=Cotton</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?tags=Holiday</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?tags=Polyester</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?tags=Wool</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?tags=Beginner-friendly</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?tags=Cozy</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/?tags=Bamboo</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/9/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/10/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/33/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/32/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/34/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/31/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/13/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/11/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/12/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/14/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/25/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/24/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/20/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/19/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/4/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/5/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/3/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/2/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/8/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/7/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/6/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/16/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/17/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/18/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/15/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/26/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/28/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/29/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/30/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://knits-knots-3cc8ac17064e.herokuapp.com/products/27/</loc>
+  <lastmod>2023-11-25T18:57:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+</urlset>

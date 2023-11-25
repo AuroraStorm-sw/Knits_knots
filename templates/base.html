@@ -83,7 +83,11 @@
             <div>
               <iconify-icon icon="octicon:person-16" width="30" height="30"></iconify-icon>
             </div>
+            {% if request.user.is_authenticated %}
             <p class="my-0">My Account</p>
+            {% else %}
+            <p class="my-0">Get started!</p>
+            {% endif %}
           </div>
         </a>
         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -140,8 +144,8 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
               All products
             </button>
 
@@ -153,8 +157,8 @@
           </li>
 
           <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
               Material
             </button>
 
@@ -167,8 +171,8 @@
           </li>
 
           <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
               About us
             </button>
 
@@ -178,19 +182,6 @@
               <a class="nav-link" href="{% url 'company_contact' %}">Contact us</a>
             </div>
           </li>
-
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-              <a class="nav-link" style="color: black;" href="{% url 'videocall' %}">
-                Free video tutorial
-              </a>
-          </li>
-          {% else %}
-          <li class="nav-item ">
-            <a class="nav-link" style="color: black;" href="{% url 'videocall_description' %}">Need help getting
-              started?</a>
-          </li>
-          {% endif %}
         </ul>
       </div>
     </nav>
@@ -204,9 +195,10 @@
     <div class="col-6 col-md-4 mx-auto">
       <form class="form-inline input-group" method="GET" action="{% url 'product' %}">
         <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search product" aria-label="Search">
-        <span class="input-group-btn "><button class="btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="Click to search for product">
+        <span class="input-group-btn "><button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+            aria-label="Click to search for product">
             <iconify-icon icon="mingcute:search-line" width="30" height="20"></iconify-icon>
-            </button>
+          </button>
         </span>
       </form>
     </div>

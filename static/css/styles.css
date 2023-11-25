@@ -40,6 +40,7 @@ h1 {
 p {
     font-family: 'Palanquin', sans-serif;
     font-size: 1.3rem;
+    text-decoration: none;
 }
 
 img {
@@ -92,6 +93,15 @@ img {
     text-align: center;
 }
 
+.videocall-banner {
+    background-color: #C5C0F1;
+    background-image:
+      linear-gradient(
+        #C5C0F1, #918acc
+      );
+    text-align: center;
+}
+
 /*  ------------------------------ BUTTONS  ------------------------------ */
 
 /*General buttons*/
@@ -120,7 +130,7 @@ button a:hover {
 }
 
 .btn-green:hover {
-    background-color: #4d7e08 !important;
+    background-color: #65a111 !important;
     color: #000 !important;
     margin: 10px;
 }

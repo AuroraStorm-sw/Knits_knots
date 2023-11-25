@@ -6,11 +6,33 @@
 {% block content %}
 
 
+<div class="videocall-banner row">
+  <div class="col-12">
+    <h3>Stuck in a project and don't know how to proceed? <br> <br>
+      We got you! <br> <br>
+      For members, we offer a free video tutorial, helping you out with materials and techniques,
+      so that you can create amazing things! <br> <br>
+
+      {% if user.is_authenticated %}
+        <a class="btn btn-green btn-lg" href="{% url 'videocall' %}">
+          Need help? We got you!
+        </a>
+      </li>
+      {% else %}
+        <a class="btn btn-green btn-lg" href="{% url 'videocall_description' %}">See what we can help you with!</a>
+      </li>
+      {% endif %}
+
+    </h3>
+  </div>
+</div>
+
+
 <!-- Website introduction -->
 <section class="py-5 text-center container-fluid">
   <div class="row py-lg-3">
-    <div class="col-lg-8 col-md-10 mx-auto">
-      <h1 class="h1 fw-bold">Crochet, embroidery, or macramé?</h1>
+    <div class="col-lg-10 col-md-12 mx-auto">
+      <h1 class="h1 fw-bold">Crochet, seweing, embroidery, or macramé?</h1>
       <br>
       <p>Welcome to Knits&Knots, where we celebrate the beautiful art of
         thread and fibre work!

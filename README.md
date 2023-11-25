@@ -12,8 +12,6 @@ The goal of my webpage is to offer a minimalistic webstore for crafters who alre
 
 It is, all in all, a webshop for knitters and knotters.
 
-#
-
 - [Introduction](#introduction)
     - [User Goals](#user-goals)
     - [Site Goals](#site-goals)
@@ -50,50 +48,16 @@ It is, all in all, a webshop for knitters and knotters.
     - [Sources for example posts](#sources-for-example-posts)
     - [Credits](#credits)
 
-# Introduction
+## Introduction
 
-## User goals
+### User goals
 - To easily browse handicraft materials
 - To have an account to save products for later purchase
 - To be provided with information about products in regards to material and care
 - To purchase quality materials for my projects
 
-## Site goals
+### Site goals / Marketing Strategy
 Knits&Knots is a one-stop Business to Consumer (B2C) shop for people who enjoy handicraft and want to find all different sorts of materials for their different projects at one place. It's aimed towards crafters who already have all the tools of the trade and wants to fill up on materials no matter what thread their project needs.
-
-# Agile and User Stories
-The baseline of my User Stories is collected in an Excel file that I then transferred into a GitHub Project that uses an agile approach with the help of a Kanban board method. This made it easy to visuallize and handle all user stories one at a time and add all details to each story to be set in one place. See [Here](https://github.com/users/AuroraStorm-sw/projects/7) for the full project.
-
-Each User Story comprises an Epic, Acceptance criteria, and several tasks; each User Story is tagged accordingly. I collected all "must have" and "nice to have" tasks in the same User Story to keep it nice and neat.
-To view all User Stories, please see the above link.
-
-# Wireframes
-
-When planning this website, I went with the idea of it being as simple as possible to stand out from cluttered, vivid websites that can feel overwhelming with too many things to look at. The idea is for the products to be in focus, and the design has developed in a few different directions from the base idea.
-
-<details>
-<summary>View Wireframes</summary>
-<br>
-
-Home page
-![Home](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-home-page.PNG)
-
-![Products](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-products-page.PNG)
-
-Product detail
-![Product detail](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-products-detail-page.PNG)
-
-![Products]()
-![Products]()
-![Products]()
-![Products]()
-![Products]()
-
-</details>
-<br>
-
-# Marketing Strategies
-
 
 1. Who are your users?
     - Handicraft enthusiasts who want to refill material
@@ -132,113 +96,11 @@ Product detail
 7. Would your business have a budget to spend on advertising? Or would it need to work with free or low cost options to market itself?
     - Low cost options while staying active on social media to promote our store and the products, putting the energy into making reels and sending out newsletters, and use the profit to pay for ads on social media apps
 
+Database: [ERD MAP](/documentation/Database/PP5-ERD.pdf)
 
-# Design
+## Structure
 
-My main design idea was to keep the webstore as simple and minimalistic as possible for two reasons; one, I view cluttered pages as unproffesional and disorienting, and two, I find it hard to focus and find my way around webstores that offer too much when I'm on a mission to find something specific, which is often materials.
-
-The colors are simple and blend in with the background, adding some artistic feel with the swirly pattern without stealing any attention from the products. I kept the colors  gender neutral with greens and purples so not to indicate the craft is suited for one or another, instead welcoming everyone to pursue their creative passion.
-
-## Colors
-I based the colors around the background image and used [Coolors](https://coolors.co) to create a palette based on one of the nuances. 
-
-![Palette](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/palette.PNG)
-
-From this palette, I focused on the colors #C5C0F1 and #66B100. They're both bright colors but used sparingly across the webstore, bringing some happiness and artistic vibe without overtaking the visual experience.
-
-## Fonts
-
-For fonts, I ended up with Autour One for the main headers. It has a touch of an artistic vibe with mildly squirly letters without coming off as childish.
-
-![Autor](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/autour-one-font.PNG)
-
-For paragraphs, I went with Palanquin, which is a very simple and straight-forward font that lets the header stand out on its own.
-
-![Palanquin](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/palanquin-font.PNG)
-
-# Features
-
-- Home page
-    - Navbar
-
-    The navbar consists of a basic Bootstrap navbar with tabs and a dropdown for categories, including a hamburger menu for smaller viewports.
-    Users can navigate between the home page and available categories, create a new ink, or sign out when logged in.
-    Users without an account or who aren't logged in can navigate between the home page, available categories, sign in, or create an account.
-    The logo also serves as a link back to the home page.
-
-    ![Image]()
-
-    - Intro
-
-    The home page introduction consists of a few paragraphs of text explaining what the website is about and for whom, inspiring users to create their own Inks and leave feedback or ink drops (likes) on others'.
-
-    ![Image]()
-
-    - Inks
-
-    After scouring the internet and Slack for inspiration for the structure of how the posts should be displayed, I ended up taking layout inspiration from [Kathrin's Haiku blog](https://github.com/Kathrin-ddggxh/woohoo-haiku), as they are of perfect size for cards displaying little information, compared to a lot of other blogs that need bigger cards that often include images. This Bootstrap card layout makes the posts responsive in all sizes and stacks prettily on smaller screens without sacrificing text.
-
-    Adding to the layout, I found a watercolor-esque wallpaper that I faded to a lighter opacity for the background, adding to an inky feel.
-
-    ![Image]()
-
-    - Footer
-
-    The footer is very basic and straightforward, offering links to social media.
-
-    ![Image]()
-
-- Create a new Ink
-    - Write
-
-    The layout for the form to write an Ink is kept very simplistic, as creating an Ink shouldn't feel like rocket science. It consists of an author input, category, title, an excerpt if the user feels like adding one, and the main content. Below are two buttons, one for submitting the Ink and one for canceling, which returns the user to the home page.
-
-    ![Image]()
-
-    - Edit Ink
-
-    Similarly to the Create a New Ink page, the Edit page is simplistic. The user can update the title, excerpt, and main content. There are two buttons below, one for updating the Ink and one for canceling out of edit mode. This can only be accessed by the author of the Ink.
-
-    ![Image]()
-
-    - Delete Ink
-
-    Should the user decide to delete an Ink, they'll be directed to a page where they are asked to confirm if they wish to delete it or not, giving them the option to go ahead and delete their Ink or cancel out and return to the home page.
-
-    ![Image]()
-
-- Category Archive
-
-    - Category
-
-    When browsing the category list, each Ink within that category is displayed similarly to those on the Home page, making it easy to browse between them.
-
-    ![Image]()
-
-- Account
-    - Create account
-
-    Like everything else, the create account section is kept as simplistic as possible to make the process quick and easy, with a basic structure.
-
-    ![Image]()
-
-    - Sign in
-
-    As with Account Creation, signing in is just as easy, offering only what's needed. 
-
-    ![Image]()
-    
-
-    - Sign out
-
-    When the user signs out, they'll be directed to a page asking them if they're sure to sign out, giving them the option to proceed with the sigh out or cancel, returning them to the home page.
-
-    ![Image]()
-
-
-# Structure
-
-## CRUD
+### CRUD
 
 - Create: A user can create an order for purchase.
 - Read: A user can browse the products on the webpage.
@@ -254,77 +116,119 @@ Tags: Tags for users to browse through as sub-categories
 Videocall: Allows authorized users to book a free videocall to get project or material help with email confirmation.
 Contact: A contact form for user to reach out and ask questions or leave feedback with email confirmation.
 
-# Testing
+## Agile and User Stories
+The baseline of my User Stories is collected in an Excel file that I then transferred into a GitHub Project that uses an agile approach with the help of a Kanban board method. This made it easy to visuallize and handle all user stories one at a time and add all details to each story to be set in one place. See [Here](https://github.com/users/AuroraStorm-sw/projects/7) for the full project.
 
-## Validator
+Each User Story comprises an Epic, Acceptance criteria, and several tasks; each User Story is tagged accordingly. I collected all "must have" and "nice to have" tasks in the same User Story to keep it nice and neat.
+To view all User Stories, please see the above link.
 
-## Code
+## Wireframes
+
+When planning this website, I went with the idea of it being as simple as possible to stand out from cluttered, vivid websites that can feel overwhelming with too many things to look at. The idea is for the products to be in focus, and the design has developed in a few different directions from the base idea.
+
+<details>
+<summary>View Wireframes</summary>
+<br>
+
+Home page
+![Home](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-home-page.PNG)
+
+![Products](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-products-page.PNG)
+
+Product detail
+![Product detail](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-products-detail-page.PNG)
+
+![Products]()
+![Products]()
+![Products]()
+![Products]()
+![Products]()
+
+</details>
+<br>
+
+## Design
+
+My main design idea was to keep the webstore as simple and minimalistic as possible for two reasons; one, I view cluttered pages as unproffesional and disorienting, and two, I find it hard to focus and find my way around webstores that offer too much when I'm on a mission to find something specific, which is often materials.
+
+The colors are simple and blend in with the background, adding some artistic feel with the swirly pattern without stealing any attention from the products. I kept the colors  gender neutral with greens and purples so not to indicate the craft is suited for one or another, instead welcoming everyone to pursue their creative passion.
+
+### Colors
+I based the colors around the background image and used [Coolors](https://coolors.co) to create a palette based on one of the nuances. 
+
+![Palette](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/palette.PNG)
+
+From this palette, I focused on the colors #C5C0F1 and #66B100. They're both bright colors but used sparingly across the webstore, bringing some happiness and artistic vibe without overtaking the visual experience.
+
+### Fonts
+
+For fonts, I ended up with Autour One for the main headers. It has a touch of an artistic vibe with mildly squirly letters without coming off as childish.
+
+![Autor](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/autour-one-font.PNG)
+
+For paragraphs, I went with Palanquin, which is a very simple and straight-forward font that lets the header stand out on its own.
+
+![Palanquin](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/palanquin-font.PNG)
+
+### Features
+
+[Front Page](/documentation/webpage_images/Front-page.pdf)
+
+[Products](/documentation/webpage_images/Products.pdf)
+
+[Profile](/documentation/webpage_images/Profile.pdf)
+
+[Shopping Basket](/documentation/webpage_images/Shopping-basket.pdf)
+
+[Videocall](/documentation/webpage_images/Videocall.pdf)
+
+[Confirmation Emails](/documentation/webpage_images/Confirmation-emails.pdf)
+
+## Testing
+
+### Validator
+
+### Code
 
 [W3 HTML checker](https://validator.w3.org)
 
 All website pages have been run through W3, with two coming out with seemingly false positive results. These two were the "Edit Ink" and "View Ink", and has been documented as a separate issue along side the debugging and re-validating, please see below.
 
-## No errors
+### No errors
 
 <details>
 <summary>View all results with no errors.</summary>
 <br>
 
-- Sign in
 
-![SignIn](https://res.cloudinary.com/dg4yefryk/image/upload/v1691147698/test-login_fl1u4l.png)
-
-- Sign out
-
-![SignOut](https://res.cloudinary.com/dg4yefryk/image/upload/v1691147698/test-sign-out_s9dhoi.png)
-
-- Sign up
-
-![SignUp](https://res.cloudinary.com/dg4yefryk/image/upload/v1691147698/test-signup_bftkjh.png)
-
- - Home page
-
-![Home](https://res.cloudinary.com/dg4yefryk/image/upload/v1691147698/test-home_rwd4lx.png)
-
- - Add new Ink
-
-![AddInk](https://res.cloudinary.com/dg4yefryk/image/upload/v1691147698/test-add-ink_tq3a5e.png)
-
- - View Ink post
-
-![Category](https://res.cloudinary.com/dg4yefryk/image/upload/v1691147698/test-category_w6bujd.png)
-
-- Delete Ink
-
-![InkDelete](https://res.cloudinary.com/dg4yefryk/image/upload/v1691147698/text-delete_jhahvj.png)
 </details>
 
-## Errors
+### Errors
 
-The errors have been documented in their separate Issue [Here #12](https://github.com/AuroraStorm-sw/Inspired-Ink/issues/12).
 
-## [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+### [CI Python Linter](https://pep8ci.herokuapp.com/)
 
 Each .py file has been passed through the linter with very few errors; those coming up were regarding trailing whitespace, missing space, and missing a new line at the end of the code. These were all easily fixed, and the files are now error-free.
 
 ![linter](https://res.cloudinary.com/dg4yefryk/image/upload/v1691147698/linter-test-model_hslsux.png)
 
 
-## [JSHint]([https://jshint.com/])
+### [JSHint]([https://jshint.com/])
 
 ![https://jshint.com/](https://res.cloudinary.com/dg4yefryk/image/upload/v1691180009/test-javascript_e99aqr.png)
 
 
-### Accessibility
+## Accessibility
 
-## [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+### [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 ![Lighthouse](https://res.cloudinary.com/dg4yefryk/image/upload/v1691159942/lighthouse_eipqg2.png)
 
-## [Axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
+### [Axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 
 ![AxeDevtools](https://res.cloudinary.com/dg4yefryk/image/upload/v1691160050/axe-devtools_nary38.png)
 
-## [WAVE](https://wave.webaim.org/)
+### [WAVE](https://wave.webaim.org/)
 ![WAVE](https://res.cloudinary.com/dg4yefryk/image/upload/v1691164948/wave_dxpdvl.png)
 
 
@@ -363,7 +267,7 @@ When creating an account on Opera web browser, the user got a "Forbidden" error 
 
 [AmIResponsive](https://ui.dev/amiresponsive) was used as a guideline to see responsiveness across different viewports.
 
-# Bugs
+## Bugs
 1. Lingering 'missing data' in the category table after migrating the category model and category addition to Post without creating a category index.
 Solution: Reset the database to remove the error and recreate the superuser.
 
@@ -383,14 +287,162 @@ Solution: No information about this specific error has come up when searching fo
 Solution: Hiding the text with CSS, using font-size: 0 on that specific field.
 
 
-# Future implements - nice to haves
+## Future implements - nice to haves
 
 - Add a word counter to the Ink posts so users can see how long the posts are in the post overview. This idea was put to the side due to the deadline.
 - Add a short backstory about each writing style's origin on the category pages.
 - Add function for user to view all their own Inks and others' Inks by clicking on their username
 - Change so that users can't like their own Inks
 
-# Deployment
+## Deployment
+
+### STRIPE Payment Setup:
+
+Setup based on STRIPE tutorial from Code Institute
+
+## Payment Configuration
+
+1. Go to https://dashboard.stripe.com/register to create a Stripe account.
+2. Visit the page for developers:
+
+![developers](developers__btn.png; documentation/payment_setup)
+
+3. Choose your API keys.
+
+![api_keys](pay_setup/documentation/api_keys.png)
+
+The 'public key' and 'secret key' should be copied to the `env.py` file.
+
+5. Update `settings.py` with the following setting:
+
+```Python
+  OS.ENVY = STRIPE_PUBLIC_KEY.acquire("STRIPE_PUBLIC_KEY")
+  OS.ENVY = STRIPE_SECRET_KEY.return get("STRIPE_SECRET_KEY")
+```
+6. Put the stripe package in place:
+
+```python
+pip3 install stripe 
+```
+7. In the orders app, create an order model with the necessary fields filled in.
+8. Set up a payment app.
+9. Complete the payment app template by adding a payment form.
+10. Add div to hold stripe element:
+
+```html
+  
+~~
+  - Get public key: `stripe_public_key = settings.STRIPE_PUBLIC_KEY`
+  - Get private key: `stripe_secret_key = settings.STRIPE_SECRET_KEY`
+  - create intent: `intent = stripe.PaymentIntent.create(**kwargs)`
+  - **kwargs for the payment intent should include:
+    * `amount`: amount
+    * `currency`: currency
+    * `metadata`: metadata
+
+```html
+  <div id="stripe-element"></div>
+```
+11. Create a View to handle payment setup:
+  - Get public key: `stripe_public_key = settings.STRIPE_PUBLIC_KEY`
+  - Get private key: `stripe_secret_key = settings.STRIPE_SECRET_KEY`
+  - create intent: `intent = stripe.PaymentIntent.create(**kwargs)`
+  - **kwargs for the payment intent should include:
+    * `amount`: amount
+    * `currency`: currency
+    * `metadata`: metadata
+  - For the metadata, I have user id `userid: request.user.id`
+  - Create context for the view with the following data:
+      *  'my_profile': my_profile,
+      *  'total_sum': total_sum,
+      *  'client_secret': intent.client_secret,
+      *  'stripe_public_key': stripe_public_key,
+
+12. Include an additional js block in the payment template, where you must include the following: 
+- stripe public key,
+- csrf token
+- payment.js script tag
+- the stripe.js script tag.
+
+13. Create variables for the payment element, payment form, stripe public key, and a variable from which you will obtain the "client secret" in the payment.js file.
+
+14. Set up STRIPE element
+
+16. Create an AJAX request to send collected data, and specify the URL for adding orders: `window.location.origin + '/orders/add/'`.
+
+17. To manage order creation, you must add a view in the orders app views.py.
+
+18. When a user hits the confirmation button, a payment intent is formed. The STRIPE element handles all potential failures and saves the user from having to click many times. To show the problem to the user, you must, however, set alerts.
+
+19. In order to test the user's payment, you can create a test payment with the card data provided by STRIPE.
+
+No auto authenticated: 4242424242424242
+
+Authenticated: 4000002500003155
+
+Error: 4000000000009995
+
+20. After a payment is successfully made, create a success page and include js functionality to manage the redirection.
+
+21. Set app STRIPE backend:
+  - Go to [Stripe Docs. Stripe CLI](https://stripe.com/docs/stripe-cli)
+  - Download the stripe-cli file based on the version of your OS.
+  - Open the downloaded file and move the file `stripe` to the project's root directory.
+
+  - Open the terminal and type:
+
+  `./stripe login`
+
+  - Hit enter, this will redirect you to the STRIPE dashboard. Here, you need to allow access to your local workspace.
+
+  - Create a payment, and the intent will be created.
+
+22. Create a function in the orders views to handle the payment confirmation, which will take payment data. Additionally, this function will be responsible for handling the email confirmation as well.
+
+23. To run this function, add the following process provided by stripe:
+
+```python
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+  def stripe_webhook(request):
+      payload = request.body
+      event = None
+      try:
+          event = stripe.Event.construct_from(
+              json.loads(payload), stripe.api_key
+          )
+      except ValueError as e:
+          return HttpResponse(status=400)
+      # Handle the event
+      if event.type == 'payment_intent.succeeded':
+          payment_confirmation(event.data.object.client_secret)
+      else:
+          print('Unhandled event type {}'.format(event.type))
+      return HttpResponse(status=200)
+```
+
+24. Add URL to the stripe_webhook function to urls.py
+
+```python
+    path('webhook/', stripe_webhook),
+```
+
+25. In the terminal type:
+
+`./stripe listen --forward-to localhost:8000/payment/webhook/`
+
+26. Remember to set app stripe data in Heroku configs:
+
+  - Create a webhook in the stripe dashboard and set the hosted endpoint.
+
+  - `STRIPE_PUBLIC_KEY`
+  - `STRIPE_SECRET_KEY`
+  - `STRIPE_WEBHOOK_SECRET`
+
+
+For STRIPE styling options, check out the following documents [stripe/elements-examples](https://github.com/stripe/elements-examples).
+---
 
 Github
 

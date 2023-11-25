@@ -11,6 +11,7 @@ import uuid
 
 
 class Order(models.Model):
+    """ Model for product orders """
     order_number = models.CharField(
         max_length=32,
         null=False,
@@ -135,6 +136,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """ Model for individual order items """
     order = models.ForeignKey(
         Order,
         null=False,

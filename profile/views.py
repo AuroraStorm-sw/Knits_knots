@@ -6,6 +6,13 @@ from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
 
+def profile(request):
+    """
+    A view to show the basket page for
+    the customer
+    """
+    return render(request, 'profile/profile.html')
+
 
 @login_required
 def profile(request):

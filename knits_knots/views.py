@@ -9,7 +9,7 @@ def handler404(request, exception):
     return render(request, "errors/404.html", status=404)
 
 
-def handler500(request, exception):
+def handler500(request):
     """
     A view for an error page if the user
     gets an internal error

@@ -175,9 +175,7 @@ def videocall(request):
 
 
 def videocall_description(request):
-    """
-    Handle successful videocall orders
-    """
+    """ Handle successful videocall orders """
 
     return render(request, 'products/videocall_description.html')
 
@@ -186,7 +184,7 @@ def videocall_description(request):
 def add_product(request):
     """
     View to add a new product to
-    the store for the store manager
+    the store for the superuser
     """
     if not request.user.is_superuser:
         messages.error(request, 'Oops, this is a superuser only function!')
@@ -216,7 +214,7 @@ def add_product(request):
 def edit_product(request, product_id):
     """
     View to edit an existing product
-    for store manager
+    for superuser
     """
     if not request.user.is_superuser:
         messages.error(request, 'Oops, this is a superuser only function!')
@@ -247,9 +245,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """
-    View to delete a product for store manager
-    """
+    """ View to delete a product for superuser """
     if not request.user.is_superuser:
         messages.error(request, 'Oops, this is a superuser only function!')
         return redirect(reverse('home'))

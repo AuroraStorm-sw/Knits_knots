@@ -7,9 +7,7 @@ import datetime
 
 
 class Category(models.Model):
-    """
-    Model for product categories
-    """
+    """ Model for product categories """
     name = models.CharField(
         max_length=200,
         db_index=True)
@@ -40,9 +38,7 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
-    """
-    Model for product tags
-    """
+    """ Model for product tags """
     name = models.CharField(
         max_length=100,
         null=False,
@@ -68,9 +64,7 @@ class Tag(models.Model):
 
 
 class Product(models.Model):
-    """
-    Model for products
-    """
+    """ Model for products """
     category = models.ForeignKey(
         Category,
         related_name='product',

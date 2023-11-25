@@ -4,6 +4,8 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """ Form for customer to fill out their 
+        personal details in checkout """
     phone_number = CharField( 
         widget=TextInput(attrs={'type':'number'}))
 
@@ -15,10 +17,8 @@ class OrderForm(forms.ModelForm):
                   'county',)
 
     def __init__(self, *args, **kwargs):
-        """
-        Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
-        """
+        # Add placeholders and classes, remove auto-generated
+        # labels and set autofocus on first field
         super().__init__(*args, **kwargs)
         placeholders = {
             'full_name': 'Full Name',

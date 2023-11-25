@@ -7,9 +7,18 @@
 <!-- Template for viewing all products -->
 
 <main>
+
+  {% if no_products_found %}
+  <div class="text-center mt-5">
+    <p>No products found! <br>
+       Please, try searching for something else.</p>
+  </div>
+  {% else %}
+
   <section class="py-5 text-center container">
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
+
         <h1 class="h1">Welcome!</h1>
         <div>
           <div>
@@ -74,6 +83,7 @@
   </div>
 </main>
 
+{% endif %}
 {% endblock %}
 
 <!-- Script -->

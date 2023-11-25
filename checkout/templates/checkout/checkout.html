@@ -62,9 +62,6 @@
                     <p class="my-0">Grand Total:</p>
                 </div>
                 <div class="col-3">
-                    <div class="col-3 text-right subtotal__qty__holder" id="totalItemQty" data-itemqty={{ calc_subtotal:item.quantity }}>
-                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
-                    </div>
                     <p class="my-0">${{ total | floatformat:2 }}</p>
                     <p class="my-0">${{ delivery | floatformat:2 }}</p>
                     <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
@@ -158,31 +155,5 @@
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}
 <script src="{% static 'js/stripe_elements.js' %}"></script>
-
-<script>
-    const parentElement = document.getElementById('totalItemQty');
-
-    // Get all children of the parent element
-    const children = parentElement.children;
-
-    // Initialize a variable to store the sum
-    let totalItemQty = 0;
-
-    // Loop through all children
-    for (let i = 0; i < children.length; i++) {
-        const child = children[i];
-
-        // Check if the child has the class 'subtotal__qty__holder'
-        if (child.classList.contains('subtotal__qty__holder')) {
-            // Get the 'data-itemqty' attribute value and convert it to a number
-            const itemQty = parseFloat(child.dataset.itemqty);
-
-            // Add the quantity to the total
-            totalItemQty += itemQty;
-        }
-    }
-
-    console.log('Total Item Quantity:', totalItemQty);
-</script>
 
 {% endblock %}

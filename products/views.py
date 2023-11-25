@@ -45,6 +45,7 @@ def product_all(request):
     query = None
     sort = None
     direction = None
+    no_products_found = False
 
     if request.GET:
         if 'sort' in request.GET:
@@ -80,9 +81,11 @@ def product_all(request):
                     search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(
-                description__icontains=query)
+            queries = Q(name__icontains=query)
             products = products.filter(queries)
+
+        # Check if no products were found
+        no_products_found = not products.exists()
 
     current_sorting = f'{sort}_{direction}'
 
@@ -93,6 +96,7 @@ def product_all(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'no_products_found': no_products_found,
     }
 
     return render(request, 'products/products.html', context)

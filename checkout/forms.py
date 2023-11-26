@@ -4,10 +4,10 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
-    """ Form for customer to fill out their 
+    """ Form for customer to fill out their
         personal details in checkout """
-    phone_number = CharField( 
-        widget=TextInput(attrs={'type':'number'}))
+    phone_number = CharField(
+        widget=TextInput(attrs={'type': 'number'}))
 
     class Meta:
         model = Order

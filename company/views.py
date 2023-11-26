@@ -47,4 +47,4 @@ def company_contact(request):
     context = {
         'form': form
         }
-    return render (request, 'contact/company_contact.html', context)
+    return render(request, 'contact/company_contact.html', context)

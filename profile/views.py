@@ -6,6 +6,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
 
+
 def profile(request):
     """
     A view to show the basket page for
@@ -44,7 +45,7 @@ def profile(request):
 
 def order_history(request, order_number):
     """ A view to show order history """
-    
+
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

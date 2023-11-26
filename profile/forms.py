@@ -4,9 +4,9 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
-    default_phone_number = CharField( 
-        widget=TextInput(attrs={'type':'number',}))
-        
+    default_phone_number = CharField(
+        widget=TextInput(attrs={'type': 'number', }))
+
     class Meta:
         model = UserProfile
         exclude = ('user',)

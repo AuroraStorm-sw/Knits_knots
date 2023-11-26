@@ -190,33 +190,26 @@ For paragraphs, I went with Palanquin, which is a very simple and straight-forwa
 
 ### Code
 
-[W3 HTML checker](https://validator.w3.org)
+#### [W3 HTML checker](https://validator.w3.org)
 
-All website pages have been run through W3, with two coming out with seemingly false positive results. These two were the "Edit Ink" and "View Ink", and has been documented as a separate issue along side the debugging and re-validating, please see below.
+[W3 HTML Testing result](/documentation/Testing/W3-HTML-Checker.pdf)
 
-### No errors
+#### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-<details>
-<summary>View all results with no errors.</summary>
-<br>
+![CSS Validator](/documentation/Testing/W3C-validator.png)
 
-
-</details>
-
-### Errors
-
-
-
-### [CI Python Linter](https://pep8ci.herokuapp.com/)
+#### [CI Python Linter](https://pep8ci.herokuapp.com/)
 
 Each .py file has been passed through the linter with very few errors; those coming up were regarding trailing whitespace, missing space, and missing a new line at the end of the code. These were all easily fixed, and the files are now error-free.
 
-![linter](https://res.cloudinary.com/dg4yefryk/image/upload/v1691147698/linter-test-model_hslsux.png)
+![linter](/documentation/Testing/pep8-validator.PNG)
 
 
-### [JSHint]([https://jshint.com/])
+#### [JSHint]([https://jshint.com/])
 
-![https://jshint.com/](https://res.cloudinary.com/dg4yefryk/image/upload/v1691180009/test-javascript_e99aqr.png)
+All javascript code  has been passed through JS hint with few errors; the errors were missing semicolons, and mentiones undefinable variables that are referenced to in other templates.
+
+![https://jshint.com/](/documentation/Testing/jsHint.PNG)
 
 
 ## Accessibility
@@ -226,7 +219,7 @@ Each .py file has been passed through the linter with very few errors; those com
 
 ### [Axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 
-![AxeDevtools](https://res.cloudinary.com/dg4yefryk/image/upload/v1691160050/axe-devtools_nary38.png)
+![AxeDevtools](/documentation/Testing/axe-dev-tools.PNG)
 
 ### [WAVE](https://wave.webaim.org/)
 ![WAVE](https://res.cloudinary.com/dg4yefryk/image/upload/v1691164948/wave_dxpdvl.png)

@@ -5,26 +5,32 @@
 
 {% block content %}
 
+  <section class="videocall-banner row">
+    <div class="col-12">
+      <h3>
+        Stuck in a project and don't know how to proceed? 
+      </h3>
+      <br><br>
+      <p>
+      We got you!
+      </p>
+      <br><br>
+      <p>
+        For members, we offer a free video tutorial, helping you out with materials and techniques,
+        so that you can create amazing things!
+      </p>
+       <br><br>
 
-<div class="videocall-banner row">
-  <div class="col-12">
-    <h3>Stuck in a project and don't know how to proceed? <br> <br>
-      We got you! <br> <br>
-      For members, we offer a free video tutorial, helping you out with materials and techniques,
-      so that you can create amazing things! <br> <br>
-
-      {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
         <a class="btn btn-green btn-lg" href="{% url 'videocall' %}">
           Need help? We got you!
         </a>
-      {% else %}
+        {% else %}
         <a class="btn btn-green btn-lg" href="{% url 'videocall_description' %}">See what we can help you with!</a>
-      </li>
-      {% endif %}
-
-    </h3>
-  </div>
-</div>
+        </li>
+        {% endif %}
+    </div>
+  </section>
 
 <!-- Website introduction -->
 <section class="py-5 text-center container-fluid">
@@ -46,7 +52,8 @@
         of fibres and discover your new favorite type of yarn!</p>
       <br><br>
 
-      <a class="btn home-btn" id="all-products-page" aria-label="Let's Thread, go to all products page" href="{% url 'product' %}">Let's thread!</a>
+      <a class="btn home-btn" id="all-products-page" aria-label="Let's Thread, go to all products page"
+        href="{% url 'product' %}">Let's thread!</a>
 
     </div>
   </div>

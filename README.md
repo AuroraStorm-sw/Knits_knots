@@ -273,14 +273,14 @@ Solution: Through tutor support, found that I had ```AWS = True``` in my enc.py 
 3. When turning the phone number input in the profile page form to integers only, it came along with increase and decrease arrows.
 Solution: Searched StackOverflow (See credits) and found a CSS solution to remove the arrows from the particular inputs.
 
-4. 
+4. Missing images on deployed heroku page after updating the images locally.
 Solution: 
 
-5. 
-Solution: 
+5. Unable to sign in as superuser with email, turned out to have accidentally added the same email for 2 different users
+Solution: Delete 1 user, problem solved.
 
-6. 
-Solution: 
+6. Images missing on heroku but showing on local and viceversa
+Solution: Copy the media folder to static and keep the media folder on top level, will be further investigated in the future to successfully remove 1 folder.
 
 
 ## Future implements - nice to haves
@@ -541,6 +541,7 @@ The instructions below are for the basic Heroku app setup. For specific Django s
 
 ### Icons
 
+- [Iconify](https://iconify.design/)
 
 ## Credits
 

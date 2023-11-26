@@ -3,8 +3,8 @@ function handleEnableDisable(itemId) {
     var currentValue = parseInt($(`#id_qty_${itemId}`).val());
     var minusDisabled = currentValue < 2;
     var plusDisabled = currentValue > 98;
-    $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
-    $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+    $('#decrement-qty_${itemId}').prop('disabled', minusDisabled);
+    $('#increment-qty_${itemId}').prop('disabled', plusDisabled);
 }
 
 // Ensure proper enabling/disabling of all inputs on page load
@@ -31,4 +31,4 @@ $('.remove-item').click(function(e) {
     .done(function() {
         location.reload();
     });
-    });
+});

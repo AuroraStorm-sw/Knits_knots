@@ -541,7 +541,7 @@ The instructions below are for the basic Heroku app setup. For specific Django s
 - https://icon-sets.iconify.design/mdi/ink-plus-outline/
 - https://icon-sets.iconify.design/material-symbols/comment/
 
-## Sources, for example, posts
+## Sources
 - [To Atthis the Inconstant by Sappho](https://ozofe.com/sappho/to-atthis-the-inconstant/)
 - [On Aging by Maya Angelou](https://ozofe.com/maya-angelou/on-aging/)
 - [In a station of the metro by Ezra Pond](https://reedsy.com/discovery/blog/haiku-poem-examples)

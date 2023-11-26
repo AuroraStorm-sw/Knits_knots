@@ -214,38 +214,62 @@ All javascript code  has been passed through JS hint with few errors; the errors
 
 ![https://jshint.com/](/documentation/Testing/jsHint.PNG)
 
-
 ## Accessibility
 
 ### [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
-![Lighthouse](https://res.cloudinary.com/dg4yefryk/image/upload/v1691159942/lighthouse_eipqg2.png)
+![Lighthouse](/documentation/Testing/Lighthouse.PNG)
 
 ### [Axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 
 ![AxeDevtools](/documentation/Testing/axe-dev-tools.PNG)
 
 ### [WAVE](https://wave.webaim.org/)
-![WAVE](https://res.cloudinary.com/dg4yefryk/image/upload/v1691164948/wave_dxpdvl.png)
+![WAVE](/documentation/Testing/wave.PNG)
 
 
 ## Manual testing
 
-| Action           | Expected Result                                                                                                                                | Pass |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------|------|
-| Account creation | I can create a new account with username and password and be notified that it's created successfully, or if not                               | Pass |
-| Sign in          | I can sign in with my username and account and get notified that I've been successfully signed in                                              | Pass |
-| Sign out         | When signed in, I can sign out of the webpage, be asked if I'm sure I want to sign out and be notified that I've been successfully signed out | Pass |
-| Navbar           | Each link in the navbar takes me to the correct corresponding page. There are different paged depending on if I am signed in or not.           | Pass |
-| Create post      | When signed in, I can write an 'Ink', a creative text of my choice, and submit it. I'll be notified that it's successfully submitted.     | Pass |
-| Edit post        | When signed in, I can edit my own Inks and be notified that it has been successfully edited                                                  | Pass |
-| Delete post      | When signed in, I can delete my own posts, be asked if I'm sure I want to delete them, and be notified that it has been successfully deleted     | Pass |
-| Comment on post  | When signed in, I can leave feedback on others' posts. My comment is then visible beneath the post.                                            | Pass |
-| Like/unlike post | When signed in, I can like and unlike others' posts. The icon changes                                                                          | Pass |
-| Category         | I can browse different categories via the navbar                                                                                               | Pass |
-| Pagination       | I can browse through multiple pages on the home page if there are more than six posts                                                          | Pass |
-| Links            | All of the links throughout the page are fully functional                                                                                      | Pass |
-| Buttons          | All of the buttons direct me to their designated function                                                                                      | Pass |
-| Footer           | I can reach the different social media sites via the footer, and they all open in new tabs.                                                   | Pass |
+| Action                 | Expected Result                                                                                                                                          |      |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|------|
+| Home navigation        | When clicking the logo, I'll be taken back to the home page                                                                                              | Pass |
+| Account creation       | I can create a new account with username and password, and be notified that it's created successfully, or if not                                         | Pass |
+| Email confirmation     | I'll be sent an email to verify my email address                                                                                                         | Pass |
+| Sign in                | I can sign in with my username and accound and get notified that I've been successfully signed in                                                        | Pass |
+| Sign out               | When signed in, I can sign out of the webpage, be asked if I'm sure I want to sign out, and be notified that I've been successfully signed out           | Pass |
+| Navbar                 | Each link in the navbar takes me to the correct corresponding page.                                                                                      | Pass |
+| Browsing               | When browsing products, I can sort them by price and category.                                                                                           | Pass |
+| Search bar             | I can search for products with the search bar                                                                                                            | Pass |
+| Category               | All categories show the appropriate products                                                                                                             | Pass |
+| Tags                   | All tags work properly and displays the tagged products                                                                                                  | Pass |
+| About us               | The about us page offers relevant information about the company                                                                                          | Pass |
+| FAQ                    | The FAQ page offers answers to relevant information about returns, orders, deliveries, and products                                                      | Pass |
+| Contact                | At the contact page, I can post a question or feedback to the company. I'll get a confirmation that my email was sent and recieve a confirmation email   | Pass |
+| Products               | I can browse through all the products and click on them to get more information                                                                          | Pass |
+| Product detail         | When clicking on a product, I can read more information about it, see the price, and choose to add a number of it to the basket or add it to my wishlist | Pass |
+| Wishlist               | When clicking "Add to wishlist" on a product, I geta notification that the product is added to my wishlist, where I can display it or remove it.         | Pass |
+| Remove from wishlist   | When clicking "Remove from wishlist", the product disappears from my wishlist, and I get a notification.                                                 | Pass |
+| Add to basket          | When clicking the 'Add to basket' button, I get a notification that the products have been added to my basket                                            | Pass |
+| Checkout button        | When I click the 'Checkout Button', I'll be taken to the basket summary page so overview my added products                                               | Pass |
+| Adjust quantity        | In the shopping basket, I can adjust the number of products which will update the price                                                                  | Pass |
+| Delete product         | In the shopping basket, I can delete products which will update the price                                                                                |      |
+| Secure checkout        | When I click the 'Secure checkout' button, I'll be taken to the checkout page                                                                            | Pass |
+| Checkout form          | I can fill out the checkout form with my delivery information, and will be notified if I've missed any information.                                      | Pass |
+| Checkout success       | After filling out my checkout form, I'll be notified that my order is successfully processed, and get a summary of my order                              | Pass |
+| Checkout confirmation  | After processing my order, I'll recieve a confirmation email about my order and delivery history                                                         | Pass |
+| Profile                | Upon registration, I'll have access to a profile                                                                                                         | Pass |
+| Profile delivery info  | In my profile, I can view and update my delivery information                                                                                             | Pass |
+| Order history          | In my profile, I can see my order history, and open it to view more details                                                                              | Pass |
+| Videocall non-member   | If I'm not a member, I can read about getting a free videocall if I register on the website                                                              | Pass |
+| Videocall member       | As a member, I can access a free videocall to get assisted with material or a handicraft                                                                 | Pass |
+| Videocall booking      | As a member, I can book a videocall and be notified that the call is confirmed                                                                           | Pass |
+| Videocall confirmation | If I book a videocall, I'll recieve a confirmation email with my booking information                                                                     | Pass |
+| Newsletter             | I can subscribe to the newsletter via the form                                                                                                           | Pass |
+| Product management     | As admin, I can add a new product to the store via the frontend                                                                                          | Pass |
+| Product management     | As admin, I can edit a product via the frontend                                                                                                          | Pass |
+| Product management     | As admin, I can delete a product via the frontend                                                                                                        |      |
+|                        |                                                                                                                                                          |      |
+| Footer                 | I can reach the different social medias sites via the footer, and they all open in new tabs.                                                             | Pass |
+
 
 
 ## Responsiveness
@@ -256,12 +280,6 @@ The deployed app has been tested across these web browsers with full responsiven
 - Microsoft Edge
 
 It has also been tested on Samsung mobile in physical form, and various viewports with the help of developer tools in the browser.
-
-When creating an account on Opera web browser, the user got a "Forbidden" error screen, but was still able to use the website as signed in after returning to the previous page. Upon searching for solutions online, non came up related to the Opera browser.
-
-![OperaError](https://res.cloudinary.com/dg4yefryk/image/upload/v1691245409/403-opera_e5eiq7.png)
-
-[AmIResponsive](https://ui.dev/amiresponsive) was used as a guideline to see responsiveness across different viewports.
 
 ## Bugs
 1. Removed Order App after realizing it never got used, but this caused a deployment error as the database was now missing the order module, and the deployed website couldn't be accessed.
@@ -542,6 +560,9 @@ The instructions below are for the basic Heroku app setup. For specific Django s
 ### Icons
 
 - [Iconify](https://iconify.design/)
+
+### Images
+All product images and descriptions have been taken from https://www.amazon.com/ where I searched for cotton yarn, bamboo yarn, cake yarn, sewing thread, macramé rope, and embroidery floss.
 
 ## Credits
 

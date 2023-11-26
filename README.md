@@ -1,4 +1,4 @@
-![AmIResponsive](https://res.cloudinary.com/dg4yefryk/image/upload/v1691243660/responsive_vwenph.png)
+![AmIResponsive]()
 
 See live site [here](https://knits-knots-3cc8ac17064e.herokuapp.com/).
 
@@ -111,15 +111,15 @@ Database: [ERD MAP](/documentation/Database/PP5-ERD.pdf)
 
 The basic structure of the website is based on [Code Institute Boutique Ado](https://github.com/Code-Institute-Solutions/Boutique-Ado) courseware walkthrough, though with 4 added custom models:
 
-Wishlist: Allowing authorized users to save products to a wishlist connected to their account
-Tags: Tags for users to browse through as sub-categories
-Videocall: Allows authorized users to book a free videocall to get project or material help with email confirmation.
-Contact: A contact form for user to reach out and ask questions or leave feedback with email confirmation.
+- Wishlist: Allowing authorized users to save products to a wishlist connected to their account
+- Tags: Tags for users to browse through as sub-categories
+- Videocall: Allows authorized users to book a free videocall to get project or material help with email confirmation.
+- Contact: A contact form for user to reach out and ask questions or leave feedback with email confirmation.
 
 ## Agile and User Stories
 The baseline of my User Stories is collected in an Excel file that I then transferred into a GitHub Project that uses an agile approach with the help of a Kanban board method. This made it easy to visuallize and handle all user stories one at a time and add all details to each story to be set in one place. See [Here](https://github.com/users/AuroraStorm-sw/projects/7) for the full project.
 
-Each User Story comprises an Epic, Acceptance criteria, and several tasks; each User Story is tagged accordingly. I collected all "must have" and "nice to have" tasks in the same User Story to keep it nice and neat.
+Each User Story comprises an Epic, Acceptance criteria, and several tasks; each User Story is tagged accordingly.
 To view all User Stories, please see the above link.
 
 ## Wireframes

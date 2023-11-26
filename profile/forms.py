@@ -32,7 +32,7 @@ class UserProfileForm(forms.ModelForm):
         self.fields['default_full_name'].widget.attrs.update({
             'aria-label': 'Full Name'
         })
-        self.fields['default_full_name'].widget.attrs.update({
+        self.fields['default_email_adress'].widget.attrs.update({
             'aria-label': 'Email Address'
         })
         self.fields['default_phone_number'].widget.attrs.update({

@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 from .webhooks import webhook
 
+# URLS to view checkout template, to view order history, and for webhooks connected to Stripe
+
 urlpatterns = [
     path('', views.checkout, name='checkout'),
     path('checkout_success/<order_number>', views.checkout_success,

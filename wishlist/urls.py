@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+# URLS for users to add and delete products to their wishlist
+
 urlpatterns = [
     path('', views.wishlist_view, name='wishlist_view'),
     path('add_to_wishlist/<item_id>/',

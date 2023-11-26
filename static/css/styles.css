@@ -26,12 +26,14 @@ body {
 .background {
     width: 100%;
     
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
 
     background-image: url("https://res.cloudinary.com/dg4yefryk/image/upload/v1694707711/background_2_rolxdf.png");
     flex: 1 0 auto;
+    background-color: #65a111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {

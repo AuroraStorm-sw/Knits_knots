@@ -60,6 +60,7 @@
                     <div class="col-6">
                       {% if user.is_authenticated %}
                       {% if is_in_wishlist %}
+                      
                       <a class="ml-3 btn btn-wishlist" href="{% url 'delete_wishlist_item' product.id 'product' %}"
                         aria-label="Remove product from wishlist">
                         <span>Remove from Wishlist</span>

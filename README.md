@@ -171,36 +171,36 @@ For paragraphs, I went with Palanquin, which is a very simple and straight-forwa
 
 #### [W3 HTML checker](https://validator.w3.org)
 
-[W3 HTML Testing result](/documentation/testing/w3-html-checker.pdf.pdf)
+[W3 HTML Testing Results No Bugs](/documentation/testing/w3-html-checker-no-bugs.pdf)
+
+[W3 HTML Testing Results Bugs](/documentation/testing/w3-html-checker-bugs.pdf)
 
 #### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+CSS code was checked by pasting the raw code from Styles.css into the validator textarea.
 
 ![CSS Validator](/documentation/testing/w3c-validator.png)
 
 #### [CI Python Linter](https://pep8ci.herokuapp.com/)
 
-Each .py file has been passed through the linter with very few errors; those coming up were regarding trailing whitespace, missing space, and missing a new line at the end of the code. These were all easily fixed, and the files are now error-free.
-
-![linter](/documentation/testing/pep8-validator.PNG)
+[CI Python Linter Results](/documentation/testing/python-linter.pdf)
 
 
 #### [JSHint]([https://jshint.com/])
 
-All javascript code  has been passed through JS hint with few errors; the errors were missing semicolons, and mentiones undefinable variables that are referenced to in other templates.
-
-![https://jshint.com/](/documentation/testing/jsHint.PNG)
+[JSHint Testing Results](/documentation/testing/jshint.pdf)
 
 ## Accessibility
 
 ### [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
-![Lighthouse](/documentation/testing/lighthouse.PNG)
+[Lighthouse Testing Results](/documentation/testing/lighthouse.pdf)
 
 ### [Axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 
 ![AxeDevtools](/documentation/testing/axe-dev-tools.PNG)
 
 ### [WAVE](https://wave.webaim.org/)
-![WAVE](/documentation/testing/wave.PNG)
+[WAVE Testing Results](/documentation/testing/wave.pdf)
 
 
 ## Manual testing

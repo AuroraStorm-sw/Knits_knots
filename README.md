@@ -96,7 +96,11 @@ Knits&Knots is a one-stop Business to Consumer (B2C) shop for people who enjoy h
 7. Would your business have a budget to spend on advertising? Or would it need to work with free or low cost options to market itself?
     - Low cost options while staying active on social media to promote our store and the products, putting the energy into making reels and sending out newsletters, and use the profit to pay for ads on social media apps
 
-Database: [ERD MAP](/documentation/Database/PP5-ERD.pdf)
+### Database: [ERD MAP](/documentation/Database/PP5-ERD.pdf)
+
+### Facebook page
+![Facebook1](/documentation/Facebook/fb-1.PNG)
+![Facebook1](/documentation/Facebook/fb-2.PNG)
 
 ## Structure
 
@@ -130,6 +134,10 @@ When planning this website, I went with the idea of it being as simple as possib
 <summary>View Wireframes</summary>
 <br>
 
+When brainstorming the website structure, I built basic wireframes for the home page, product page, and product detail, getting an idea of what feeling the website should have. A few structures are inspired by Code Institutes Boutique Ado walkthrough, mainly the profile, shopping basket, and checkout page, that I adjusted to fit my website.
+
+The other pages I build as I went on, making changes throughout the process to fit the vibe, though focusing on functionality first.
+
 Home page
 ![Home](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-home-page.PNG)
 
@@ -138,11 +146,6 @@ Home page
 Product detail
 ![Product detail](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-products-detail-page.PNG)
 
-![Products]()
-![Products]()
-![Products]()
-![Products]()
-![Products]()
 
 </details>
 <br>

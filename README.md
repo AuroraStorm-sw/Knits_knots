@@ -264,31 +264,27 @@ When creating an account on Opera web browser, the user got a "Forbidden" error 
 [AmIResponsive](https://ui.dev/amiresponsive) was used as a guideline to see responsiveness across different viewports.
 
 ## Bugs
-1. Lingering 'missing data' in the category table after migrating the category model and category addition to Post without creating a category index.
-Solution: Reset the database to remove the error and recreate the superuser.
+1. Removed Order App after realizing it never got used, but this caused a deployment error as the database was now missing the order module, and the deployed website couldn't be accessed.
+Solution: Re-added the Order App and re-deployed the website due to lack of time to resolve the issue with the app removed. For now, the app will remain, and where there is time to solve the issue, the app will either be used or removed properly.
 
 2. Static files are not loading on Heroku.
-Solution: Through tutor support, they found a spelling error in loading style.css in base.html after much trial and error.
+Solution: Through tutor support, found that I had ```AWS = True``` in my enc.py file which stopped static updates from being deployed. Removed it and the issue was solved.
 
-3. "Back" button on view_ink.html shows up on a white, separate line when a user isn't signed in.
-Solution: Wrap the section around an extra top div so the button doesn't get its own line when the feedback section isn't visible to unauthorized users.
+3. When turning the phone number input in the profile page form to integers only, it came along with increase and decrease arrows.
+Solution: Searched StackOverflow (See credits) and found a CSS solution to remove the arrows from the particular inputs.
 
-4. After changing DEBUG from True to False, sometimes needs to change name of style.css file for the new styling to get added to the website, even after hard refreshing the webpage.
-Solution: Still debugging at time of project submission, no solution discovered in time.
+4. 
+Solution: 
 
-5. Account creation not fully functional on Opera Web browser, causing an 403 Forbidden error message.
-Solution: No information about this specific error has come up when searching for information online. The signup form comes with a csrf token. Unclear if the error is caused by the webpage itself or by Allauth.
+5. 
+Solution: 
 
-6. The text "Body*" showing next to the main textcontent input when creating an Ink. The text was included in the form, and I wasn't able to remove it.
-Solution: Hiding the text with CSS, using font-size: 0 on that specific field.
+6. 
+Solution: 
 
 
 ## Future implements - nice to haves
 
-- Add a word counter to the Ink posts so users can see how long the posts are in the post overview. This idea was put to the side due to the deadline.
-- Add a short backstory about each writing style's origin on the category pages.
-- Add function for user to view all their own Inks and others' Inks by clicking on their username
-- Change so that users can't like their own Inks
 
 ## Deployment
 
@@ -480,15 +476,15 @@ The instructions below are for the basic Heroku app setup. For specific Django s
 8. Here, you select "GitHub" as the deployment method and search for your repository to link them together
 9. Scroll down the page and select if you want to "Enable Automatic Deploys" to deploy your pushes from GitHub to Heroku automatically.
 
-# Technologies Used
+## Technologies Used
 
-## Languages
+### Languages
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 
-## Frameworks
+### Frameworks
 - [Django](https://www.djangoproject.com/) - The main Python framework used to develop this project.
 - [Bootstrap](https://getbootstrap.com/) - For general layouts and responsiveness across the site.
 - [ElephantSQL](https://www.elephantsql.com/) - The production database used for the project.
@@ -496,9 +492,10 @@ The instructions below are for the basic Heroku app setup. For specific Django s
 - [Gitpod](https://gitpod.io/) - Used to commit, comment, and push code throughout the project.
 - [Heroku](https://www.heroku.com) - Used for app deployment.
 - [Balsamiq](https://balsamiq.com/) - For creating wireframes for the project.
-- [Cloudinary](https://console.cloudinary.com) - Stores all static files and images.
+- [AWS Bucket](https://aws.amazon.com/) - Stores all static files and images.
+- [STRIPE](https://stripe.com/en-gb-se) - Payment system and webhooks.
 
-## Tools
+### Tools
 - [JsHint](https://jshint.com/) - For validating Javascript code.
 - [CI Python Linter](https://pep8ci.herokuapp.com/#) - For validating Python code.
 - [W3C HTML Validator](https://validator.w3.org/) - For validating HTML code.
@@ -510,52 +507,83 @@ The instructions below are for the basic Heroku app setup. For specific Django s
 - [WAVE](https://wave.webaim.org/) - For accessibility and contrast validation.
 - [Grammarly](https://app.grammarly.com/) - Used to spell and grammar check the ReadMe.
 
-## Libraries
+### Libraries
 - Gunicorn - The server used for running Django on Heroku.
 - pyscopg2 - Used to connect to PostgreSQL.
-- Cloudinary - Used to host static files and images.
-- Whitenoise - Helps resolve issues with Heroku not rendering custom CSS stylesheets.
 
-## Packages
+### Packages
 
 - Django - An MVP, model-template-view, Python-based web framework for building projects.
 - django-allauth - Used for account registration, managing signing in and out, and authentication.
-- cloudinary_storage - Storage backend for Cloudinary that is used for static storage.
-- django_summernote - Integrates Summernote WYSIWYG editor into Django projects. This package was installed but ended up not being used in the project.
+- django_summernote - Integrates Summernote WYSIWYG editor into Django projects. This package is used for styling product descriptions.
 - crispy_forms - Makes styling Django forms easier.
 
-# Resourses
+### Resourses
 
-## Assisting
+### Assisting
 - [Table Converter](https://tableconvert.com/) - For Manual Testing structuring.
-- [Tinypng](https://tinypng.com/) - For compressing background image.
 - [Coolors](https://coolors.co) - For generating a color palette.
 - [Google Fonts](https://fonts.google.com) - For browsing and implementing fonts.
 - [AmIResponsive](https://ui.dev/amiresponsive) - For checking responsiveness across several viewports.
 
-## Images
+### Generators
+- Slogan generator - https://ahrefs.com/writing-tools/slogan-generator
+- Logo designer - https://www.freelogodesign.org
+- Background generator - https://bgjar.com
+- Secret key generator - https://miniwebtool.com/django-secret-key-generator/
+- Intro text generator - https://deepai.org/
+- Company biography generator - https://writerbuddy.ai/free-tools/company-bio
+- Private Policy generator - https://www.privacypolicygenerator.info
+- Font generator - https://fontjoy.com/
+
+### Images
 - [Background image](https://www.pexels.com/photo/empty-brown-canvas-235985/)
-- [Quote image](https://abstract.desktopnexus.com/get/1737801/?t=146uo7bue09b2o59gjgv030rd364ccdb5086d33)
-- [Ink Card Image](https://wallpapercave.com/w/wp1938057)
 
-## Icons
-- https://icon-sets.iconify.design/mdi/ink/
-- https://icon-sets.iconify.design/mdi/ink-plus/
-- https://icon-sets.iconify.design/mdi/ink-plus-outline/
-- https://icon-sets.iconify.design/material-symbols/comment/
+### Icons
 
-## Sources
-- [To Atthis the Inconstant by Sappho](https://ozofe.com/sappho/to-atthis-the-inconstant/)
-- [On Aging by Maya Angelou](https://ozofe.com/maya-angelou/on-aging/)
-- [In a station of the metro by Ezra Pond](https://reedsy.com/discovery/blog/haiku-poem-examples)
-- [Part of the lyrics to War by Poets Of The Fall](https://www.songlyrics.com/poets-of-the-fall/war-lyrics/)
-- [The Story of an Hour by Kate Chopin](https://americanliterature.com/author/kate-chopin/short-story/the-story-of-an-hour ) 
-- [Lyric part of Lie to Me by Riell](https://genius.com/Riell-lie-to-me-lyrics)
-- [Scarlet Stockings by Louisa May Alcott](https://americanliterature.com/author/louisa-may-alcott/short-story/scarlet-stockings)
 
-Any Ink not included in the list is written by me or website users.
+## Credits
 
-# Credits
+- Remove increment on forms inputs for phone number
+https://stackoverflow.com/questions/28320349
+
+- Button for scrolling back to the top of tha page
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top*/
+
+- Previous page button:
+https://stackoverflow.com/questions/2968425/
+
+- Setting for Django version above 3.2 for Allauth to trust site CSRF token
+https://stackoverflow.com/questions/70285834/
+
+- Horizontal tab:
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs 
+
+- Add all model fields to the admin page:
+https://stackoverflow.com/questions/10543032/
+
+- Center image:
+https://www.w3schools.com/howto/howto_css_image_center.asp
+
+- Shopping byutton:
+https://css-tricks.com/css-link-hover-effects/#aa-the-sliding-highlight-link-hover-effect
+
+- Displaying manytomanyfields:
+https://stackoverflow.com/questions/3891321/question-on-django-displaying-many-to-many-fields
+
+- DateInput form class:
+https://stackoverflow.com/questions/3367091/
+
+- Heroku total:
+https://code-institute-room.slack.com/archives/C7HS3U3AP/p1637505402125700
+
+- Contact form with email:
+https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid
+https://www.sitepoint.com/django-send-email/
+https://www.geeksforgeeks.org/setup-sending-email-in-django-project/
+
+- Booking date and time:
+https://stackoverflow.com/questions/56885754/
 
 - [Very Academy](https://www.youtube.com/watch?v=S9-Bt1JgRjQ&list=PLOLrQ9Pn6cawWd-5UZM6CIm0uqFXeBcTd&index=4) - Youtube video guidance on how to add a category model and view for the custom model.
 

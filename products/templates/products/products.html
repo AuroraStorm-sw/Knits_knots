@@ -6,82 +6,80 @@
 
 <!-- Template for viewing all products -->
 
-<main>
+{% if no_products_found %}
+<div class="text-center mt-5">
+  <p>No products found! <br>
+    Please, try searching for something else.</p>
+</div>
+{% else %}
 
-  {% if no_products_found %}
-  <div class="text-center mt-5">
-    <p>No products found! <br>
-       Please, try searching for something else.</p>
-  </div>
-  {% else %}
+<section class="py-5 text-center container">
+  <div class="row py-lg-3">
+    <div class="col-lg-6 col-md-8 mx-auto">
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-3">
-      <div class="col-lg-6 col-md-8 mx-auto">
-
-        <h1 class="h1">Welcome!</h1>
+      <h1 class="h1">Welcome!</h1>
+      <div>
         <div>
+          <!-- Tag section for browsing -->
+          <p>Explore the tags!</p>
           <div>
-            <!-- Tag section for browsing -->
-            <p>Explore the tags!</p>
-            <div>
-              <a class="btn tag-btn" href="{% url 'product' %}?tags=Cake" role="button">#Cake</a>
-              <a class="btn tag-btn" href="{% url 'product' %}?tags=Colorful" role="button">#Colorful</a>
-              <a class="btn tag-btn" href="{% url 'product' %}?tags=Cotton" role="button">#Cotton</a>
-              <a class="btn tag-btn" href="{% url 'product' %}?tags=Holiday" role="button">#Holiday</a>
-              <a class="btn tag-btn" href="{% url 'product' %}?tags=Polyester" role="button">#Polyester</a>
-              <a class="btn tag-btn" href="{% url 'product' %}?tags=Wool" role="button">#Wool</a>
-              <a class="btn tag-btn" href="{% url 'product' %}?tags=Beginner-friendly" role="button">#Beginner
-                friendly</a>
-              <a class="btn tag-btn" href="{% url 'product' %}?tags=Cozy" role="button">#Cozy</a>
-              <a class="btn tag-btn" href="{% url 'product' %}?tags=Bamboo" role="button">#Bamboo</a>
-            </div>
+            <a class="btn tag-btn" href="{% url 'product' %}?tags=Cake" role="button">#Cake</a>
+            <a class="btn tag-btn" href="{% url 'product' %}?tags=Colorful" role="button">#Colorful</a>
+            <a class="btn tag-btn" href="{% url 'product' %}?tags=Cotton" role="button">#Cotton</a>
+            <a class="btn tag-btn" href="{% url 'product' %}?tags=Holiday" role="button">#Holiday</a>
+            <a class="btn tag-btn" href="{% url 'product' %}?tags=Polyester" role="button">#Polyester</a>
+            <a class="btn tag-btn" href="{% url 'product' %}?tags=Wool" role="button">#Wool</a>
+            <a class="btn tag-btn" href="{% url 'product' %}?tags=Beginner-friendly" role="button">#Beginner
+              friendly</a>
+            <a class="btn tag-btn" href="{% url 'product' %}?tags=Cozy" role="button">#Cozy</a>
+            <a class="btn tag-btn" href="{% url 'product' %}?tags=Bamboo" role="button">#Bamboo</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Displaying all products -->
-  <div class="album py-5">
-    <div class="container-fluid">
-      <div class="row d-flex justify-content-around p-3 m-1">
-
-        {% for product in products %}
-
-        <!-- Product img and link to product detail -->
-        <div class="col">
-          <div class="card product-card m-2 align-items-center">
-            <a href="{% url 'product_detail' product.id %}">
-              {% if product.image %}
-              <img class="product-img img-fluid rounded mx-auto d-block w-100" src="{{ product.image.url }}"
-                alt="{{ product.name }}">
-              {% else %}
-              <img class="product-img img-fluid rounded mx-auto d-block" src="{{ MEDIA_URL }}noimage.jpg"
-                alt="{{ product.name }}">
-              {% endif %}
-            </a>
-
-            <!-- Quick product details -->
-            <div class="card-body w-100">
-
-              <div class="text-dark">
-                <p>{{ product.name }}</p>
-              </div>
-
-              <div class="justify-content-between">
-                <small class="text-muted fw-bold">£{{ product.price }}</small>
-                <small class="text-muted">{{ product.category }}</small>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        {% endfor %}
       </div>
     </div>
   </div>
-</main>
+</section>
+
+<!-- Displaying all products -->
+<div class="album py-5">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-around p-3 m-1">
+
+      {% for product in products %}
+
+      <!-- Product img and link to product detail -->
+      <div class="col">
+        <div class="card product-card m-2 align-items-center">
+          <a href="{% url 'product_detail' product.id %}">
+            {% if product.image %}
+            <img class="product-img img-fluid rounded mx-auto d-block w-100" src="{{ product.image.url }}"
+              alt="{{ product.name }}">
+            {% else %}
+            <img class="product-img img-fluid rounded mx-auto d-block" src="{{ MEDIA_URL }}noimage.jpg"
+              alt="{{ product.name }}">
+            {% endif %}
+          </a>
+
+          <!-- Quick product details -->
+          <div class="card-body w-100">
+
+            <div class="text-dark">
+              <p>{{ product.name }}</p>
+            </div>
+
+            <div class="justify-content-between">
+              <small class="text-muted fw-bold">£{{ product.price }}</small>
+              <small class="text-muted">{{ product.category }}</small>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
 
 {% endif %}
 {% endblock %}

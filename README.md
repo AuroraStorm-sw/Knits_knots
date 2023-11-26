@@ -56,6 +56,8 @@ It is, all in all, a webshop for knitters and knotters.
 - To be provided with information about products in regards to material and care
 - To purchase quality materials for my projects
 
+---
+
 ### Site goals / Marketing Strategy
 Knits&Knots is a one-stop Business to Consumer (B2C) shop for people who enjoy handicraft and want to find all different sorts of materials for their different projects at one place. It's aimed towards crafters who already have all the tools of the trade and wants to fill up on materials no matter what thread their project needs.
 
@@ -102,6 +104,8 @@ Knits&Knots is a one-stop Business to Consumer (B2C) shop for people who enjoy h
 ![Facebook1](/documentation/Facebook/fb-1.PNG)
 ![Facebook1](/documentation/Facebook/fb-2.PNG)
 
+---
+
 ## Structure
 
 ### CRUD
@@ -111,7 +115,7 @@ Knits&Knots is a one-stop Business to Consumer (B2C) shop for people who enjoy h
 - Update: A user can update their order with more or fewer products when browsing and in the shopping basket, and an authenticated user can update their profile information.
 - Delete: A user can delete items from their shopping basket.
 
-## Custom model
+### Custom model
 
 The basic structure of the website is based on [Code Institute Boutique Ado](https://github.com/Code-Institute-Solutions/Boutique-Ado) courseware walkthrough, though with 4 added custom models:
 
@@ -120,13 +124,13 @@ The basic structure of the website is based on [Code Institute Boutique Ado](htt
 - Videocall: Allows authorized users to book a free videocall to get project or material help with email confirmation.
 - Contact: A contact form for user to reach out and ask questions or leave feedback with email confirmation.
 
-## Agile and User Stories
+### Agile and User Stories
 The baseline of my User Stories is collected in an Excel file that I then transferred into a GitHub Project that uses an agile approach with the help of a Kanban board method. This made it easy to visuallize and handle all user stories one at a time and add all details to each story to be set in one place. See [Here](https://github.com/users/AuroraStorm-sw/projects/7) for the full project.
 
 Each User Story comprises an Epic, Acceptance criteria, and several tasks; each User Story is tagged accordingly.
 To view all User Stories, please see the above link.
 
-## Wireframes
+### Wireframes
 
 When planning this website, I went with the idea of it being as simple as possible to stand out from cluttered, vivid websites that can feel overwhelming with too many things to look at. The idea is for the products to be in focus, and the design has developed in a few different directions from the base idea.
 
@@ -149,6 +153,8 @@ Product detail
 
 </details>
 <br>
+
+---
 
 ## Design
 
@@ -302,7 +308,10 @@ Solution: Copy the media folder to static and keep the media folder on top level
 
 
 ## Future implements - nice to haves
-
+- Add a pop-up for booking time for videocall form instead of writing it in manually
+- Ensure a member can only book 1 videocall
+- Style confirmation emails to be more aestethic
+- Include discounts for members
 
 ## Deployment
 
@@ -566,6 +575,18 @@ All product images and descriptions have been taken from https://www.amazon.com/
 
 ## Credits
 
+### Github repos inspiration
+
+- Wishlist and footer inspired by Clay&Fire
+https://github.com/SamanthaBooth81/clay_and_fire
+
+- General inspiration for model structure and template tags
+https://github.com/IuliiaKonovalova/e-commerce
+https://github.com/Kieran132/Runaway
+https://github.com/rockroman/CI_PP5_Blade
+
+### Troubleshooting
+
 - Remove increment on forms inputs for phone number
 https://stackoverflow.com/questions/28320349
 
@@ -621,9 +642,8 @@ https://stackoverflow.com/questions/56885754/
 
 - [Kathrin's Haiku blog](https://github.com/Kathrin-ddggxh/woohoo-haiku) - For the shape and Bootstrap template of the Ink cards on the Home and Category page, including the 'hover transformation' effect.
 
-- Code Institutes Tutor Support where amazing in helping me sort out some mind-boggling issues, like why my static files weren't loading on Heroku and when I had to reset my database, and they did so with such patience and clear guidance.
-Many thanks to Sarah, Rebecca, Martin, Ed, and Joshua for code reparing, typo-hunting, and for their support throughout this journey. I would not have any hair left on my head if it weren't for them helping me with these frustrating issues.
+- My mentor Juliia who offered a lot of support and technical help, ensuring my project is as good as it can be for submission.
 
-- Fellow coders on Slack were of great help in pointing me in the right direction when I felt lost or when the result of my code didn't make any sense. The outline of the ReadMe has been inspired by different Portfolio 4 projects in the peer-per-view channel, as well as my own previous projects.
+- Code Institutes Tutor Support helped me out with issues big and small throughout the project.
 
-- My amazing flatmate Erik, who helped me with a fresh pair of eyes when I couldn't find errors across the code and also supplied me with snacks to help me keep my sanity throughout the project.
+- My amazing flatmate Erik who provided mental support throughout the project when things felt difficult.

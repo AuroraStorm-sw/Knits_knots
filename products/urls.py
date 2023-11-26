@@ -1,7 +1,8 @@
 from django.urls import path, include
 from products import views
 
-# URLS for users to view videocall template, products and product details, and for superuser to edit and delete products
+""" URLS for users to view videocall template, products
+and product details, and for superuser to edit and delete products """
 
 urlpatterns = [
     path('', views.product_all, name='product'),

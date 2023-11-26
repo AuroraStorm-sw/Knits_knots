@@ -5,6 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
+    """ Admin for Tag model """
     list_display = (
         'name',
         'slug',
@@ -13,6 +14,7 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    """ Admin for category model """
     list_display = (
         'name',
         'friendly_name',
@@ -25,6 +27,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
+    """ Admin for Product model and Summernote """
     list_display = (
         'id',
         'name',
@@ -47,6 +50,7 @@ class ProductAdmin(SummernoteModelAdmin):
 
 @admin.register(Videocall)
 class VideocallAdmin(admin.ModelAdmin):
+    """ Admin for Videocall model """
     list_display = (
         'id',
         'calltype',

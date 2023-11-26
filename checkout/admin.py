@@ -6,12 +6,14 @@ from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
+    """Admin for OrderLineItem model"""
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
+    """Admin for Order model"""
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = (

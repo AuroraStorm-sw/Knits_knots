@@ -39,7 +39,8 @@ class TimeInput(forms.TimeInput):
 
 
 class VideocallForm(forms.ModelForm):
-
+    """ A form to books a free
+    videocall """
     class Meta:
         model = Videocall
         fields = (

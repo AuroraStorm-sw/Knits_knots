@@ -4,6 +4,7 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    """ Form for user to fill out their details """
     default_phone_number = CharField(
         widget=TextInput(attrs={'type': 'number', }))
 

@@ -12,41 +12,6 @@ The goal of my webpage is to offer a minimalistic webstore for crafters who alre
 
 It is, all in all, a webshop for knitters and knotters.
 
-- [Introduction](#introduction)
-    - [User Goals](#user-goals)
-    - [Site Goals](#site-goals)
-- [Agile and User stories](#agile-and-user-stories)
-- [Scope](#scope)
-- [Wireframes](#wireframes)
-- [Marketing Strategies](#marketing-strategies)
-- [Design](#design)
-    - [Colors](#colors)
-    - [Fonts](#fonts)
-- [Features](#features)
-- [Structure](#structure)
-- [CRUD](#crud)
-- [Testing](#testing)
-    - [Validator](#validator-testing)
-    - [Code](#code)
-    - [No errors](#no-errors)
-    - [Errors](#errors)
-        - [Accessability](#accessability)
-    - [Manual testing](#manual-testing)
-- [Bugs](#bugs)
-- [Future implements - nice to have](#future-implements---nice-to-haves)
-- [Deployment](#deployment)
-- [Technologies Used](#technologies-used)
-    - [Languages](#languages)
-    - [Frameworks](#frameworks)
-    - [Tools](#tools)
-    - [Libraries](#libraries)
-    - [Packages](#packages)
-- [Resourses](#resourses)
-    - [Assisting](#assisting)
-    - [Images](#images)
-    - [Icons](#icons)
-    - [Sources for example posts](#sources-for-example-posts)
-    - [Credits](#credits)
 
 ## Introduction
 
@@ -98,7 +63,7 @@ Knits&Knots is a one-stop Business to Consumer (B2C) shop for people who enjoy h
 7. Would your business have a budget to spend on advertising? Or would it need to work with free or low cost options to market itself?
     - Low cost options while staying active on social media to promote our store and the products, putting the energy into making reels and sending out newsletters, and use the profit to pay for ads on social media apps
 
-### Database: [ERD MAP](/documentation/Database/PP5-ERD.pdf)
+### Database: [ERD MAP](/documentation/database/pp5-erd.pdf)
 
 ### Facebook page
 ![Facebook1](/documentation/Facebook/fb-1.PNG)
@@ -124,11 +89,16 @@ The basic structure of the website is based on [Code Institute Boutique Ado](htt
 - Videocall: Allows authorized users to book a free videocall to get project or material help with email confirmation.
 - Contact: A contact form for user to reach out and ask questions or leave feedback with email confirmation.
 
-### Agile and User Stories
-The baseline of my User Stories is collected in an Excel file that I then transferred into a GitHub Project that uses an agile approach with the help of a Kanban board method. This made it easy to visuallize and handle all user stories one at a time and add all details to each story to be set in one place. See [Here](https://github.com/users/AuroraStorm-sw/projects/7) for the full project.
+### Agile Methodology
 
-Each User Story comprises an Epic, Acceptance criteria, and several tasks; each User Story is tagged accordingly.
-To view all User Stories, please see the above link.
+![Agile](/documentation/agile/agile.PNG)
+
+The baseline of my User Stories is collected in an Excel file that I then transferred into a GitHub Project that uses an agile approach with the help of a Kanban board method.
+
+The first Kanban board I created with this product became unavailable to display for anyone other than me on my Github page. After trying to solve the issue with the help of my mentor, we concluded that the only way to solve the issue was by creating a newe Kanban board and add new issues. These are therefore all created and closed at the same time, since I've already worked along the previous board. My former Kanban project is still connected to the repository in order to turn the issue to GitHub, marked BUGGED, and the new Kanban board is now connected to the repository.
+
+See [Here](https://github.com/users/AuroraStorm-sw/projects/12/) for the full Kanban project.
+
 
 ### Wireframes
 
@@ -201,36 +171,36 @@ For paragraphs, I went with Palanquin, which is a very simple and straight-forwa
 
 #### [W3 HTML checker](https://validator.w3.org)
 
-[W3 HTML Testing result](/documentation/Testing/W3-HTML-Checker.pdf)
+[W3 HTML Testing result](/documentation/testing/w3-html-checker.pdf.pdf)
 
 #### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-![CSS Validator](/documentation/Testing/W3C-validator.png)
+![CSS Validator](/documentation/testing/w3c-validator.png)
 
 #### [CI Python Linter](https://pep8ci.herokuapp.com/)
 
 Each .py file has been passed through the linter with very few errors; those coming up were regarding trailing whitespace, missing space, and missing a new line at the end of the code. These were all easily fixed, and the files are now error-free.
 
-![linter](/documentation/Testing/pep8-validator.PNG)
+![linter](/documentation/testing/pep8-validator.PNG)
 
 
 #### [JSHint]([https://jshint.com/])
 
 All javascript code  has been passed through JS hint with few errors; the errors were missing semicolons, and mentiones undefinable variables that are referenced to in other templates.
 
-![https://jshint.com/](/documentation/Testing/jsHint.PNG)
+![https://jshint.com/](/documentation/testing/jsHint.PNG)
 
 ## Accessibility
 
 ### [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
-![Lighthouse](/documentation/Testing/Lighthouse.PNG)
+![Lighthouse](/documentation/testing/lighthouse.PNG)
 
 ### [Axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 
-![AxeDevtools](/documentation/Testing/axe-dev-tools.PNG)
+![AxeDevtools](/documentation/testing/axe-dev-tools.PNG)
 
 ### [WAVE](https://wave.webaim.org/)
-![WAVE](/documentation/Testing/wave.PNG)
+![WAVE](/documentation/testing/wave.PNG)
 
 
 ## Manual testing
@@ -463,7 +433,7 @@ from django.views.decorators.csrf import csrf_exempt
 For STRIPE styling options, check out the following documents [stripe/elements-examples](https://github.com/stripe/elements-examples).
 ---
 
-Github
+### Github Deployment
 
 Steps I took to deploy my website;
 
@@ -514,15 +484,26 @@ The instructions below are for the basic Heroku app setup. For specific Django s
 ### Frameworks
 - [Django](https://www.djangoproject.com/) - The main Python framework used to develop this project.
 - [Bootstrap](https://getbootstrap.com/) - For general layouts and responsiveness across the site.
+
+### Databases
 - [ElephantSQL](https://www.elephantsql.com/) - The production database used for the project.
+
+### Packages
+
+- Gunicorn - The server used for running Django on Heroku.
+- pyscopg2 - Used to connect to PostgreSQL.
+- django-allauth - Used for account registration, managing signing in and out, and authentication.
+- django_summernote - Integrates Summernote WYSIWYG editor into Django projects. This package is used for styling product descriptions.
+- crispy_forms - Makes styling Django forms easier.
+
+
+### Tools
 - [GitHub](https://github.com/) - Used to host the source code.
 - [Gitpod](https://gitpod.io/) - Used to commit, comment, and push code throughout the project.
 - [Heroku](https://www.heroku.com) - Used for app deployment.
 - [Balsamiq](https://balsamiq.com/) - For creating wireframes for the project.
 - [AWS Bucket](https://aws.amazon.com/) - Stores all static files and images.
 - [STRIPE](https://stripe.com/en-gb-se) - Payment system and webhooks.
-
-### Tools
 - [JsHint](https://jshint.com/) - For validating Javascript code.
 - [CI Python Linter](https://pep8ci.herokuapp.com/#) - For validating Python code.
 - [W3C HTML Validator](https://validator.w3.org/) - For validating HTML code.
@@ -534,21 +515,11 @@ The instructions below are for the basic Heroku app setup. For specific Django s
 - [WAVE](https://wave.webaim.org/) - For accessibility and contrast validation.
 - [Grammarly](https://app.grammarly.com/) - Used to spell and grammar check the ReadMe.
 
-### Libraries
-- Gunicorn - The server used for running Django on Heroku.
-- pyscopg2 - Used to connect to PostgreSQL.
-
-### Packages
-
-- Django - An MVP, model-template-view, Python-based web framework for building projects.
-- django-allauth - Used for account registration, managing signing in and out, and authentication.
-- django_summernote - Integrates Summernote WYSIWYG editor into Django projects. This package is used for styling product descriptions.
-- crispy_forms - Makes styling Django forms easier.
 
 ### Resourses
 
 ### Assisting
-- [Table Converter](https://tableconvert.com/) - For Manual Testing structuring.
+- [Table Converter](https://tableconvert.com/) - For Manual testing structuring.
 - [Coolors](https://coolors.co) - For generating a color palette.
 - [Google Fonts](https://fonts.google.com) - For browsing and implementing fonts.
 - [AmIResponsive](https://ui.dev/amiresponsive) - For checking responsiveness across several viewports.

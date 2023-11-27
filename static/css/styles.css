@@ -345,7 +345,10 @@ form p {
 
 /* Contact form */
 
-input[type=text], input[type=email], textarea {
+/* Also including password for allauth */
+input[type=text],
+input[type="password"],
+input[type=email], textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

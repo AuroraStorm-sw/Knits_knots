@@ -55,7 +55,7 @@ class UserProfileForm(forms.ModelForm):
             'aria-label': 'County/State/Locality'
         })
 
-        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
+        self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             # If-statement to ignore country field as it throws an HTML error
             # for placeholders on select fields

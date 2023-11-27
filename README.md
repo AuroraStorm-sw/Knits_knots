@@ -250,31 +250,67 @@ CSS code was checked by pasting the raw code from Styles.css into the validator 
 
 ## Responsiveness
 
-The deployed app has been tested across these web browsers with full responsiveness:
+The deployed app has been tested across these web browsers:
 - Firefox
 - Google Chrome
 - Microsoft Edge
 
 It has also been tested on Samsung mobile in physical form, and various viewports with the help of developer tools in the browser.
 
+
+For both Chrome and Edge, there is a bug where the increase and decrease arrows of products in Product Detail doesn't show up, which is likely related to the CSS removing increase and decrease arrows from phone number inputs.
+
+````css
+input[type=number]#id_phone_number::-webkit-inner-spin-button, 
+input[type=number]#id_phone_number::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+     margin: 0; 
+}
+
+input[type=number]#id_phone_number {
+    -moz-appearance: textfield;
+}
+````
+
+Due to lack of time, I haven't been able to troubleshoot this further.
+
+Bugs are planned to be sorted after submission due to lack of time before submission.
+
+[Responsiveness Firefox no bugs](/documentation/responsiveness/responsiveness-firefox-no-bugs.pdf)
+[Responsiveness Firefox bugs](/documentation/responsiveness/responsiveness-chrome-bugs.pdf)
+[Responsiveness Chrome no bugs](/documentation/responsiveness/responsiveness-chrome-no-bugs.pdf)
+[Responsiveness Chrome bugs](/documentation/responsiveness/amiresponsive.PNG)
+
+
+
 ## Bugs
+
+### Solved bugs
+1. Static files are not loading on Heroku.
+Solution: Through tutor support, found that I had ```AWS = True``` in my enc.py file which stopped static updates from being deployed. Removed it and the issue was solved.
+
+2. When turning the phone number input in the profile page form to integers only, it came along with increase and decrease arrows.
+Solution: Searched StackOverflow (See credits) and found a CSS solution to remove the arrows from the particular inputs.
+
+3. Missing images on deployed heroku page after updating the images locally.
+Solution: Removed DISABLE_COLLECTSTATIC from Heroku variables and the images loaded.
+
+4. Unable to sign in as superuser with email, turned out to have accidentally added the same email for 2 different users
+Solution: Delete 1 user, problem solved.
+
+3. Images missing on heroku but showing on local and viceversa
+Solution: Copy the media folder to static and keep the media folder on top level, will be further investigated in the future to successfully remove 1 folder. The static media folder has been removed after re-uploading images to products, and all images are now showing.
+
+
+### Unsolved bugs
 1. Removed Order App after realizing it never got used, but this caused a deployment error as the database was now missing the order module, and the deployed website couldn't be accessed.
 Solution: Re-added the Order App and re-deployed the website due to lack of time to resolve the issue with the app removed. For now, the app will remain, and where there is time to solve the issue, the app will either be used or removed properly.
 
-2. Static files are not loading on Heroku.
-Solution: Through tutor support, found that I had ```AWS = True``` in my enc.py file which stopped static updates from being deployed. Removed it and the issue was solved.
+2. FAQ-buttons stacking instead of lying horizontal on Chrome.
+This bug showed up the same day as project submission, so I have not had the time to troubleshoot the code in order to fix this, and will have to solve this issue in the future.
 
-3. When turning the phone number input in the profile page form to integers only, it came along with increase and decrease arrows.
-Solution: Searched StackOverflow (See credits) and found a CSS solution to remove the arrows from the particular inputs.
-
-4. Missing images on deployed heroku page after updating the images locally.
-Solution: 
-
-5. Unable to sign in as superuser with email, turned out to have accidentally added the same email for 2 different users
-Solution: Delete 1 user, problem solved.
-
-6. Images missing on heroku but showing on local and viceversa
-Solution: Copy the media folder to static and keep the media folder on top level, will be further investigated in the future to successfully remove 1 folder.
+3. FAQ Delivery tab showing different width than on Firefox.
+This bug was also discovered on submission date, so I have not had the time to troubleshoot and fix the error. All other tabs; Products, Returns, and Order show as intended.
 
 
 ## Future implements - nice to haves

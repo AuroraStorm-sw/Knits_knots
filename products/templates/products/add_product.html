@@ -14,7 +14,7 @@
             <h3>Add a new product</h3>
             <hr>
         </div>
-        <div class="row">
+        <div class="row m-4">
             <!-- Submit new product -->
             <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}

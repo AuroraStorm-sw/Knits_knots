@@ -5,10 +5,10 @@ See live site [here](https://knits-knots-3cc8ac17064e.herokuapp.com/).
 
 
 # Why Knits&Knots?
-As a passionate hobbymaker, I often scour the internet for webshops with good quality materials for my crochet or cross-stitch projects, and have learned with time which websites not only feel serious, but which provide an easy aestethic to shop at.
+As a passionate hobbymaker, I often scour the internet for webshops with good quality materials for my crochet or cross-stitch projects, and have learned with time which websites not only feel serious but which provide an easy aesthetic to shop at.
 Many websites I've come across feel cluttered with both threads and patterns and accessories and a wide range of hooks and knitting needles and embroidery frames, and I don't want to offer another busy 'have-it-all' website, because I want the focus to be on the materials themselves, not the tools.
 
-The goal of my webpage is to offer a minimalistic webstore for crafters who already have a collection of crochet hooks in all sizes and an abundance of embroidery needles, for those of us who enjoy browsing a clean page with the must-haves of yarns and threads. In addition, I'm offering a free videocall for members who, like I have in the past, all these cool tools from a starter pack and no idea where to go from there.
+The goal of my webpage is to offer a minimalistic website for crafters who already have a collection of crochet hooks in all sizes and an abundance of embroidery needles, for those of us who enjoy browsing a clean page with the must-haves of yarns and threads. In addition, I'm offering a free videocall for members who, like I have in the past, all these cool tools from a starter pack and no idea where to go from there.
 
 It is, all in all, a webshop for knitters and knotters.
 
@@ -24,7 +24,7 @@ It is, all in all, a webshop for knitters and knotters.
 ---
 
 ### Site goals / Marketing Strategy
-Knits&Knots is a one-stop Business to Consumer (B2C) shop for people who enjoy handicraft and want to find all different sorts of materials for their different projects at one place. It's aimed towards crafters who already have all the tools of the trade and wants to fill up on materials no matter what thread their project needs.
+Knits&Knots is a one-stop Business-to-consumer (B2C) shop for people who enjoy handicrafts and want to find all different sorts of materials for their different projects in one place. It's aimed towards crafters who already have all the tools of the trade and want to fill up on materials no matter what thread their project needs.
 
 1. Who are your users?
     - Handicraft enthusiasts who want to refill material
@@ -60,8 +60,8 @@ Knits&Knots is a one-stop Business to Consumer (B2C) shop for people who enjoy h
     - Assist customers to find the right product for their project
     - Get returning customers
 
-7. Would your business have a budget to spend on advertising? Or would it need to work with free or low cost options to market itself?
-    - Low cost options while staying active on social media to promote our store and the products, putting the energy into making reels and sending out newsletters, and use the profit to pay for ads on social media apps
+7. Would your business have a budget to spend on advertising? Or would it need to work with free or low-cost options to market itself?
+    - Low-cost options while staying active on social media to promote our store and the products, putting the energy into making reels and sending out newsletters, and using the profit to pay for ads on social media apps
 
 ### Database: [ERD MAP](/documentation/database/pp5-erd.pdf)
 
@@ -87,7 +87,7 @@ The basic structure of the website is based on [Code Institute Boutique Ado](htt
 - Wishlist: Allowing authorized users to save products to a wishlist connected to their account
 - Tags: Tags for users to browse through as sub-categories
 - Videocall: Allows authorized users to book a free videocall to get project or material help with email confirmation.
-- Contact: A contact form for user to reach out and ask questions or leave feedback with email confirmation.
+- Contact: A contact form for users to reach out and ask questions or leave feedback with email confirmation.
 
 ### Agile Methodology
 
@@ -95,7 +95,7 @@ The basic structure of the website is based on [Code Institute Boutique Ado](htt
 
 The baseline of my User Stories is collected in an Excel file that I then transferred into a GitHub Project that uses an agile approach with the help of a Kanban board method.
 
-The first Kanban board I created with this product became unavailable to display for anyone other than me on my Github page. After trying to solve the issue with the help of my mentor, we concluded that the only way to solve the issue was by creating a newe Kanban board and add new issues. These are therefore all created and closed at the same time, since I've already worked along the previous board. My former Kanban project is still connected to the repository in order to turn the issue to GitHub, marked BUGGED, and the new Kanban board is now connected to the repository.
+The first Kanban board I created with this product became unavailable to display for anyone other than me on my Github page. After trying to solve the issue with the help of my mentor, we concluded that the only way to solve the issue was by creating a new Kanban board and adding new issues. These are therefore all created and closed at the same time, since I've already worked along the previous board. My former Kanban project is still connected to the repository to turn the issue to GitHub, marked BUGGED, and the new Kanban board is now connected to the repository.
 
 See [Here](https://github.com/users/AuroraStorm-sw/projects/12/) for the full Kanban project.
 
@@ -108,9 +108,9 @@ When planning this website, I went with the idea of it being as simple as possib
 <summary>View Wireframes</summary>
 <br>
 
-When brainstorming the website structure, I built basic wireframes for the home page, product page, and product detail, getting an idea of what feeling the website should have. A few structures are inspired by Code Institutes Boutique Ado walkthrough, mainly the profile, shopping basket, and checkout page, that I adjusted to fit my website.
+When brainstorming the website structure, I built basic wireframes for the home page, product page, and product detail, getting an idea of what feeling the website should have. A few structures are inspired by Code Institutes Boutique Ado walkthrough, mainly the profile, shopping basket, and checkout page, which I adjusted to fit my website.
 
-The other pages I build as I went on, making changes throughout the process to fit the vibe, though focusing on functionality first.
+The other pages I built as I went on, made changes throughout the process to fit the vibe, though focusing on functionality first.
 
 Home page
 ![Home](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/wireframe-home-page.PNG)
@@ -128,16 +128,16 @@ Product detail
 
 ## Design
 
-My main design idea was to keep the webstore as simple and minimalistic as possible for two reasons; one, I view cluttered pages as unproffesional and disorienting, and two, I find it hard to focus and find my way around webstores that offer too much when I'm on a mission to find something specific, which is often materials.
+My main design idea was to keep the webstore as simple and minimalistic as possible for two reasons; one, I view cluttered pages as unprofessional and disorienting, and two, I find it hard to focus and find my way around websites that offer too much when I'm on a mission to find something specific, which is often materials.
 
-The colors are simple and blend in with the background, adding some artistic feel with the swirly pattern without stealing any attention from the products. I kept the colors  gender neutral with greens and purples so not to indicate the craft is suited for one or another, instead welcoming everyone to pursue their creative passion.
+The colors are simple and blend in with the background, adding some artistic feel with the swirly pattern without stealing any attention from the products. I kept the colors gender neutral with greens and purples so as not to indicate the craft is suited for one or another, instead welcoming everyone to pursue their creative passion.
 
 ### Colors
 I based the colors around the background image and used [Coolors](https://coolors.co) to create a palette based on one of the nuances. 
 
 ![Palette](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/palette.PNG)
 
-From this palette, I focused on the colors #C5C0F1 and #66B100. They're both bright colors but used sparingly across the webstore, bringing some happiness and artistic vibe without overtaking the visual experience.
+From this palette, I focused on the colors #C5C0F1 and #66B100. They're both bright colors but used sparingly across the website, bringing some happiness and an artistic vibe without overtaking the visual experience.
 
 ### Fonts
 
@@ -145,7 +145,7 @@ For fonts, I ended up with Autour One for the main headers. It has a touch of an
 
 ![Autor](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/autour-one-font.PNG)
 
-For paragraphs, I went with Palanquin, which is a very simple and straight-forward font that lets the header stand out on its own.
+For paragraphs, I went with Palanquin, which is a very simple and straightforward font that lets the header stand out on its own.
 
 ![Palanquin](https://knitsknots.s3.eu-north-1.amazonaws.com/documentation/readme_images/palanquin-font.PNG)
 
@@ -177,7 +177,7 @@ For paragraphs, I went with Palanquin, which is a very simple and straight-forwa
 
 #### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-CSS code was checked by pasting the raw code from Styles.css into the validator textarea.
+CSS code was checked by pasting the raw code from Styles.css into the validator text area.
 
 ![CSS Validator](/documentation/testing/w3c-validator.png)
 
@@ -210,7 +210,7 @@ CSS code was checked by pasting the raw code from Styles.css into the validator 
 | Home navigation        | When clicking the logo, I'll be taken back to the home page                                                                                              | Pass |
 | Account creation       | I can create a new account with username and password, and be notified that it's created successfully, or if not                                         | Pass |
 | Email confirmation     | I'll be sent an email to verify my email address                                                                                                         | Pass |
-| Sign in                | I can sign in with my username and accound and get notified that I've been successfully signed in                                                        | Pass |
+| Sign in                | I can sign in with my username and account and get notified that I've been successfully signed in                                                        | Pass |
 | Sign out               | When signed in, I can sign out of the webpage, be asked if I'm sure I want to sign out, and be notified that I've been successfully signed out           | Pass |
 | Navbar                 | Each link in the navbar takes me to the correct corresponding page.                                                                                      | Pass |
 | Browsing               | When browsing products, I can sort them by price and category.                                                                                           | Pass |
@@ -258,7 +258,7 @@ The deployed app has been tested across these web browsers:
 It has also been tested on Samsung mobile in physical form, and various viewports with the help of developer tools in the browser.
 
 
-For both Chrome and Edge, there is a bug where the increase and decrease arrows of products in Product Detail doesn't show up, which is likely related to the CSS removing increase and decrease arrows from phone number inputs.
+For both Chrome and Edge, there is a bug where the increase and decrease arrows of products in Product Detail don't show up, which is likely related to the CSS removing increase and decrease arrows from phone number inputs.
 
 ````css
 input[type=number]#id_phone_number::-webkit-inner-spin-button, 
@@ -277,10 +277,16 @@ Due to lack of time, I haven't been able to troubleshoot this further.
 Bugs are planned to be sorted after submission due to lack of time before submission.
 
 [Responsiveness Firefox no bugs](/documentation/responsiveness/responsiveness-firefox-no-bugs.pdf)
-[Responsiveness Firefox bugs](/documentation/responsiveness/responsiveness-chrome-bugs.pdf)
-[Responsiveness Chrome no bugs](/documentation/responsiveness/responsiveness-chrome-no-bugs.pdf)
-[Responsiveness Chrome bugs](/documentation/responsiveness/amiresponsive.PNG)
 
+[Responsiveness Firefox bugs](/documentation/responsiveness/responsiveness-chrome-bugs.pdf)
+
+[Responsiveness Chrome no bugs](/documentation/responsiveness/responsiveness-chrome-no-bugs.pdf)
+
+[Responsiveness Chrome bugs](/documentation/responsiveness/responsiveness-chrome-bugs.pdf)
+
+[Responsiveness Edge no bugs](/documentation/responsiveness/responsiveness-edge-no-bugs.pdf)
+
+[Responsiveness Edge bugs](/documentation/responsiveness/responsiveness-edge-bugs.pdf)
 
 
 ## Bugs
@@ -292,31 +298,31 @@ Solution: Through tutor support, found that I had ```AWS = True``` in my enc.py 
 2. When turning the phone number input in the profile page form to integers only, it came along with increase and decrease arrows.
 Solution: Searched StackOverflow (See credits) and found a CSS solution to remove the arrows from the particular inputs.
 
-3. Missing images on deployed heroku page after updating the images locally.
+3. Missing images on the deployed Heroku page after updating the images locally.
 Solution: Removed DISABLE_COLLECTSTATIC from Heroku variables and the images loaded.
 
 4. Unable to sign in as superuser with email, turned out to have accidentally added the same email for 2 different users
 Solution: Delete 1 user, problem solved.
 
-3. Images missing on heroku but showing on local and viceversa
-Solution: Copy the media folder to static and keep the media folder on top level, will be further investigated in the future to successfully remove 1 folder. The static media folder has been removed after re-uploading images to products, and all images are now showing.
+3. Images missing on Heroku but showing on local and vice versa
+Solution: Copy the media folder to static and keep the media folder on top level. This will be further investigated in the future to successfully remove 1 folder. The static media folder has been removed after re-uploading images to products, and all images are now showing.
 
 
 ### Unsolved bugs
 1. Removed Order App after realizing it never got used, but this caused a deployment error as the database was now missing the order module, and the deployed website couldn't be accessed.
 Solution: Re-added the Order App and re-deployed the website due to lack of time to resolve the issue with the app removed. For now, the app will remain, and where there is time to solve the issue, the app will either be used or removed properly.
 
-2. FAQ-buttons stacking instead of lying horizontal on Chrome.
-This bug showed up the same day as project submission, so I have not had the time to troubleshoot the code in order to fix this, and will have to solve this issue in the future.
+2. FAQ buttons stacking instead of lying horizontally on Chrome.
+This bug showed up the same day as the project submission, so I have not had the time to troubleshoot the code to fix this, and will have to solve this issue in the future.
 
-3. FAQ Delivery tab showing different width than on Firefox.
+3. FAQ Delivery tab shows a different width than on Firefox.
 This bug was also discovered on submission date, so I have not had the time to troubleshoot and fix the error. All other tabs; Products, Returns, and Order show as intended.
 
 
 ## Future implements - nice to haves
 - Add a pop-up for booking time for videocall form instead of writing it in manually
 - Ensure a member can only book 1 videocall
-- Style confirmation emails to be more aestethic
+- Style confirmation emails to be more aesthetic
 - Include discounts for members
 
 ## Deployment
@@ -547,7 +553,7 @@ The instructions below are for the basic Heroku app setup. For specific Django s
 - [Grammarly](https://app.grammarly.com/) - Used to spell and grammar check the ReadMe.
 
 
-### Resourses
+### Resources
 
 ### Assisting
 - [Table Converter](https://tableconvert.com/) - For Manual testing structuring.
@@ -638,11 +644,7 @@ https://stackoverflow.com/questions/56885754/
 
 - [Slack](https://slack.com/) - Many answers to errors and frustrations have been found when browsing issues across different channels. Throughout the project, sources have been added to each corresponding piece of code in comments.
 
-- [Code Institute Courseware](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/dabfed30d1fc4d078b6de270117dbe50/) - Code Institute courseware used for the basic structure of the Ink and Feedback/Comment models.
-
 - [Code Institute Template](https://github.com/Code-Institute-Org/gitpod-full-template) - the template used as a base for the project.
-
-- [Kathrin's Haiku blog](https://github.com/Kathrin-ddggxh/woohoo-haiku) - For the shape and Bootstrap template of the Ink cards on the Home and Category page, including the 'hover transformation' effect.
 
 - My mentor Juliia who offered a lot of support and technical help, ensuring my project is as good as it can be for submission.
 

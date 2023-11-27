@@ -247,8 +247,8 @@ Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_t
 }
 
 .product-card {
-    width: 20rem;
-    height: 25rem !important;
+    max-width: 20rem;
+    min-height: 25rem !important;
 }
 
 .product-card:hover {

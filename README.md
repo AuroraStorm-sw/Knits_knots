@@ -1,4 +1,4 @@
-![AmIResponsive]()
+![AmIResponsive](/documentation/responsiveness/amiresponsive.PNG)
 
 See live site [here](https://knits-knots-3cc8ac17064e.herokuapp.com/).
 
@@ -294,11 +294,7 @@ Setup based on STRIPE tutorial from Code Institute
 1. Go to https://dashboard.stripe.com/register to create a Stripe account.
 2. Visit the page for developers:
 
-![developers](developers__btn.png; documentation/payment_setup)
-
 3. Choose your API keys.
-
-![api_keys](pay_setup/documentation/api_keys.png)
 
 The 'public key' and 'secret key' should be copied to the `env.py` file.
 
@@ -319,8 +315,6 @@ pip3 install stripe
 10. Add div to hold stripe element:
 
 ```html
-  
-~~
   - Get public key: `stripe_public_key = settings.STRIPE_PUBLIC_KEY`
   - Get private key: `stripe_secret_key = settings.STRIPE_SECRET_KEY`
   - create intent: `intent = stripe.PaymentIntent.create(**kwargs)`
@@ -332,6 +326,7 @@ pip3 install stripe
 ```html
   <div id="stripe-element"></div>
 ```
+
 11. Create a View to handle payment setup:
   - Get public key: `stripe_public_key = settings.STRIPE_PUBLIC_KEY`
   - Get private key: `stripe_secret_key = settings.STRIPE_SECRET_KEY`

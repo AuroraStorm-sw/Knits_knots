@@ -31,7 +31,8 @@ DEBUG ='DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     "8000-aurorastorms-knitsknots-nbv9ea6ia1o.ws-eu106.gitpod.io",
-    "knits-knots-3cc8ac17064e.herokuapp.com"
+    "knits-knots-3cc8ac17064e.herokuapp.com",
+    "https://knitsnknots.onrender.com"
     ]
 
 # Setting for Django version above 3.2 for Allauth to trust site CSRF token
